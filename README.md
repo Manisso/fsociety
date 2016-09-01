@@ -82,4 +82,4 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 + Sniper
  
 #Installation
-git clone https://github.com/MohamedNourTN/PenBox.git 
+git clone https://github.com/Manisso/fsociety.git
