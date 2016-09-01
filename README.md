@@ -78,8 +78,8 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 + POET
 + Phishing Framework
 
-#Recon
-+ Sniper
+#Install Me
++ Install Directly On System (Only For Linux & Mac System )
  
 #Installation
 git clone https://github.com/Manisso/fsociety.git
