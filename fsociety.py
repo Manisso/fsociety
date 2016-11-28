@@ -10,7 +10,7 @@
 
 #                                 Greet's To
 
-#             Koptan-Dz - Sparky Dz - Houssem Maraval - Shadow00715
+#              Koptan-Dz - Sparky Dz - HoussemTlm - Shadow00715
                   
 #                             Tool For Hacking 
 #                       Authors : Manisso & Sparky Dz
@@ -105,8 +105,8 @@ def menu():
 
          [+]        Coded BY Manisso & Sparky Dz         [+] 
          [+]        FB/dzmanisso   ~~ FB/SparkyDzx       [+] 
-      [+]Greetz To Koptan Dz & Shadow00715 & Houssem Maraval[+] 
-
+         [+] Greetz To Koptan Dz Shadow00715  HoussemTlm [+] 
+        
     Select From The Menu:
 
     1 : Information Gathering
