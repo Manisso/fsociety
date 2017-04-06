@@ -100,7 +100,7 @@ def menu():
  | | \__ \ (_) | (__| |  __/ |_| |_| |
  |_| |___/\___/ \___|_|\___|\__|\__, |
   Coded By Manisso & Sparky Dz   __/ |
-                                |___/  """)                              
+                                |___/                                
         
     Select From The Menu:
 
