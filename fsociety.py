@@ -236,7 +236,7 @@ def weeman():
     print("HTTP server for phishing in python. (and framework) Usually you will want to run Weeman with DNS spoof attack. (see dsniff, ettercap).")
     choicewee = raw_input("Install Weeman ? Y / N : ")
     if choicewee in yes:
-        os.system("git clone https://github.com/Hypsurus/weeman.git && cd weeman && python weeman.py")
+        os.system("git clone https://github.com/samyoyo/weeman.git && cd weeman && python weeman.py")
     if choicewee in no:
         menu()
     else:
