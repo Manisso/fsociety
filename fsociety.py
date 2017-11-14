@@ -104,7 +104,7 @@ def menu():
 
          [+]            Coded By Manisso               [+] 
          [+]         https://fb.me/dzmanisso           [+] 
-         [+]        Greetz To IcoDz & Canejo           [+] 
+         [+]       Greetz To IcoDz & Canejo Dz         [+] 
         
     Select From The Menu:
 
