@@ -100,10 +100,13 @@ def menu():
  | |  \__ \ (_) | (__| |  __/ |_| |_| |    | |  __/ (_| | | | | | |
  |_|  |___/\___/ \___|_|\___|\__|\__, |    |_|\___|\__,_|_| |_| |_|
        * Copyright fsociety Team  __/ |                             
-                                 |___/                                           
-
-
+                                 |___/   
         
+                         |+|Coded By Manisso & IcoDz|+|
+                         |+|      FB/Dzmanisso      |+|
+                         |+| Thnx To IcoDz & Canejo |+|
+
+     
     Select From The Menu:
 
     1 : Information Gathering
