@@ -103,7 +103,7 @@ def menu():
                                  |___/   
         
                          |+|Coded By Manisso & IcoDz|+|
-                         |+|      FB/Dzmanisso      |+|
+                        #|+|      FB/Dzmanisso      |+|#
                          |+| Thnx To IcoDz & Canejo |+|
 
      
