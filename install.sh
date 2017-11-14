@@ -21,16 +21,15 @@ if [ $baba == "y" ] ;
     exit
 fi
 
-echo "[✔] Where Do you want to install the tool? [Ex:/usr/share/doc]:";
-read refdir
+
 echo "[✔] Checking directories..."
-if [ -d "$refdir/fsociety" ] ;
+if [ -d "/usr/share/doc/fsociety" ] ;
 then
 echo "[◉] A directory fsociety was found! Do you want to replace it? [Y/n]:" ; 
 read mama
 if [ $mama == "y" ] ; 
 then
- rm -R "$refdir/fsociety"
+ rm -R "/usr/share/doc/fsociety"
 else
  exit
 fi
@@ -40,13 +39,13 @@ fi
  echo "";
  git clone https://github.com/Manisso/fsociety.git $refdir/fsociety;
  echo "#!/bin/bash 
- python $refdir/fsociety/fsociety.py" '${1+"$@"}' > fsociety;
+ python /usr/share/doc/fsociety/fsociety.py" '${1+"$@"}' > fsociety;
  chmod +x fsociety;
  sudo cp fsociety /usr/bin/;
  rm fsociety;
 
 
-if [ -d "$refdir/fsociety" ] ;
+if [ -d "/usr/share/doc/fsociety" ] ;
 then
 echo "";
 echo "[✔]Tool istalled with success![✔]";
