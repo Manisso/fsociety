@@ -104,7 +104,7 @@ def menu():
         
                          |+|Coded By Manisso & IcoDz|+|
                          |+|      FB/Dzmanisso      |+|
-                         |+| Thnx To IcoDz & Canejo |+| 0
+                         |+| Thnx To IcoDz & Canejo |+| Finaly
 
      
     Select From The Menu:
