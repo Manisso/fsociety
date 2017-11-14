@@ -158,9 +158,7 @@ def sniper():
         menu()
 
 def updatefs():
-    print ("This tool is only available for Linux / OSX or similar systems ")
-    choicesniper = raw_input("Continue Y / N: ")
-    if choicesniper in yes:
+        os.system ("cd /etc/")
         os.system ("git clone https://github.com/Manisso/fsociety.git")
         os.system ("cd fsociety && sudo bash ./update.sh")
         os.system ("fsociety")
