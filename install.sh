@@ -37,7 +37,7 @@ fi
 
  echo "[✔] Installing ...";
  echo "";
- git clone https://github.com/Manisso/fsociety.git $refdir/fsociety;
+ git clone https://github.com/Manisso/fsociety.git /usr/share/doc/fsociety;
  echo "#!/bin/bash 
  python /usr/share/doc/fsociety/fsociety.py" '${1+"$@"}' > fsociety;
  chmod +x fsociety;
