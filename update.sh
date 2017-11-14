@@ -57,5 +57,3 @@ clear
 ./install.sh
 
 clear
-
-fsociety
