@@ -161,6 +161,8 @@ def sniper():
         menu()
 
 def updatefs():
+        os.system ("sudo rm -rf /usr/share/doc/fsociety/")
+        os.system ("sudo rm -rf /etc/fsociety/")
         os.system ("cd /etc/")
         os.system ("git clone https://github.com/Manisso/fsociety.git")
         os.system ("cd fsociety && sudo bash ./update.sh")
