@@ -13,9 +13,9 @@ echo "
 
                                                 ";
 echo "";
-echo "" ;
+echo "y"y;
 read baba
-if [ $baba == "" ] ; 
+if [ $baba == "y" ] ; 
   then
     echo " "
   else
