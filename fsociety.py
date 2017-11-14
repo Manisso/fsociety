@@ -116,8 +116,8 @@ def menu():
     6 : Web Hacking 
     7 : Private Web Hacking
     8 : Post Exploitation
-    9 : Install Me
-    0 : UPDATE Fsociety
+    9 : INSTALL & UPDATE
+    0 : UPDATE 
     99: Exit
 
     """)
