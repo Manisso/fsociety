@@ -112,7 +112,7 @@ def menu():
     6 : Web Hacking 
     7 : Private Web Hacking
     8 : Post Exploitation
-    9 : Install Me
+    9 : Install & Update
     99: Exit
 
     """)
@@ -143,11 +143,11 @@ def menu():
     else: 
         menu()
 def sniper():
-    print ("This tool is only available for Linux / OSX or similar systems ")
+    print ("This tool is only available for Linux and or similar systems ")
     choicesniper = raw_input("Continue Y / N: ")
     if choicesniper in yes:
         os.system ("git clone https://github.com/Manisso/fsociety.git")
-        os.system ("cd fsociety && sudo bash ./install.sh")
+        os.system ("cd fsociety && sudo bash ./update.sh")
         os.system ("fsociety")
     elif choicesniper == "":
         menu()
