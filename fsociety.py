@@ -165,7 +165,9 @@ def updatefs():
         os.system ("sudo rm -rf /etc/fsociety/")
         os.system ("cd /etc/")
         os.system ("git clone https://github.com/Manisso/fsociety.git")
-        os.system ("cd fsociety && sudo bash ./update.sh")
+        os.system ("cd fsociety")
+        os.system ("sudo chmod +x update.sh")
+        os.system ("./update.sh")
         os.system ("fsociety")
 
 def doork():
