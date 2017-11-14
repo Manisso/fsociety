@@ -102,9 +102,7 @@ def menu():
        * Copyright fsociety Team  __/ |                             
                                  |___/                                           
 
-         [+]            Coded By Manisso               [+] 
-         [+]         https://fb.me/dzmanisso           [+] 
-         [+]        Greetz To IcoDz & Canejo           [+] 
+
         
     Select From The Menu:
 
