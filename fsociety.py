@@ -100,13 +100,12 @@ def menu():
  | |  \__ \ (_) | (__| |  __/ |_| |_| |    | |  __/ (_| | | | | | |
  |_|  |___/\___/ \___|_|\___|\__|\__, |    |_|\___|\__,_|_| |_| |_|
        * Copyright fsociety Team  __/ |                             
-                                 |___/   
-        
-                         |+|Coded By Manisso & IcoDz|+|
-                         |+|      FB/Dzmanisso      |+|
-                         |+| Thnx To IcoDz & Canejo |+| Finaly
+                                 |___/                                           
 
-     
+         [+]            Coded By Manisso               [+] 
+         [+]         https://fb.me/dzmanisso           [+] 
+         [+]        Greetz To IcoDz & Canejo           [+] 
+        
     Select From The Menu:
 
     1 : Information Gathering
@@ -117,7 +116,8 @@ def menu():
     6 : Web Hacking 
     7 : Private Web Hacking
     8 : Post Exploitation
-    9 : Install & UPDATE 
+    9 : Install Me
+    0 : UPDATE Fsociety
     99: Exit
 
     """)
@@ -150,11 +150,22 @@ def menu():
     else: 
         menu()
 def sniper():
+    print ("This tool is only available for Linux / OSX or similar systems ")
+    choicesniper = raw_input("Continue Y / N: ")
+    if choicesniper in yes:
         os.system ("git clone https://github.com/Manisso/fsociety.git")
         os.system ("cd fsociety && sudo bash ./install.sh")
         os.system ("fsociety")
     elif choicesniper == "":
         menu()
+
+def updatefs():
+    print ("This tool is only available for Linux / OSX or similar systems ")
+    choicesniper = raw_input("Continue Y / N: ")
+    if choicesniper in yes:
+        os.system ("git clone https://github.com/Manisso/fsociety.git")
+        os.system ("cd fsociety && sudo bash ./update.sh")
+        os.system ("fsociety")
 
 def doork():
     print("doork is a open-source passive vulnerability auditor tool that automates the process of searching on Google information about specific website based on dorks. ")
