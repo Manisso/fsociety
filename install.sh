@@ -12,15 +12,6 @@ echo "
   ▀   ▀▀▀▀ ▀▀▀▀ ▀▀▀ ▀▀▀             
 
                                                 ";
-echo "";
-echo "y"y;
-read baba
-if [ $baba == "y" ] ; 
-  then
-    echo " "
-  else
-    exit
-fi
 
 
 echo "[✔] Checking directories...";
