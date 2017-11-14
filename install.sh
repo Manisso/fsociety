@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 echo "
 ███╗   ███╗ █████╗ ███╗   ██╗██╗███████╗███████╗ ██████╗
 ████╗ ████║██╔══██╗████╗  ██║██║██╔════╝██╔════╝██╔═══██╗
@@ -12,9 +13,9 @@ echo "
 
                                                 ";
 echo "";
-echo "[✔] You will install fsociety tool in the system [Y/N] :" ;
+echo "" ;
 read baba
-if [ $baba == "y" ] ; 
+if [ $baba == "" ] ; 
   then
     echo " "
   else
