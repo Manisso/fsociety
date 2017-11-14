@@ -22,7 +22,7 @@ if [ $baba == "y" ] ;
 fi
 
 
-echo "[✔] Checking directories..."
+echo "[✔] Checking directories...";
 if [ -d "/usr/share/doc/fsociety" ] ;
 then
 echo "[◉] A directory fsociety was found! Do you want to replace it? [Y/n]:" ; 
