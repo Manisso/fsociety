@@ -10,11 +10,10 @@
 
 #                                 Greet's To
 
-#              Koptan-Dz - Sparky Dz - HoussemTlm - Shadow00715
+#                               IcoDz - Canejo
                   
 #                             Tool For Hacking 
-#                       Authors : Manisso & Sparky Dz
-
+#                       Authors : Manisso & IcoDz
 
 import sys
 import argparse
@@ -103,9 +102,9 @@ def menu():
        * Copyright fsociety Team  __/ |                             
                                  |___/                                           
 
-         [+]        Coded BY Manisso & Sparky Dz         [+] 
-         [+]        FB/dzmanisso   ~~ FB/SparkyDzx       [+] 
-         [+] Greetz To Koptan Dz Shadow00715  HoussemTlm [+] 
+         [+]            Coded By Manisso               [+] 
+         [+]         https://fb.me/dzmanisso           [+] 
+         [+]        Greetz To IcoDz & Canejo           [+] 
         
     Select From The Menu:
 
