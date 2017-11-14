@@ -117,6 +117,7 @@ def menu():
     7 : Private Web Hacking
     8 : Post Exploitation
     9 : Install Me
+    0 : UPDATE Fsociety
     99: Exit
 
     """)
@@ -139,7 +140,9 @@ def menu():
     elif choice == "8":
         postexp()
     elif choice == "9":
-        sniper()    
+        sniper() 
+    elif choice == "0":
+        updatefs()       
     elif choice == "99":
         clearScr(),sys.exit();
     elif choice == "":
@@ -155,6 +158,15 @@ def sniper():
         os.system ("fsociety")
     elif choicesniper == "":
         menu()
+
+def updatefs():
+    print ("This tool is only available for Linux / OSX or similar systems ")
+    choicesniper = raw_input("Continue Y / N: ")
+    if choicesniper in yes:
+        os.system ("git clone https://github.com/Manisso/fsociety.git")
+        os.system ("cd fsociety && sudo bash ./update.sh")
+        os.system ("fsociety")
+
 def doork():
     print("doork is a open-source passive vulnerability auditor tool that automates the process of searching on Google information about specific website based on dorks. ")
     doorkchice = raw_input("Continue Y / N: ")
