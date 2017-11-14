@@ -149,7 +149,7 @@ def menu():
     else: 
         menu()
 def sniper():
-    print ("This tool is only available for Linux / OSX or similar systems ")
+    print ("This tool is only available for Linux and similar systems ")
     choicesniper = raw_input("Continue Y / N: ")
     if choicesniper in yes:
         os.system ("git clone https://github.com/Manisso/fsociety.git")
