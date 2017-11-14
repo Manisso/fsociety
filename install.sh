@@ -12,7 +12,6 @@ echo "
   ▀   ▀▀▀▀ ▀▀▀▀ ▀▀▀ ▀▀▀             
 
                                                 ";
-rm -rf /usr/share/doc/fsociety/
 
 echo "[✔] Checking directories...";
 if [ -d "/usr/share/doc/fsociety" ] ;
