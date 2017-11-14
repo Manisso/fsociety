@@ -117,7 +117,6 @@ def menu():
     7 : Private Web Hacking
     8 : Post Exploitation
     9 : INSTALL & UPDATE
-    0 : UPDATE 
     99: Exit
 
     """)
