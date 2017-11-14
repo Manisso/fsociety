@@ -104,7 +104,7 @@ def menu():
         
                          |+|Coded By Manisso & IcoDz|+|
                          |+|      FB/Dzmanisso      |+|
-                         |+| Thnx To IcoDz & Canejo |+|
+                         |+| Thnx To IcoDz & Canejo |+| 0
 
      
     Select From The Menu:
@@ -166,8 +166,8 @@ def updatefs():
         os.system ("cd /etc/")
         os.system ("git clone https://github.com/Manisso/fsociety.git")
         os.system ("cd fsociety")
-        os.system ("sudo chmod +x update.sh")
-        os.system ("./update.sh")
+        os.system ("sudo chmod +x install.sh")
+        os.system ("./install.sh")
         os.system ("fsociety")
 
 def doork():
