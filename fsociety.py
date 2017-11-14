@@ -117,8 +117,7 @@ def menu():
     6 : Web Hacking 
     7 : Private Web Hacking
     8 : Post Exploitation
-    9 : Install Me
-    0 : UPDATE Fsociety
+    9 : Install & UPDATE 
     99: Exit
 
     """)
@@ -151,24 +150,11 @@ def menu():
     else: 
         menu()
 def sniper():
-    print ("This tool is only available for Linux / OSX or similar systems ")
-    choicesniper = raw_input("Continue Y / N: ")
-    if choicesniper in yes:
         os.system ("git clone https://github.com/Manisso/fsociety.git")
         os.system ("cd fsociety && sudo bash ./install.sh")
         os.system ("fsociety")
     elif choicesniper == "":
         menu()
-
-def updatefs():
-        os.system ("sudo rm -rf /usr/share/doc/fsociety/")
-        os.system ("sudo rm -rf /etc/fsociety/")
-        os.system ("cd /etc/")
-        os.system ("git clone https://github.com/Manisso/fsociety.git")
-        os.system ("cd fsociety")
-        os.system ("sudo chmod +x install.sh")
-        os.system ("./install.sh")
-        os.system ("fsociety")
 
 def doork():
     print("doork is a open-source passive vulnerability auditor tool that automates the process of searching on Google information about specific website based on dorks. ")
