@@ -85,7 +85,7 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 + Install Directly On System (Only For Linux & Mac System )
 + Update instantly When There are New Update
  
-# Installation [Linux](https://fr.wikipedia.org/wiki/Linux) ![alt tag](http://icons.iconarchive.com/icons/dakirby309/simply-styled/48/OS-Linux-icon.png)
+# Installation [Linux](https://fr.wikipedia.org/wiki/Linux) [![alt tag](http://icons.iconarchive.com/icons/dakirby309/simply-styled/32/OS-Linux-icon.png)](https://fr.wikipedia.org/wiki/Linux)
 [✓] git clone https://github.com/Manisso/fsociety.git
 
 [✓] cd fsociety && python fsociety.py
