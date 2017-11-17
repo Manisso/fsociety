@@ -1,4 +1,5 @@
 ![UP](https://img.shields.io/uptimerobot/status/m778918918-3e92c097147760ee39d02d36.svg) ![Os](https://img.shields.io/badge/Platform-Linux%20%7C%20OSX%20%7C%20Windows%20%7C%20Android-orange.svg)
+![python](https://img.shields.io/badge/python-2.7-brightgreen.svg) ![license](https://img.shields.io/badge/license-GPL-brightgreen.svg)
 
 # fsociety Hacking Tools Pack – A Penetration Testing Framework
 A Penetration Testing Framework , you will have evry script that a hacker needs
