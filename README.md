@@ -98,7 +98,7 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 
 [✓] ongratulation Fsociety is Installed !
 
-# Installation [Windows](https://fr.wikipedia.org/wiki/Microsoft_Windows)
+# Installation [Windows](https://fr.wikipedia.org/wiki/Microsoft_Windows)[![alt tag](http://icons.iconarchive.com/icons/yootheme/social-bookmark/32/social-windows-button-icon.png)](https://fr.wikipedia.org/wiki/Microsoft_Windows)
 
 [✔] Download [![python](https://img.shields.io/badge/python-2.7-brightgreen.svg)](https://www.python.org/downloads/release/python-2714/)
 
