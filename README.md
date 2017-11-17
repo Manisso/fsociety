@@ -1,4 +1,4 @@
-![GitHub stars](https://img.shields.io/redmine/plugin/stars/redmine_xlsx_format_issue_exporter.svg) ![UP](https://img.shields.io/uptimerobot/status/m778918918-3e92c097147760ee39d02d36.svg) ![Os](https://img.shields.io/badge/Os-Linux%20%7C%20OSX%20%7C%20Windows%20%7C%20Android-green.svg)
+![UP](https://img.shields.io/uptimerobot/status/m778918918-3e92c097147760ee39d02d36.svg) ![Os](https://img.shields.io/badge/Os-Linux%20%7C%20OSX%20%7C%20Windows%20%7C%20Android-green.svg)
 
 # fsociety Hacking Tools Pack – A Penetration Testing Framework
 A Penetration Testing Framework , you will have evry script that a hacker needs
