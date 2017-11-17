@@ -104,19 +104,17 @@ def logo():
 
 
 def menu():
-    print ("""
-  ______              _      _           _______
- |  ____|            (_)    | |         |__   __|
- | |__ ___  ___   ___ _  ___| |_ _   _     | | ___  __ _ _ __ ___
- |  __/ __|/ _ \ / __| |/ _ \ __| | | |    | |/ _ \/ _` | '_ ` _ \
- | |  \__ \ (_) | (__| |  __/ |_| |_| |    | |  __/ (_| | | | | | |
- |_|  |___/\___/ \___|_|\___|\__|\__, |    |_|\___|\__,_|_| |_| |_|
-  * Copyright El Moujahidin Team  __/ |                        V 2.0
-                                 |___/
-
-         [+]            Coded By Manisso               [+]
-         [+]         https://fb.me/dzmanisso           [+]
-         [+]       Greetz To IcoDz & Canejo Dz         [+]
+    print ("""    
+d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db 
+88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8' 
+88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'  
+88        `Y8b. 88    88 8b         88    88         88       88    
+88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88    
+YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP    
+                                                                    
+        [+]            Coded By Manisso               [+]
+        [+]         https://fb.me/dzmanisso           [+]
+        [+]       Greetz To IcoDz & Canejo Dz         [+]                                                                  
 
     Select From The Menu:
 
