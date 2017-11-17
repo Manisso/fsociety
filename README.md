@@ -3,7 +3,7 @@
 
 # fsociety Hacking Tools Pack – A Penetration Testing Framework
 A Penetration Testing Framework , you will have evry script that a hacker needs
-#Menu
+# Menu
 + Information Gathering
 + Password Attacks
 + Wireless Testing
@@ -12,9 +12,9 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 + Web Hacking 
 + Private Web Hacking
 + Post Exploitation
-+ Install Me
++ INSTALL & UPDATE
 
-#Information Gathering : 
+# Information Gathering : 
 + Nmap 
 + Setoolkit
 + Port Scanning
@@ -76,13 +76,39 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 + Bypass Cloudflare
 
 
-#Post Exploitation
+# Post Exploitation
 + Shell Checker
 + POET
 + Phishing Framework
 
-#Install Me
+# Install Me
 + Install Directly On System (Only For Linux & Mac System )
++ Update instantly When There are New Update
  
-#Installation
-git clone https://github.com/Manisso/fsociety.git
+# Installation [Linux](https://fr.wikipedia.org/wiki/Linux)
+[✓] git clone https://github.com/Manisso/fsociety.git
+
+[✓] cd fsociety && python fsociety.py
+
+[◉] 0 : INSTALL & UPDATE
+
+[◉] -> 0
+
+[✓] press 0 
+
+[✓] ongratulation Fsociety is Installed !
+
+# Installation [Windows](https://fr.wikipedia.org/wiki/Microsoft_Windows)
+
+[✔] Download [![python](https://img.shields.io/badge/python-2.7-brightgreen.svg)](https://www.python.org/downloads/release/python-2714/)
+
+[✓] Download [fsociety](https://github.com/Manisso/fsociety/archive/master.zip)
+
+[✓] Extract [fsociety](https://github.com/Manisso/fsociety/archive/master.zip) into Desktop
+
+[◉]Open CMD and type the following commands:
+
+[✓] $cd Desktop/fsociety-master/
+
+[✓] $python fsociety.py
+
