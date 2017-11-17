@@ -1,4 +1,4 @@
-![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Stars)
+![GitHub stars](https://img.shields.io/redmine/plugin/stars/redmine_xlsx_format_issue_exporter.svg)
 
 # fsociety Hacking Tools Pack – A Penetration Testing Framework
 A Penetration Testing Framework , you will have evry script that a hacker needs
