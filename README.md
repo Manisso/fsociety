@@ -98,7 +98,7 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 
 [✓] press 0 
 
-[✓] ongratulation Fsociety is Installed !
+[✓] Congratulation Fsociety is Installed !
 
 # Installation [Windows](https://fr.wikipedia.org/wiki/Microsoft_Windows)[![alt tag](http://icons.iconarchive.com/icons/yootheme/social-bookmark/32/social-windows-button-icon.png)](https://fr.wikipedia.org/wiki/Microsoft_Windows)
 
