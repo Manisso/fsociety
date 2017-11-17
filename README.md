@@ -1,3 +1,5 @@
+![GitHub stars](https://img.shields.io/github/stars/badges/shields.svg?style=social&label=Stars)
+
 # fsociety Hacking Tools Pack – A Penetration Testing Framework
 A Penetration Testing Framework , you will have evry script that a hacker needs
 #Menu
@@ -58,7 +60,7 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 + BruteX - Automatically brute force all services running on a target
 + Arachni - Web Application Security Scanner Framework 
 
-#Private Web Hacking
+# Private Web Hacking
 + Get all websites
 + Get joomla websites
 + Get wordpress websites
