@@ -110,7 +110,7 @@ YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP
                                                                     
         [+]            Coded By Manisso               [+]
         [+]         https://fb.me/dzmanisso           [+]
-        [+]       Greetz To IcoDz & Canejo Dz         [+]                                                                  
+        [+]             Greetz To IcoDz               [+]                                                                  
 
     Select From The Menu:
 
