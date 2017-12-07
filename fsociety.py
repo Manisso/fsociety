@@ -108,25 +108,22 @@ d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db
 88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88    
 YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP    
                                                                     
-        [+]            Coded By Manisso               [+]
-        [+]         https://fb.me/dzmanisso           [+]
-        [+]             Greetz To IcoDz               [+]                                                                  
-
-    Select From The Menu:
-
-    1 : Information Gathering
-    2 : Password Attacks
-    3 : Wireless Testing
-    4 : Exploitation Tools
-    5 : Sniffing & Spoofing
-    6 : Web Hacking
-    7 : Private Web Hacking
-    8 : Post Exploitation
-    0 : INSTALL & UPDATE
-    99: Exit
-
-    """)
-    choice = raw_input("-> ")
+            }-----{+} Coded By Manisso {+}-----{
+         }--------{+}  fb.me/dzmanisso {+}--------{
+            }-----{+} Greetz To IcoDz  {+}-----{                                                                  
+  
+   {1}--Information Gathering
+   {2}--Password Attacks
+   {3}--Wireless Testing
+   {4}--Exploitation Tools
+   {5}--Sniffing & Spoofing
+   {6}--Web Hacking
+   {7}--Private Web Hacking
+   {8}--Post Exploitation
+   {0}--INSTALL & UPDATE
+   {99}-Exit
+ """)
+    choice = raw_input("fsociety~# ")
     os.system('clear')
     if choice == "1":
         info()
@@ -189,11 +186,20 @@ def doork():
 
 def postexp():
     clearScr()
-    print("1:  Shell Checker")
-    print("2:  POET")
-    print("3:  Phishing Framework \n")
-    print("99: Return to main menu \n ")
-    choice11 = raw_input("-> ")
+    print("""
+d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db 
+88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8' 
+88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'  
+88        `Y8b. 88    88 8b         88    88         88       88    
+88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88    
+YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP    
+
+""")
+    print("   {1}--Shell Checker")
+    print("   {2}--POET")
+    print("   {3}--Phishing Framework \n")
+    print("   {99}-Return to main menu \n\n ")
+    choice11 = raw_input("fsociety~# ")
     os.system('clear')
     if choice11 == "1":
         sitechecker()
@@ -302,7 +308,7 @@ def h2ip():
 
 def ports():
     clearScr()
-    target = raw_input('Select a Target IP -> ')
+    target = raw_input('Select a Target IP : ')
     os.system("nmap -O -Pn %s" % target)
     sys.exit()
 
@@ -374,20 +380,29 @@ def pixiewps():
 
 
 def webhack():
-    print("1 : Drupal Hacking ")
-    print("2 : Inurlbr")
-    print("3 : Wordpress & Joomla Scanner")
-    print("4 : Gravity Form Scanner")
-    print("5 : File Upload Checker")
-    print("6 : Wordpress Exploit Scanner")
-    print("7 : Wordpress Plugins Scanner")
-    print("8 : Shell and Directory Finder")
-    print("9 : Joomla! 1.5 - 3.4.5 remote code execution")
-    print("10: Vbulletin 5.X remote code execution")
-    print("11: BruteX - Automatically brute force all services running on a target")
-    print("12: Arachni - Web Application Security Scanner Framework \n ")
-    print("99: Exit \n ")
-    choiceweb = raw_input("-> ")
+    print("""
+d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db 
+88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8' 
+88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'  
+88        `Y8b. 88    88 8b         88    88         88       88    
+88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88    
+YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP    
+
+""")
+    print("   {1}--Drupal Hacking ")
+    print("   {2}--Inurlbr")
+    print("   {3}--Wordpress & Joomla Scanner")
+    print("   {4}--Gravity Form Scanner")
+    print("   {5}--File Upload Checker")
+    print("   {6}--Wordpress Exploit Scanner")
+    print("   {7}--Wordpress Plugins Scanner")
+    print("   {8}--Shell and Directory Finder")
+    print("   {9}--Joomla! 1.5 - 3.4.5 remote code execution")
+    print("   {10}-Vbulletin 5.X remote code execution")
+    print("   {11}-BruteX - Automatically brute force all services running on a target")
+    print("   {12}-Arachni - Web Application Security Scanner Framework \n ")
+    print("   {99}-Back To Main Menu \n")
+    choiceweb = raw_input("fsociety~# ")
     if choiceweb == "1":
         clearScr()
         maine()
@@ -775,25 +790,25 @@ def shellnoob():
 
 def info():
     print("""
-   __                _      _
-  / _|              (_)    | |
- | |_ ___  ___   ___ _  ___| |_ _   _
- |  _/ __|/ _ \ / __| |/ _ \ __| | | |
- | | \__ \ (_) | (__| |  __/ |_| |_| |
- |_| |___/\___/ \___|_|\___|\__|\__, |
-  Coded By Manisso & Sparky Dz   __/ |
-                                |___/  """)
-    print("1: Nmap ")
-    print("2: Setoolkit")
-    print("3: Port Scanning")
-    print("4: Host To IP")
-    print("5: wordpress user")
-    print("6: CMS scanner")
-    print("7: XSStracer")
-    print("8: Dork - Google Dorks Passive Vulnerability Auditor ")
-    print("9: Scan A server's Users \n ")
-    print("99: Back To Main Menu \n")
-    choice2 = raw_input("-> ")
+d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db 
+88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8' 
+88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'  
+88        `Y8b. 88    88 8b         88    88         88       88    
+88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88    
+YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP    
+
+""")
+    print("  {1}--Nmap ")
+    print("  {2}--Setoolkit")
+    print("  {3}--Port Scanning")
+    print("  {4}--Host To IP")
+    print("  {5}--wordpress user")
+    print("  {6}--CMS scanner")
+    print("  {7}--XSStracer")
+    print("  {8}--Dork - Google Dorks Passive Vulnerability Auditor ")
+    print("  {9}--Scan A server's Users\n  ")
+    print("  {99}-Back To Main Menu \n\n")
+    choice2 = raw_input("fsociety~# ")
     if choice2 == "1":
         os.system('clear')
         nmap()
@@ -858,19 +873,20 @@ def androidhash():
 
 def passwd():
     print("""
-   __                _      _
-  / _|              (_)    | |
- | |_ ___  ___   ___ _  ___| |_ _   _
- |  _/ __|/ _ \ / __| |/ _ \ __| | | |
- | | \__ \ (_) | (__| |  __/ |_| |_| |
- |_| |___/\___/ \___|_|\___|\__|\__, |
-  Coded By Manisso & Sparky Dz   __/ |
-                                |___/  """)
-    print("1: Cupp ")
-    print("2: Ncrack \n ")
+d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db 
+88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8' 
+88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'  
+88        `Y8b. 88    88 8b         88    88         88       88    
+88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88    
+YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP    
 
-    print("99: Back To Main Menu \n")
-    choice3 = raw_input("-> ")
+
+""")
+    print("   {1}--Cupp ")
+    print("   {2}--Ncrack \n ")
+
+    print("   {99}-Back To Main Menu \n")
+    choice3 = raw_input("fsociety~# ")
     if choice3 == "1":
         clearScr()
         cupp()
@@ -899,19 +915,20 @@ def bluepot():
 
 def wire():
     print("""
-   __                _      _
-  / _|              (_)    | |
- | |_ ___  ___   ___ _  ___| |_ _   _
- |  _/ __|/ _ \ / __| |/ _ \ __| | | |
- | | \__ \ (_) | (__| |  __/ |_| |_| |
- |_| |___/\___/ \___|_|\___|\__|\__, |
-  Coded By Manisso & Sparky Dz   __/ |
-                                |___/  """)
-    print("1 : reaver ")
-    print("2 : pixiewps")
-    print("3 : Bluetooth Honeypot GUI Framework \n")
-    print("99: Back To The Main Menu \n")
-    choice4 = raw_input("-> ")
+d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db 
+88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8' 
+88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'  
+88        `Y8b. 88    88 8b         88    88         88       88    
+88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88    
+YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP    
+
+
+""")
+    print("   {1}--reaver ")
+    print("   {2}--pixiewps")
+    print("   {3}--Bluetooth Honeypot GUI Framework \n")
+    print("   {99}-Back To The Main Menu \n\n")
+    choice4 = raw_input("fsociety~# ")
     if choice4 == "1":
         clearScr()
         reaver()
@@ -930,25 +947,26 @@ def wire():
 
 def exp():
     print("""
-   __                _      _
-  / _|              (_)    | |
- | |_ ___  ___   ___ _  ___| |_ _   _
- |  _/ __|/ _ \ / __| |/ _ \ __| | | |
- | | \__ \ (_) | (__| |  __/ |_| |_| |
- |_| |___/\___/ \___|_|\___|\__|\__, |
-  Coded By Manisso & Sparky Dz   __/ |
-                                |___/  """)
-    print("1 : Venom")
-    print("2 : sqlmap")
-    print("3 : Shellnoob")
-    print("4 : commix")
-    print("5 : FTP Auto Bypass")
-    print("6 : jboss-autopwn")
-    print("7 : Blind SQL Automatic Injection And Exploit")
-    print("8 : Bruteforce the Android Passcode given the hash and salt")
-    print("9 : Joomla SQL injection Scanner \n ")
-    print("99 : Go Back To Main Menu \n")
-    choice5 = raw_input("-> ")
+d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db 
+88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8' 
+88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'  
+88        `Y8b. 88    88 8b         88    88         88       88    
+88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88    
+YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP    
+
+
+""")
+    print("   {1}--Venom")
+    print("   {2}--sqlmap")
+    print("   {3}--Shellnoob")
+    print("   {4}--commix")
+    print("   {5}--FTP Auto Bypass")
+    print("   {6}--jboss-autopwn")
+    print("   {7}--Blind SQL Automatic Injection And Exploit")
+    print("   {8}--Bruteforce the Android Passcode given the hash and salt")
+    print("   {9}--Joomla SQL injection Scanner \n ")
+    print("   {99}-Go Back To Main Menu \n\n")
+    choice5 = raw_input("fsociety~# ")
     if choice5 == "2":
         clearScr()
         sqlmap()
@@ -984,20 +1002,21 @@ def exp():
 
 def snif():
     print("""
-   __                _      _
-  / _|              (_)    | |
- | |_ ___  ___   ___ _  ___| |_ _   _
- |  _/ __|/ _ \ / __| |/ _ \ __| | | |
- | | \__ \ (_) | (__| |  __/ |_| |_| |
- |_| |___/\___/ \___|_|\___|\__|\__, |
-  Coded By Manisso & Sparky Dz   __/ |
-                                |___/  """)
-    print("1 : Setoolkit ")
-    print("2 : SSLtrip")
-    print("3 : pyPISHER")
-    print("4 : SMTP Mailer \n ")
-    print("99: Back To Main Menu \n")
-    choice6 = raw_input("-> ")
+d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db 
+88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8' 
+88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'  
+88        `Y8b. 88    88 8b         88    88         88       88    
+88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88    
+YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP    
+
+
+""")
+    print("   {1}--Setoolkit ")
+    print("   {2}--SSLtrip")
+    print("   {3}--pyPISHER")
+    print("   {4}--SMTP Mailer \n ")
+    print("   {99}-Back To Main Menu \n\n")
+    choice6 = raw_input("fsociety~# ")
     if choice6 == "1":
         clearScr()
         setoolkit()
@@ -1040,19 +1059,28 @@ def pisher():
 
 
 menuu = """
- 1) Get all websites
- 2) Get joomla websites
- 3) Get wordpress websites
- 4) Control Panel Finder
- 5) Zip Files Finder
- 6) Upload File Finder
- 7) Get server users
- 8) SQli Scanner
- 9) Ports Scan (range of ports)
- 10) ports Scan (common ports)
- 11) Get server Info
- 12) Bypass Cloudflare
- 99) Exit
+d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db 
+88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8' 
+88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'  
+88        `Y8b. 88    88 8b         88    88         88       88    
+88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88    
+YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP    
+
+
+   {1}--Get all websites
+   {2}--Get joomla websites
+   {3}--Get wordpress websites
+   {4}--Control Panel Finder
+   {5}--Zip Files Finder
+   {6}--Upload File Finder
+   {7}--Get server users
+   {8}--SQli Scanner
+   {9}--Ports Scan (range of ports)
+   {10}-ports Scan (common ports)
+   {11}-Get server Info
+   {12}-Bypass Cloudflare
+   
+   {99}-Back To Main Menu
 """
 
 
@@ -1081,7 +1109,7 @@ class TNscan:
         self.getSites(False)
         print menuu
         while True:
-            choice = raw_input(' Enter choice -> ')
+            choice = raw_input('fsociety~# ')
             if choice == '1':
                 self.getSites(True)
             elif choice == '2':
@@ -1474,7 +1502,7 @@ def drupal():
 
 
 def getdrupal():
-    ip = raw_input('Enter The Ip ->  ')
+    ip = raw_input('Enter The Ip :  ')
     page = 1
     sites = list()
     while page <= 50:
@@ -1498,7 +1526,7 @@ def getdrupal():
 
 
 def drupallist():
-    listop = raw_input("Enter The list Txt -> ")
+    listop = raw_input("Enter The list Txt ~# ")
     fileopen = open(listop, 'r')
     content = fileopen.readlines()
     for i in content:
@@ -1523,7 +1551,7 @@ def drupallist():
 def maine():
 
     print minu
-    choose = raw_input("choose a number -> ")
+    choose = raw_input("choose a number : ")
     while True:
 
         if choose == "1":
@@ -1602,7 +1630,7 @@ def check_joomla(sites):
 
 def wppjmla():
 
-    ipp = raw_input('Enter Target IP -> ')
+    ipp = raw_input('Enter Target IP : ')
     sites = bing_all_grabber(str(ipp))
     wordpress = check_wordpress(sites)
     joomla = check_joomla(sites)
@@ -1622,7 +1650,7 @@ def wppjmla():
 class tnn():
     def __init__(self):
         clearScr()
-        aaa = raw_input("Target IP -> ")
+        aaa = raw_input("Target IP : ")
         TNscan(aaa)
 ############################
 
@@ -1792,7 +1820,7 @@ def check_wpsymposium(sites):
 
 
 def wpminiscanner():
-    ip = raw_input('Enter IP -> ')
+    ip = raw_input('Enter IP : ')
     sites = bing_all_grabber(str(ip))
     wordpress = check_wordpress(sites)
     wpstorethemeremotefileupload = check_wpstorethemeremotefileupload(sites)
