@@ -7,13 +7,12 @@
 #   |_|  |___/\___/ \___|_|\___|\__|\__, |    |_|\___|\__,_|_| |_| |_|
 #                                    __/ |
 #                                   |___/
-
-#                                 Greet's To
-
-#                               IcoDz - Canejo
-
+#
+#
+#                                Greet's To
+#                              IcoDz - Canejo
 #                             Tool For Hacking
-#                       Authors : Manisso & IcoDz
+#                             Authors : Manisso 
 
 import sys
 import argparse
@@ -48,24 +47,27 @@ os.system('clear')
 
 def menu():
     print ("""
- #     #
- ##   ##   ##   #    # #  ####   ####   ####
- # # # #  #  #  ##   # # #      #      #    #
- #  #  # #    # # #  # #  ####   ####  #    #
- #     # ###### #  # # #      #      # #    #
- #     # #    # #   ## # #    # #    # #    #
- #     # #    # #    # #  ####   ####   ####
+MIT License
 
-     #######
-       #     ####   ####  #       ####
-       #    #    # #    # #      #
-       #    #    # #    # #       ####
-       #    #    # #    # #           #
-       #    #    # #    # #      #    #
-       #     ####   ####  ######  ####
-             Penetration Testing Tools
+Copyright (c) 2016-2018 Manisso
 
-                                               """)
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.""")
 
 
 os.system('clear')
@@ -100,18 +102,18 @@ def logo():
 
 
 def menu():
-    print ("""    
+    print (""" \033[0m  
 d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db 
 88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8' 
 88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'  
 88        `Y8b. 88    88 8b         88    88         88       88    
 88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88    
 YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP    
-                                                                    
+\033[91m    \033[1m                                                                
             }-----{+} Coded By Manisso {+}-----{
          }--------{+}  fb.me/dzmanisso {+}--------{
-            }-----{+} Greetz To IcoDz  {+}-----{                                                                  
-  
+            }-----{+} Greetz To IcoDz  {+}-----{                                                               
+\033[0m  \033[1m
    {1}--Information Gathering
    {2}--Password Attacks
    {3}--Wireless Testing
@@ -154,8 +156,8 @@ YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP
 
 
 def sniper():
-    print ("This tool is only available for Linux and similar systems ")
-    choicesniper = raw_input("Continue Y / N: ")
+    print("This tool is only available for Linux and similar systems  ")
+    choicesniper = raw_input ("Continue Y / N: ")
     if choicesniper in yes:
         os.system("git clone https://github.com/Manisso/fsociety.git")
         os.system("cd fsociety && sudo bash ./install.sh")
