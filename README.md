@@ -89,7 +89,7 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 # Installation [Linux](https://fr.wikipedia.org/wiki/Linux) [![alt tag](http://icons.iconarchive.com/icons/dakirby309/simply-styled/32/OS-Linux-icon.png)](https://fr.wikipedia.org/wiki/Linux)
 [✓] git clone https://github.com/Manisso/fsociety.git
 
-[✓] cd fsociety && python fsociety.py
+[code]cd fsociety && python fsociety.py
 
 [◉] 0 : INSTALL & UPDATE
 
