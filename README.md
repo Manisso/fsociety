@@ -87,9 +87,9 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 + Update instantly When There are New Update
  
 # Installation [Linux](https://fr.wikipedia.org/wiki/Linux) [![alt tag](http://icons.iconarchive.com/icons/dakirby309/simply-styled/32/OS-Linux-icon.png)](https://fr.wikipedia.org/wiki/Linux)
-[✓] git clone https://github.com/Manisso/fsociety.git
+<code>git clone https://github.com/Manisso/fsociety.git</code><br>
 
-[code]cd fsociety && python fsociety.py
+<code>cd fsociety && python fsociety.py</code><br>
 
 [◉] 0 : INSTALL & UPDATE
 
@@ -109,9 +109,9 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 
 [◉]Open CMD and type the following commands:
 
-[✓] $cd Desktop/fsociety-master/
+<code>cd Desktop/fsociety-master/</code><br>
 
-[✓] $python fsociety.py
+<code>python fsociety.py</code><br>
 
 # Use
 [![asciicast](https://asciinema.org/a/URj2nvpbYpeJyJe43KlASZ7fz.png)](https://asciinema.org/a/URj2nvpbYpeJyJe43KlASZ7fz)
