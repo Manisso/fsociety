@@ -140,7 +140,7 @@ YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP
     elif choice == "6":
         webhack()
     elif choice == "7":
-        tnn()
+        dzz()
     elif choice == "8":
         postexp()
     elif choice == "9":
@@ -274,6 +274,12 @@ def xsstracer():
     os.system(
         "cd XSSTracer && chmod 777 xsstracer.py && python xsstracer.py %s 80" % xsstracerchoice)
 
+def crips():
+    clearScr()
+    os.system("git clone https://github.com/Manisso/Crips.git")
+    os.system("cd Crips && sudo bash ./update.sh")
+    os.system("crips")
+    os.system("clear")
 
 def weeman():
     print("HTTP server for phishing in python. (and framework) Usually you will want to run Weeman with DNS spoof attack. (see dsniff, ettercap).")
@@ -338,17 +344,16 @@ def bsqlbf():
     os.system("rm bsqlbf.pl")
 
 
-def venom():
-    print ("Venom Automatic Shellcode Generator")
-    print ("Do You To Install Venom ?")
+def atscan():
+    print ("Do You To Install ATSCAN ?")
     choiceshell = raw_input("Y/N: ")
     if choiceshell in yes:
-        os.system("wget http://fsociety.tn/venom.zip --output-document=venom.zip")
-        os.system("unzip venom.zip -d venom")
-        os.system("cd venom && sh venom.sh")
+        os.system("git clone https://github.com/AlisamTechnology/ATSCAN.git")
+        os.system("cd ATSCAN")
+        os.system("bash install.sh")
     elif choiceshell in no:
         os.system('clear')
-        info()
+        menu()
 
 
 def commix():
@@ -808,7 +813,8 @@ YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP
     print("  {6}--CMS scanner")
     print("  {7}--XSStracer")
     print("  {8}--Dork - Google Dorks Passive Vulnerability Auditor ")
-    print("  {9}--Scan A server's Users\n  ")
+    print("  {9}--Scan A server's Users  ")
+    print("  {10}-Crips\n  ")
     print("  {99}-Back To Main Menu \n\n")
     choice2 = raw_input("fsociety~# ")
     if choice2 == "1":
@@ -835,6 +841,9 @@ YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP
     if choice2 == "8":
         clearScr()
         doork()
+    if choice2 == "10":
+        clearScr()
+        crips()
     elif choice2 == "99":
         clearScr()
         menu()
@@ -862,7 +871,7 @@ def wpue():
 
 
 def priv8():
-    tnn()
+    dzz()
 
 
 def androidhash():
@@ -958,7 +967,7 @@ YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP
 
 
 """)
-    print("   {1}--Venom")
+    print("   {1}--ATSCAN")
     print("   {2}--sqlmap")
     print("   {3}--Shellnoob")
     print("   {4}--commix")
@@ -974,7 +983,7 @@ YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP
         sqlmap()
     if choice5 == "1":
         os.system('clear')
-        venom()
+        atscan()
     if choice5 == "3":
         clearScr()
         shellnoob()
@@ -1105,7 +1114,7 @@ def clearScr():
         os.system('cls')
 
 
-class TNscan:
+class Fscan:
     def __init__(self, serverip):
         self.serverip = serverip
         self.getSites(False)
@@ -1646,14 +1655,14 @@ def wppjmla():
     print '[+] Found ! ', len(joomla), ' Joomla Websites'
 
     print '\n'
-# initialise the tnscan function
+# initialise the fscan function
 
 
-class tnn():
+class dzz():
     def __init__(self):
         clearScr()
         aaa = raw_input("Target IP : ")
-        TNscan(aaa)
+        Fscan(aaa)
 ############################
 
 
@@ -1861,3 +1870,4 @@ def wpminiscanner():
 
 if __name__ == "__main__":
     menu()
+
