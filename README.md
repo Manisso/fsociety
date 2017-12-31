@@ -101,17 +101,10 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 
 # Installation [Windows](https://fr.wikipedia.org/wiki/Microsoft_Windows)[![alt tag](http://icons.iconarchive.com/icons/yootheme/social-bookmark/32/social-windows-button-icon.png)](https://fr.wikipedia.org/wiki/Microsoft_Windows)
 
+[✔] Download Linux Bash Like [![Cygwin](https://www.cygwin.com/)]
+
 [✔] Download [![python](https://img.shields.io/badge/python-2.7-brightgreen.svg)](https://www.python.org/downloads/release/python-2714/)
-
-[✓] Download [fsociety](https://github.com/Manisso/fsociety/archive/master.zip)
-
-[✓] Extract [fsociety](https://github.com/Manisso/fsociety/archive/master.zip) into Desktop
-
-[◉]Open CMD and type the following commands:
-
-<code>cd Desktop/fsociety-master/</code><br>
-
-<code>python fsociety.py</code><br>
+[] Use Google Cloud Console [![Cloud Shell](https://console.cloud.google.com/cloudshell/editor?project=&pli=1&shellonly=true)]
 
 # Use
 [![asciicast](https://asciinema.org/a/URj2nvpbYpeJyJe43KlASZ7fz.png)](https://asciinema.org/a/URj2nvpbYpeJyJe43KlASZ7fz)
