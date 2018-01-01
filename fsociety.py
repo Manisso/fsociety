@@ -346,6 +346,7 @@ def atscan():
     print ("Do You To Install ATSCAN ?")
     choiceshell = raw_input("Y/N: ")
     if choiceshell in yes:
+        os.system("sudo rm -rf ATSCAN")
         os.system("git clone https://github.com/AlisamTechnology/ATSCAN.git")
         os.system("cd ATSCAN")
         os.system("bash install.sh")
