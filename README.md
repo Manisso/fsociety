@@ -22,9 +22,10 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 + Host To IP
 + wordpress user
 + CMS scanner
-+ XSStracer
++ XSStrike
 + Dork - Google Dorks Passive Vulnerability Auditor 
-+ Scan A server's Users 
++ Scan A server's Users
++ Crips
 
 # Password Attacks : 
 + Cupp 
@@ -35,7 +36,7 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 + pixiewps
 
 # Exploitation Tools : 
-+ Venom
++ ATSCAN
 + sqlmap
 + Shellnoob
 + commix
@@ -80,7 +81,7 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 # Post Exploitation
 + Shell Checker
 + POET
-+ Phishing Framework
++ Weeman
 
 # Install Me
 + Install Directly On System (Only For Linux & Mac System )
