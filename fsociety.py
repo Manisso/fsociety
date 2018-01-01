@@ -347,9 +347,7 @@ def atscan():
     choiceshell = raw_input("Y/N: ")
     if choiceshell in yes:
         os.system("sudo rm -rf ATSCAN")
-        os.system("git clone https://github.com/AlisamTechnology/ATSCAN.git")
-        os.system("cd ATSCAN")
-        os.system("bash install.sh")
+        os.system("git clone https://github.com/AlisamTechnology/ATSCAN.git && cd ATSCAN && perl atscan.pl")
     elif choiceshell in no:
         os.system('clear')
         menu()
