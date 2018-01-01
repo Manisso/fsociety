@@ -113,7 +113,7 @@ YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP
             }-----{+} Coded By Manisso {+}-----{
          }--------{+}  fb.me/dzmanisso {+}--------{
             }-----{+} Greetz To IcoDz  {+}-----{                                                               
-\033[0m  \033[1m
+\033[0m
    {1}--Information Gathering
    {2}--Password Attacks
    {3}--Wireless Testing
@@ -265,14 +265,12 @@ def arachni():
     os.system("cd arachni/bin && chmod 777 arachni && ./arachni %s" % tara)
 
 
-def xsstracer():
+def XSStrike():
     clearScr()
-    print("XSSTracer is a small python script that checks remote web servers for Clickjacking, Cross-Frame Scripting, Cross-Site Tracing and Host Header Injection.")
-    os.system("git clone https://github.com/1N3/XSSTracer.git")
-    clearScr()
-    xsstracerchoice = raw_input("Select a Target: ")
-    os.system(
-        "cd XSSTracer && chmod 777 xsstracer.py && python xsstracer.py %s 80" % xsstracerchoice)
+    print("XSStrike is a python script designed to detect and exploit XSS vulnerabilites. Follow The Owner On Github @UltimateHackers")
+    os.system("sudo rm -rf XSStrike")
+    os.system("git clone https://github.com/UltimateHackers/XSStrike.git && cd XSStrike && pip install -r requirements.txt && clear && python xsstrike")
+    
 
 def crips():
     clearScr()
@@ -811,7 +809,7 @@ YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP
     print("  {4}--Host To IP")
     print("  {5}--wordpress user")
     print("  {6}--CMS scanner")
-    print("  {7}--XSStracer")
+    print("  {7}--XSStrike")
     print("  {8}--Dork - Google Dorks Passive Vulnerability Auditor ")
     print("  {9}--Scan A server's Users  ")
     print("  {10}-Crips\n  ")
@@ -837,7 +835,7 @@ YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP
         cmsscan()
     if choice2 == "7":
         clearScr()
-        xsstracer()
+        XSStrike()
     if choice2 == "8":
         clearScr()
         doork()
