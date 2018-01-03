@@ -2,10 +2,10 @@
 FROM ubuntu:16.04
 
 # Update Ubuntu Software repository
-RUN sudo apt-get update && sudo apt-get -y upgrade
+RUN apt-get update && apt-get -y upgrade
 
 # Install Python 2.7 & Git
-RUN sudo apt-get install -y wget git python2.7 python-pip
+RUN apt-get install -y wget git python2.7 python-pip
 
 # Install Pip Requirements
 RUN pip install requests beautifulsoup4
