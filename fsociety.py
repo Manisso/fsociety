@@ -12,7 +12,7 @@
 #                                Greet's To
 #                              IcoDz - Canejo
 #                             Tool For Hacking
-#                             Authors : Manisso 
+#                             Authors : Manisso
 
 import sys
 import argparse
@@ -101,18 +101,21 @@ def logo():
 """
 
 
+fsocietylogo = """\033[0m
+d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db
+88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8'
+88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'
+88        `Y8b. 88    88 8b         88    88         88       88
+88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88
+YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP
+\033[91m"""
+
+
 def menu():
-    print (""" \033[0m  
-d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db 
-88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8' 
-88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'  
-88        `Y8b. 88    88 8b         88    88         88       88    
-88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88    
-YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP    
-\033[91m    \033[1m                                                                
+    print (fsocietylogo + """\033[1m
             }-----{+} Coded By Manisso {+}-----{
          }--------{+}  fb.me/dzmanisso {+}--------{
-            }-----{+} Greetz To IcoDz  {+}-----{                                                               
+            }-----{+} Greetz To IcoDz  {+}-----{
 \033[0m
    {1}--Information Gathering
    {2}--Password Attacks
@@ -157,7 +160,7 @@ YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP
 
 def sniper():
     print("This tool is only available for Linux and similar systems  ")
-    choicesniper = raw_input ("Continue Y / N: ")
+    choicesniper = raw_input("Continue Y / N: ")
     if choicesniper in yes:
         os.system("git clone https://github.com/Manisso/fsociety.git")
         os.system("cd fsociety && sudo bash ./install.sh")
@@ -188,15 +191,7 @@ def doork():
 
 def postexp():
     clearScr()
-    print("""
-d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db 
-88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8' 
-88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'  
-88        `Y8b. 88    88 8b         88    88         88       88    
-88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88    
-YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP    
-
-""")
+    print(fsocietylogo)
     print("   {1}--Shell Checker")
     print("   {2}--POET")
     print("   {3}--Phishing Framework \n")
@@ -270,7 +265,7 @@ def XSStrike():
     print("XSStrike is a python script designed to detect and exploit XSS vulnerabilites. Follow The Owner On Github @UltimateHackers")
     os.system("sudo rm -rf XSStrike")
     os.system("git clone https://github.com/UltimateHackers/XSStrike.git && cd XSStrike && pip install -r requirements.txt && clear && python xsstrike")
-    
+
 
 def crips():
     clearScr()
@@ -278,6 +273,7 @@ def crips():
     os.system("cd Crips && sudo bash ./update.sh")
     os.system("crips")
     os.system("clear")
+
 
 def weeman():
     print("HTTP server for phishing in python. (and framework) Usually you will want to run Weeman with DNS spoof attack. (see dsniff, ettercap).")
@@ -347,7 +343,8 @@ def atscan():
     choiceshell = raw_input("Y/N: ")
     if choiceshell in yes:
         os.system("sudo rm -rf ATSCAN")
-        os.system("git clone https://github.com/AlisamTechnology/ATSCAN.git && cd ATSCAN && perl atscan.pl")
+        os.system(
+            "git clone https://github.com/AlisamTechnology/ATSCAN.git && cd ATSCAN && perl atscan.pl")
     elif choiceshell in no:
         os.system('clear')
         menu()
@@ -384,15 +381,7 @@ def pixiewps():
 
 
 def webhack():
-    print("""
-d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db 
-88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8' 
-88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'  
-88        `Y8b. 88    88 8b         88    88         88       88    
-88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88    
-YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP    
-
-""")
+    print(fsocietylogo)
     print("   {1}--Drupal Hacking ")
     print("   {2}--Inurlbr")
     print("   {3}--Wordpress & Joomla Scanner")
@@ -403,7 +392,8 @@ YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP
     print("   {8}--Shell and Directory Finder")
     print("   {9}--Joomla! 1.5 - 3.4.5 remote code execution")
     print("   {10}-Vbulletin 5.X remote code execution")
-    print("   {11}-BruteX - Automatically brute force all services running on a target")
+    print(
+        "   {11}-BruteX - Automatically brute force all services running on a target")
     print("   {12}-Arachni - Web Application Security Scanner Framework \n ")
     print("   {99}-Back To Main Menu \n")
     choiceweb = raw_input("fsociety~# ")
@@ -793,15 +783,7 @@ def shellnoob():
 
 
 def info():
-    print("""
-d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db 
-88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8' 
-88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'  
-88        `Y8b. 88    88 8b         88    88         88       88    
-88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88    
-YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP    
-
-""")
+    print(fsocietylogo)
     print("  {1}--Nmap ")
     print("  {2}--Setoolkit")
     print("  {3}--Port Scanning")
@@ -880,16 +862,7 @@ def androidhash():
 
 
 def passwd():
-    print("""
-d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db 
-88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8' 
-88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'  
-88        `Y8b. 88    88 8b         88    88         88       88    
-88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88    
-YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP    
-
-
-""")
+    print(fsocietylogo)
     print("   {1}--Cupp ")
     print("   {2}--Ncrack \n ")
 
@@ -922,16 +895,7 @@ def bluepot():
 
 
 def wire():
-    print("""
-d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db 
-88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8' 
-88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'  
-88        `Y8b. 88    88 8b         88    88         88       88    
-88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88    
-YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP    
-
-
-""")
+    print(fsocietylogo)
     print("   {1}--reaver ")
     print("   {2}--pixiewps")
     print("   {3}--Bluetooth Honeypot GUI Framework \n")
@@ -954,16 +918,7 @@ YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP
 
 
 def exp():
-    print("""
-d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db 
-88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8' 
-88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'  
-88        `Y8b. 88    88 8b         88    88         88       88    
-88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88    
-YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP    
-
-
-""")
+    print(fsocietylogo)
     print("   {1}--ATSCAN")
     print("   {2}--sqlmap")
     print("   {3}--Shellnoob")
@@ -1009,16 +964,7 @@ YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP
 
 
 def snif():
-    print("""
-d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db 
-88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8' 
-88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'  
-88        `Y8b. 88    88 8b         88    88         88       88    
-88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88    
-YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP    
-
-
-""")
+    print(fsocietylogo)
     print("   {1}--Setoolkit ")
     print("   {2}--SSLtrip")
     print("   {3}--pyPISHER")
@@ -1066,14 +1012,7 @@ def pisher():
     os.system("python pisher.py")
 
 
-menuu = """
-d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db 
-88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8' 
-88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'  
-88        `Y8b. 88    88 8b         88    88         88       88    
-88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88    
-YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP    
-
+menuu = fsocietylogo + """
 
    {1}--Get all websites
    {2}--Get joomla websites
@@ -1087,7 +1026,7 @@ YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP
    {10}-ports Scan (common ports)
    {11}-Get server Info
    {12}-Bypass Cloudflare
-   
+
    {99}-Back To Main Menu
 """
 
@@ -1867,4 +1806,3 @@ def wpminiscanner():
 
 if __name__ == "__main__":
     menu()
-

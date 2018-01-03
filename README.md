@@ -10,32 +10,32 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 + Wireless Testing
 + Exploitation Tools
 + Sniffing & Spoofing
-+ Web Hacking 
++ Web Hacking
 + Private Web Hacking
 + Post Exploitation
 + INSTALL & UPDATE
 
 # Information Gathering : 
-+ Nmap 
++ Nmap
 + Setoolkit
 + Port Scanning
 + Host To IP
 + wordpress user
 + CMS scanner
 + XSStrike
-+ Dork - Google Dorks Passive Vulnerability Auditor 
++ Dork - Google Dorks Passive Vulnerability Auditor
 + Scan A server's Users
 + Crips
 
-# Password Attacks : 
-+ Cupp 
+# Password Attacks :
++ Cupp
 + Ncrack
 
-# Wireless Testing : 
-+ reaver 
+# Wireless Testing :
++ reaver
 + pixiewps
 
-# Exploitation Tools : 
+# Exploitation Tools :
 + ATSCAN
 + sqlmap
 + Shellnoob
@@ -43,14 +43,14 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 + FTP Auto Bypass
 + jboss-autopwn
 
-# Sniffing & Spoofing : 
-+ Setoolkit 
+# Sniffing & Spoofing :
++ Setoolkit
 + SSLtrip
 + pyPISHER
 + SMTP Mailer
 
-# Web Hacking : 
-+ Drupal Hacking 
+# Web Hacking :
++ Drupal Hacking
 + Inurlbr
 + Wordpress & Joomla Scanner
 + Gravity Form Scanner
@@ -61,7 +61,7 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 + Joomla! 1.5 - 3.4.5 remote code execution
 + Vbulletin 5.X remote code execution
 + BruteX - Automatically brute force all services running on a target
-+ Arachni - Web Application Security Scanner Framework 
++ Arachni - Web Application Security Scanner Framework
 
 # Private Web Hacking
 + Get all websites
@@ -86,7 +86,7 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 # Install Me
 + Install Directly On System (Only For Linux & Mac System )
 + Update instantly When There are New Update
- 
+
 # Installation [Linux](https://fr.wikipedia.org/wiki/Linux) [![alt tag](http://icons.iconarchive.com/icons/dakirby309/simply-styled/32/OS-Linux-icon.png)](https://fr.wikipedia.org/wiki/Linux)
 <code>git clone https://github.com/Manisso/fsociety.git</code><br>
 
@@ -96,7 +96,7 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 
 [◉] -> 0
 
-[✓] press 0 
+[✓] press 0
 
 [✓] Congratulation Fsociety is Installed !
 
@@ -118,4 +118,3 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 [![asciicast](https://asciinema.org/a/URj2nvpbYpeJyJe43KlASZ7fz.png)](https://asciinema.org/a/URj2nvpbYpeJyJe43KlASZ7fz)
 
 ![alt logo](https://media.giphy.com/media/xT0xeFxyHAKirrLa24/giphy.gif)
-
