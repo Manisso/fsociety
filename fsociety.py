@@ -240,7 +240,7 @@ def brutex():
     clearScr()
     print("Automatically brute force all services running on a target : Open ports / DNS domains / Usernames / Passwords ")
     os.system("git clone https://github.com/1N3/BruteX.git")
-    clearScr
+    clearScr()
     brutexchoice = raw_input("Select a Target : ")
     os.system("cd BruteX && chmod 777 brutex && ./brutex %s" % brutexchoice)
 
@@ -248,7 +248,7 @@ def brutex():
 def arachni():
     print("Arachni is a feature-full, modular, high-performance Ruby framework aimed towards helping penetration testers and administrators evaluate the security of web applications")
     cara = raw_input("Install And Run ? Y / N : ")
-    clearScr
+    clearScr()
     print("exemple : http://www.target.com/")
     tara = raw_input("Select a target to scan : ")
     if cara in yes:
