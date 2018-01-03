@@ -1,11 +1,11 @@
 [![MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/Manisso/fsociety/blob/master/LICENSE) ![Os](https://img.shields.io/badge/Tested%20On-Linux%20|%20OSX%20|%20Windows%20|%20Android-yellowgreen.svg?style=flat-square)
-[![python](https://img.shields.io/badge/Python-2.7-green.svg?style=flat-square)](https://www.python.org/downloads/release/python-2714/)
-[![python3](https://img.shields.io/badge/Python-%203%20-orange.svg?style=flat-square)](https://github.com/Manisso/fsociety/tree/python3)
+[![python2.7](https://img.shields.io/badge/Python-2.7-green.svg?style=flat-square)](https://www.python.org/downloads/release/python-2714/)
+[![python3](https://img.shields.io/badge/Python-3-green.svg?style=flat-square)](https://github.com/Manisso/fsociety/tree/python3)
 # Fsociety Hacking Tools Pack – A Penetration Testing Framework
-A Penetration Testing Framework , you will have evry script that a hacker needs
-# Fsociety Contains All Tools Used In Mr Robot Series
+A Penetration Testing Framework, you will have evry script that a hacker needs
+### Fsociety Contains All Tools Used In Mr Robot Series
 ![alt tag](http://nikolaskama.me/content/images/2016/07/mr-robot-1.gif)
-# Menu
+## Menu
 + Information Gathering
 + Password Attacks
 + Wireless Testing
@@ -16,7 +16,7 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 + Post Exploitation
 + INSTALL & UPDATE
 
-# Information Gathering : 
+## Information Gathering : 
 + Nmap
 + Setoolkit
 + Port Scanning
@@ -28,15 +28,15 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 + Scan A server's Users
 + Crips
 
-# Password Attacks :
+## Password Attacks :
 + Cupp
 + Ncrack
 
-# Wireless Testing :
+## Wireless Testing :
 + reaver
 + pixiewps
 
-# Exploitation Tools :
+## Exploitation Tools :
 + ATSCAN
 + sqlmap
 + Shellnoob
@@ -44,13 +44,13 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 + FTP Auto Bypass
 + jboss-autopwn
 
-# Sniffing & Spoofing :
+## Sniffing & Spoofing :
 + Setoolkit
 + SSLtrip
 + pyPISHER
 + SMTP Mailer
 
-# Web Hacking :
+## Web Hacking :
 + Drupal Hacking
 + Inurlbr
 + Wordpress & Joomla Scanner
@@ -64,7 +64,7 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 + BruteX - Automatically brute force all services running on a target
 + Arachni - Web Application Security Scanner Framework
 
-# Private Web Hacking
+## Private Web Hacking
 + Get all websites
 + Get joomla websites
 + Get wordpress websites
@@ -79,7 +79,7 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 + Bypass Cloudflare
 
 
-# Post Exploitation
+## Post Exploitation
 + Shell Checker
 + POET
 + Weeman
@@ -89,17 +89,22 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 + Update instantly When There are New Update
 
 # Installation [Linux](https://fr.wikipedia.org/wiki/Linux) [![alt tag](http://icons.iconarchive.com/icons/dakirby309/simply-styled/32/OS-Linux-icon.png)](https://fr.wikipedia.org/wiki/Linux)
-<code>git clone https://github.com/Manisso/fsociety.git</code><br>
 
-<code>cd fsociety && python fsociety.py</code><br>
+```bash 
+git clone https://github.com/Manisso/fsociety.git
+```
+
+```bash
+cd fsociety && python fsociety.py
+```
 
 [◉] 0 : INSTALL & UPDATE
 
 [◉] -> 0
 
-[✓] press 0
+[✔] press 0
 
-[✓] Congratulation Fsociety is Installed !
+[✔] Congratulation Fsociety is Installed !
 
 [+] Follow This Video [HackerSploit](https://www.youtube.com/watch?v=t3uYpMrK2EU)
 
@@ -111,7 +116,7 @@ A Penetration Testing Framework , you will have evry script that a hacker needs
 
 [✔] Download Linux Bash Like [Cygwin](https://www.cygwin.com/)
 
-[✔] Download [![python](https://img.shields.io/badge/python-2.7-brightgreen.svg)](https://www.python.org/downloads/release/python-2714/)
+[✔] Download [![python](https://img.shields.io/badge/python-2.7%20|%203-brightgreen.svg)](https://www.python.org/downloads/release/python-2714/)
 
 [✔] Or Use Google Cloud Console [Cloud Shell](https://console.cloud.google.com/cloudshell/editor?project=&pli=1&shellonly=true)
 
