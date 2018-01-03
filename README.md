@@ -155,6 +155,10 @@ docker-compose run --rm fsociety fsociety
 
 [mswell](https://github.com/mswell)
 
+[RyanFilho](https://github.com/RyanFilho)
+
+[gabru-md](https://github.com/gabru-md)
+
 [jdrago999](https://github.com/jdrago999)
 
 # License
