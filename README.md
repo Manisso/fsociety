@@ -113,10 +113,9 @@ Follow This Video [HackerSploit](https://www.youtube.com/watch?v=t3uYpMrK2EU)
 Download [Termux](https://play.google.com/store/apps/details?id=com.termux)
 
 ```bash
-pkg install -y git python2
-git clone https://github.com/Manisso/fsociety
-cd fsociety
-chmod +x fsociety.py
+wget https://github.com/Manisso/fsociety/install.sh
+chmod +x install.sh
+./install.sh
 ```
 
 Follow This Video [Arif - Tech](https://www.youtube.com/watch?v=JwK5oOBjpgQ&t=160s)
