@@ -124,7 +124,7 @@ Follow This Video [Arif - Tech](https://www.youtube.com/watch?v=JwK5oOBjpgQ&t=16
 
 Download Linux Bash Like [Cygwin](https://www.cygwin.com/)
 
-Download [![python](https://img.shields.io/badge/Python-2.7%20/%203-green.svg?style=flat-square)](https://www.python.org/downloads/release/python-2714/)
+Download [Python](https://www.python.org/downloads/release/python-2714/)
 
 Or Use Google Cloud Console [Cloud Shell](https://console.cloud.google.com/cloudshell/editor?project=&pli=1&shellonly=true)
 
