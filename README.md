@@ -2,7 +2,7 @@
 [![python2.7](https://img.shields.io/badge/Python-2.7-green.svg?style=flat-square)](https://www.python.org/downloads/release/python-2714/)
 [![python3](https://img.shields.io/badge/Python-3-green.svg?style=flat-square)](https://github.com/Manisso/fsociety/tree/python3)
 # Fsociety Hacking Tools Pack – A Penetration Testing Framework
-A Penetration Testing Framework, you will have evry script that a hacker needs
+A Penetration Testing Framework, you will have every script that a hacker needs
 ### Fsociety Contains All Tools Used In Mr Robot Series
 ![alt tag](http://nikolaskama.me/content/images/2016/07/mr-robot-1.gif)
 ## Menu
