@@ -125,6 +125,7 @@ cd fsociety && python fsociety.py
 ### Dependecies
 
 [Docker](https://www.docker.com/)
+
 [Docker-compose](https://docs.docker.com/compose/install/)
 
 [✓] `docker-compose build`
