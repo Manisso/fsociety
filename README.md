@@ -128,9 +128,9 @@ cd fsociety && python fsociety.py
 
 [Docker-compose](https://docs.docker.com/compose/install/)
 
-[✓] `docker-compose build`
+[✔] `docker-compose build`
 
-[✓] `docker-compose run --rm fsociety fsociety`
+[✔] `docker-compose run --rm fsociety fsociety`
 
 # Use
 [![asciicast](https://asciinema.org/a/URj2nvpbYpeJyJe43KlASZ7fz.png)](https://asciinema.org/a/URj2nvpbYpeJyJe43KlASZ7fz)
