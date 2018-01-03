@@ -120,6 +120,18 @@ cd fsociety && python fsociety.py
 
 [✔] Or Use Google Cloud Console [Cloud Shell](https://console.cloud.google.com/cloudshell/editor?project=&pli=1&shellonly=true)
 
+# Docker usage
+
+### Dependecies
+
+[Docker](https://www.docker.com/)
+[Docker-compose](https://docs.docker.com/compose/install/)
+
+[✓] docker-compose build
+[✓] docker-compose run --rm fsociety fsociety
+
+> command **--rm fsociety** remove container after run
+
 # Use
 [![asciicast](https://asciinema.org/a/URj2nvpbYpeJyJe43KlASZ7fz.png)](https://asciinema.org/a/URj2nvpbYpeJyJe43KlASZ7fz)
 

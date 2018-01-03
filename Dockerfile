@@ -1,17 +1,17 @@
-# Download base image ubuntu 16.04
-FROM ubuntu:16.04
+FROM python:2.7-slim
 
-# Update Ubuntu Software repository
-RUN apt-get update && apt-get -y upgrade
+# Update apt
+RUN apt-get update && apt-get install -qq -y --no-install-recommends \
+    build-essential git sudo wget curl
 
-# Install Python 2.7 & Git
-RUN apt-get install -y wget git python2.7 python-pip
+# Install python dependecies
+RUN pip install requests
 
-# Install Pip Requirements
-RUN pip install requests beautifulsoup4
+RUN git clone https://github.com/Manisso/fsociety.git
 
-# Install fsociety
-RUN wget https://github.com/Manisso/fsociety/blob/master/install.sh && chmod +x install.sh && ./install.sh
+RUN cd fsociety && chmod +x install.sh && ./install.sh
+
+RUN rm -rf fsociety
 
 # Run fsociety
 RUN fsociety
