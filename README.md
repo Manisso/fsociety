@@ -1,4 +1,4 @@
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/Manisso/fsociety/blob/master/LICENSE) ![OS](https://img.shields.io/badge/Tested%20On-Linux%20|%20OSX%20|%20Windows%20|%20Android-yellowgreen.svg?style=flat-square) [![Python2.7](https://img.shields.io/badge/Python-2.7-green.svg?style=flat-square)](https://www.python.org/downloads/release/python-2714/) [![Python3](https://img.shields.io/badge/Python-3-green.svg?style=flat-square)](https://github.com/Manisso/fsociety/tree/python3)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/Manisso/fsociety/blob/master/LICENSE) ![OS](https://img.shields.io/badge/Tested%20On-Linux%20|%20OSX%20|%20Windows%20|%20Android-yellowgreen.svg?style=flat-square) [![Python2.7](https://img.shields.io/badge/Python-2.7-green.svg?style=flat-square)](https://www.python.org/downloads/release/python-2714/) [![Python3](https://img.shields.io/badge/Python-3-green.svg?style=flat-square)](https://github.com/Manisso/fsociety/tree/python3)
 ![Docker](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg?style=flat-square)
 
 # Fsociety Hacking Tools Pack – A Penetration Testing Framework
@@ -129,7 +129,7 @@ Download [Python](https://www.python.org/downloads/release/python-2714/)
 
 Or Use Google Cloud Console [Cloud Shell](https://console.cloud.google.com/cloudshell/editor?project=&pli=1&shellonly=true)
 
-## [Docker](https://en.wikipedia.org/wiki/Docker_(software) Usage ![docker logo](https://png.icons8.com/color/50/000000/docker.png)
+## [Docker](https://en.wikipedia.org/wiki/Docker_(software)) Usage ![docker logo](https://png.icons8.com/color/50/000000/docker.png)
 
 ### Dependecies
 
