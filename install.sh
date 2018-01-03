@@ -14,12 +14,12 @@ echo "
 ";
 
 if [ $PREFIX = "/data/data/com.termux/files/usr"]; then
-    INSTALL_DIR = $PREFIX/usr/share/doc/fsociety
-    BIN_DIR = $PREFIX/usr/bin/
+    INSTALL_DIR=$PREFIX/usr/share/doc/fsociety
+    BIN_DIR=$PREFIX/usr/bin/
     pkg install -y git python2
 else
-    INSTALL_DIR = /usr/share/doc/fsociety
-    BIN_DIR = /usr/bin/
+    INSTALL_DIR=/usr/share/doc/fsociety
+    BIN_DIR=/usr/bin/
 fi
 
 echo "[✔] Checking directories...";
