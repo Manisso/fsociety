@@ -127,10 +127,9 @@ cd fsociety && python fsociety.py
 [Docker](https://www.docker.com/)
 [Docker-compose](https://docs.docker.com/compose/install/)
 
-[✓] docker-compose build
-[✓] docker-compose run --rm fsociety fsociety
+[✓] `docker-compose build`
 
-> command **--rm fsociety** remove container after run
+[✓] `docker-compose run --rm fsociety fsociety`
 
 # Use
 [![asciicast](https://asciinema.org/a/URj2nvpbYpeJyJe43KlASZ7fz.png)](https://asciinema.org/a/URj2nvpbYpeJyJe43KlASZ7fz)
