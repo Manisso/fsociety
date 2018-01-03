@@ -116,7 +116,7 @@ cd fsociety && python fsociety.py
 
 [✔] Download Linux Bash Like [Cygwin](https://www.cygwin.com/)
 
-[✔] Download [![python](https://img.shields.io/badge/python-2.7%20|%203-brightgreen.svg)](https://www.python.org/downloads/release/python-2714/)
+[✔] Download [![python](https://img.shields.io/badge/Python-2.7%20/%203-green.svg?style=flat-square)](https://www.python.org/downloads/release/python-2714/)
 
 [✔] Or Use Google Cloud Console [Cloud Shell](https://console.cloud.google.com/cloudshell/editor?project=&pli=1&shellonly=true)
 
