@@ -101,9 +101,7 @@ A Penetration Testing Framework, you will have every script that a hacker needs
 ## Installation [Linux](https://wikipedia.org/wiki/Linux) [![alt tag](http://icons.iconarchive.com/icons/dakirby309/simply-styled/32/OS-Linux-icon.png)](https://fr.wikipedia.org/wiki/Linux)
 
 ```bash
-wget https://raw.githubusercontent.com/Manisso/fsociety/master/install.sh
-chmod +x install.sh
-./install.sh
+bash <(curl -s https://raw.githubusercontent.com/Manisso/fsociety/master/install.sh)
 ```
 
 Follow This Video [HackerSploit](https://www.youtube.com/watch?v=t3uYpMrK2EU)
@@ -113,9 +111,7 @@ Follow This Video [HackerSploit](https://www.youtube.com/watch?v=t3uYpMrK2EU)
 Download [Termux](https://play.google.com/store/apps/details?id=com.termux)
 
 ```bash
-wget https://raw.githubusercontent.com/Manisso/fsociety/master/install.sh
-chmod +x install.sh
-./install.sh
+bash <(curl -s https://raw.githubusercontent.com/Manisso/fsociety/master/install.sh)
 ```
 
 Follow This Video [Arif - Tech](https://www.youtube.com/watch?v=JwK5oOBjpgQ&t=160s)
