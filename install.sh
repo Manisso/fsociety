@@ -26,7 +26,7 @@ echo "[✔] Checking directories...";
 if [ -d "$INSTALL_DIR" ]; then
     echo "[◉] A directory fsociety was found! Do you want to replace it? [Y/n]:" ;
     read mama
-    if [ $mama == "y" ]; then
+    if [ "$mama" = "y" ]; then
         rm -R "$INSTALL_DIR"
     else
         exit
