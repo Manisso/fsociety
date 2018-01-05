@@ -3,4 +3,3 @@ version: '2'
 services:
   fsociety:
     build: .
-    command: bash fsociety
