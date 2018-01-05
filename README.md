@@ -149,6 +149,8 @@ docker-compose down # destroys instance
 
 [thehappydinoa](https://github.com/thehappydinoa)
 
+[alexcreek](https://github.com/alexcreek)
+
 [mswell](https://github.com/mswell)
 
 [RyanFilho](https://github.com/RyanFilho)
