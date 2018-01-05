@@ -134,8 +134,9 @@ Or Use Google Cloud Console [Cloud Shell](https://console.cloud.google.com/cloud
 
 ```bash
 docker-compose build
-
-docker-compose run --rm fsociety fsociety
+docker-compose up -d
+docker-compose exec fsociety fsociety
+docker-compose down # destroys instance
 ```
 
 # Use
