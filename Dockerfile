@@ -16,4 +16,4 @@ RUN git clone https://github.com/Manisso/fsociety.git \
   && ./install.sh
 
 # Hack to keep the container running
-CMD /bin/sleep 365d
+CMD python -c "import signal; signal.pause()"
