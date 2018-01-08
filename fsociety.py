@@ -146,8 +146,6 @@ def menu():
         dzz()
     elif choice == "8":
         postexp()
-    elif choice == "9":
-        sniper()
     elif choice == "0":
         updatefs()
     elif choice == "99":
@@ -158,21 +156,10 @@ def menu():
         menu()
 
 
-def sniper():
-    print("This tool is only available for Linux and similar systems  ")
-    choicesniper = raw_input("Continue Y / N: ")
-    if choicesniper in yes:
-        os.system("git clone https://github.com/Manisso/fsociety.git")
-        os.system("cd fsociety && sudo bash ./install.sh")
-        os.system("fsociety")
-    elif choicesniper == "":
-        menu()
-
-
 def updatefs():
     print ("This tool is only available for Linux and similar systems ")
-    choicesniper = raw_input("Continue Y / N: ")
-    if choicesniper in yes:
+    choiceupdate = raw_input("Continue Y / N: ")
+    if choiceupdate in yes:
         os.system("git clone https://github.com/Manisso/fsociety.git")
         os.system("cd fsociety && sudo bash ./update.sh")
         os.system("fsociety")
@@ -620,6 +607,7 @@ def setoolkit():
     print(" allow you to make a believable attack quickly. SET is a product of TrustedSec, LLC  ")
     print("an information security consulting firm located in Cleveland, Ohio.")
     print("")
+
     choiceset = raw_input("y / n :")
     if choiceset in yes:
         os.system(
