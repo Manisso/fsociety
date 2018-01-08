@@ -467,12 +467,11 @@ def nmap():
 
     choice7 = raw_input("continue ? Y / N : ")
     if choice7 in yes:
-        os.system("wget https://nmap.org/dist/nmap-7.01.tar.bz2")
-        os.system("bzip2 -cd nmap-7.01.tar.bz2 | tar xvf -")
-        os.system("cd nmap-7.01 & ./configure")
-        os.system("cd nmap-7.01 & make")
-        os.system("su root")
-        os.system("cd nmap-7.01 & make install")
+        os.system("git clone https://github.com/nmap/nmap.git")
+        os.system("cd nmap")
+        os.system("./configure")
+        os.system("make")
+        os.system("make install")
     elif choice7 in no:
         info()
     elif choice7 == "":
