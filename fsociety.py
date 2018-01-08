@@ -31,7 +31,7 @@ import glob
 import random
 import Queue
 import threading
-import requests
+#import requests
 import base64
 from getpass import getpass
 from commands import *
