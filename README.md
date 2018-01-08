@@ -153,6 +153,8 @@ docker-compose down # destroys instance
 
 [mswell](https://github.com/mswell)
 
+[huangsam](https://github.com/huangsam)
+
 [RyanFilho](https://github.com/RyanFilho)
 
 [gabru-md](https://github.com/gabru-md)
