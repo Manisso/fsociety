@@ -357,8 +357,8 @@ def pixiewps():
     choicewps = raw_input("Continue ? Y/N : ")
     if choicewps in yes:
         os.system("git clone https://github.com/wiire/pixiewps.git")
-        os.system(" cd pixiewps/src & make ")
-        os.system(" cd pixiewps/src & sudo make install")
+        os.system("cd pixiewps & make ")
+        os.system("sudo make install")
     if choicewps in no:
         menu()
     elif choicewps == "":
