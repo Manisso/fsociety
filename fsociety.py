@@ -238,7 +238,7 @@ def arachni():
     clearScr()
     print("exemple : http://www.target.com/")
     tara = raw_input("Select a target to scan : ")
-    if cara in yes:
+    if cara in yes:        
         os.system("git clone git://github.com/Arachni/arachni.git")
         os.system(
             "cd arachni && sudo gem install bundler && bundle install --without prof && rake install")
@@ -468,10 +468,7 @@ def nmap():
     choice7 = raw_input("continue ? Y / N : ")
     if choice7 in yes:
         os.system("git clone https://github.com/nmap/nmap.git")
-        os.system("cd nmap")
-        os.system("./configure")
-        os.system("make")
-        os.system("make install")
+        os.system("cd nmap && ./configure && make && make install")
     elif choice7 in no:
         info()
     elif choice7 == "":
