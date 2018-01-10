@@ -155,6 +155,8 @@ docker-compose down # destroys instance
 
 [mswell](https://github.com/mswell)
 
+[Ev3](https://github.com/Ev3)
+
 [huangsam](https://github.com/huangsam)
 
 [RyanFilho](https://github.com/RyanFilho)
