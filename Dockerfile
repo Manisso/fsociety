@@ -3,7 +3,7 @@ FROM python:2.7-slim
 
 # Update Repos
 RUN apt-get update \
-  && apt-get install -qq -y --no-install-recommends build-essential sudo git wget curl nmap \
+  && apt-get install -qq -y --no-install-recommends build-essential sudo git wget curl nmap ruby \
   && apt-get clean
 
 # Install Python dependecies
