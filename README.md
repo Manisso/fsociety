@@ -1,7 +1,6 @@
-[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/Manisso/fsociety/blob/master/LICENSE) ![OS](https://img.shields.io/badge/Tested%20On-Linux%20|%20OSX%20|%20Windows%20|%20Android-yellowgreen.svg?style=flat-square) [![Python2.7](https://img.shields.io/badge/Python-2.7-green.svg?style=flat-square)](https://www.python.org/downloads/release/python-2714/) [![Python3](https://img.shields.io/badge/Python-3-green.svg?style=flat-square)](https://github.com/Manisso/fsociety/tree/python3)
-![Docker](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg?style=flat-square)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/Manisso/fsociety/blob/master/LICENSE) ![OS](https://img.shields.io/badge/Tested%20On-Linux%20|%20OSX%20|%20Windows%20|%20Android-yellowgreen.svg?style=flat-square) [![Python2.7](https://img.shields.io/badge/Python-2.7-green.svg?style=flat-square)](https://www.python.org/downloads/release/python-2714/) [![Python3](https://img.shields.io/badge/Python-3-green.svg?style=flat-square)](https://github.com/Manisso/fsociety/tree/python3) ![Docker](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg?style=flat-square)
 
-# Fsociety Hacking Tools Pack – A Penetration Testing Framework
+# Fsociety Hacking Tools Pack
 
 A Penetration Testing Framework, you will have every script that a hacker needs
 
@@ -27,7 +26,7 @@ A Penetration Testing Framework, you will have every script that a hacker needs
 - Setoolkit
 - Port Scanning
 - Host To IP
-- wordpress user
+- Wordpress user
 - CMS scanner
 - XSStrike
 - Dork - Google Dorks Passive Vulnerability Auditor
@@ -43,6 +42,7 @@ A Penetration Testing Framework, you will have every script that a hacker needs
 
 - reaver
 - pixiewps
+- Bluetooth Honeypot
 
 ### Exploitation Tools:
 
@@ -51,7 +51,7 @@ A Penetration Testing Framework, you will have every script that a hacker needs
 - Shellnoob
 - commix
 - FTP Auto Bypass
-- jboss-autopwn
+- JBoss Autopwn
 
 ### Sniffing & Spoofing:
 
