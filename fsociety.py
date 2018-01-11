@@ -12,12 +12,14 @@
 #                                Greet's To
 #                              IcoDz - Canejo
 #                             Tool For Hacking
-#                             Authors : Manisso
+#                     Authors : Manisso/thehappydinoa
 
+'''
+Imports
+'''
 import sys
 import argparse
 import os
-import time
 import httplib
 import subprocess
 import re
@@ -32,14 +34,18 @@ import random
 import Queue
 import threading
 import base64
-from getpass import getpass
-from commands import *
+import time
 from sys import argv
-from urlparse import urlparse
+from commands import *
+from getpass import getpass
 from xml.dom import minidom
+from urlparse import urlparse
 from optparse import OptionParser
-from time import sleep
-##########################
+from time import gmtime, strftime, sleep
+
+'''
+Common Functions
+'''
 
 
 class color:
@@ -59,6 +65,15 @@ def clearScr():
     os.system('clear')
 
 
+def yesOrNo():
+    return (raw_input("Continue Y / N: ") in yes)
+
+
+'''
+Variables
+'''
+
+
 directories = ['/uploads/', '/upload/', '/files/', '/resume/', '/resumes/', '/documents/', '/docs/', '/pictures/', '/file/', '/Upload/', '/Uploads/', '/Resume/', '/Resume/', '/UsersFiles/', '/Usersiles/', '/usersFiles/', '/Users_Files/', '/UploadedFiles/',
                '/Uploaded_Files/', '/uploadedfiles/', '/uploadedFiles/', '/hpage/', '/admin/upload/', '/admin/uploads/', '/admin/resume/', '/admin/resumes/', '/admin/pictures/', '/pics/', '/photos/', '/Alumni_Photos/', '/alumni_photos/', '/AlumniPhotos/', '/users/']
 shells = ['wso.php', 'shell.php', 'an.php', 'hacker.php', 'lol.php', 'up.php', 'cp.php', 'upload.php',
@@ -66,7 +81,7 @@ shells = ['wso.php', 'shell.php', 'an.php', 'hacker.php', 'lol.php', 'up.php', '
 upload = []
 yes = ['yes', 'y', 'ye', 'Y']
 
-fsocietylogo = color.END + """\033[0m
+fsocietylogo = color.END + """
 d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db
 88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8'
 88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'
@@ -74,6 +89,13 @@ d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db
 88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88
 YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP
 """
+alreadyInstalled = "Already Installed"
+continuePrompt = "\nClick [Return] to continue"
+
+
+'''
+Starts Menu Classes
+'''
 
 
 class fsociety:
@@ -112,26 +134,23 @@ class fsociety:
         elif choice == "7":
             privateWebHacking()
         elif choice == "8":
-            postexp()
+            postExploitationMenu()
         elif choice == "0":
             self.update()
         elif choice == "99":
-            clearScr()
             sys.exit()
         else:
             self.__init__()
+        self.completed()
+
+    def completed(self):
+        print("Completed, click return to go back")
+        self.__init__()
 
     def update(self):
         os.system("git clone https://github.com/Manisso/fsociety.git")
         os.system("cd fsociety && sudo bash ./update.sh")
         os.system("fsociety")
-
-    def completed(self, process=None):
-        if process:
-            print("%s is completed, click return to go back")
-        else:
-            print("Completed, click return to go back")
-        self.__init__()
 
 
 class informationGatheringMenu:
@@ -140,15 +159,14 @@ class informationGatheringMenu:
         print(fsocietylogo)
         print("  {1}--Nmap ")
         print("  {2}--Setoolkit")
-        print("  {3}--Port Scanning")
-        print("  {4}--Host To IP")
-        print("  {5}--Scan for Wordpress Admin")
-        print("  {6}--CMS scanner")
-        print("  {7}--XSStrike")
-        print("  {8}--Doork")
-        print("  {9}--Scan for CGI Users  ")
-        print("  {10}-Crips\n  ")
-        print("  {99}-Back To Main Menu \n\n")
+        print("  {3}--Host To IP")
+        print("  {4}--Scan for Wordpress Admin")
+        print("  {5}--CMS scanner")
+        print("  {6}--XSStrike")
+        print("  {7}--Doork")
+        print("  {8}--Scan for CGI Users  ")
+        print("  {9}--Crips\n  ")
+        print("  {99}-Back To Main Menu \n")
         choice2 = raw_input("fsociety~# ")
         clearScr()
         if choice2 == "1":
@@ -156,31 +174,27 @@ class informationGatheringMenu:
         elif choice2 == "2":
             setoolkit()
         elif choice2 == "3":
-            ports()
-        elif choice2 == "4":
             h2ip()
-        elif choice2 == "5":
+        elif choice2 == "4":
             wpue()
-        elif choice2 == "6":
+        elif choice2 == "5":
             cmsscan()
-        elif choice2 == "7":
+        elif choice2 == "6":
             XSStrike()
-        elif choice2 == "8":
+        elif choice2 == "7":
             doork()
-        elif choice2 == "9":
+        elif choice2 == "8":
             scanusers()
-        elif choice2 == "10":
+        elif choice2 == "9":
             crips()
         elif choice2 == "99":
             fsociety()
         else:
             self.__init__()
+        self.completed()
 
-    def completed(self, process=None):
-        if process:
-            print("%s is completed, click return to go back")
-        else:
-            print("Completed, click return to go back")
+    def completed(self):
+        print("Completed, click return to go back")
         self.__init__()
 
 
@@ -190,7 +204,7 @@ class passwordAttacksMenu:
         print(fsocietylogo)
         print("   {1}--Cupp ")
         print("   {2}--Ncrack \n ")
-        print("   {99}-Back To Main Menu \n\n")
+        print("   {99}-Back To Main Menu \n")
         choice3 = raw_input("fsociety~# ")
         clearScr()
         if choice3 == "1":
@@ -203,12 +217,10 @@ class passwordAttacksMenu:
             fsociety()
         else:
             self.__init__()
+        self.completed()
 
-    def completed(self, process=None):
-        if process:
-            print("%s is completed, click return to go back")
-        else:
-            print("Completed, click return to go back")
+    def completed(self):
+        print("Completed, click return to go back")
         self.__init__()
 
 
@@ -219,7 +231,7 @@ class wirelessTestingMenu:
         print("   {1}--reaver ")
         print("   {2}--pixiewps")
         print("   {3}--Bluetooth Honeypot GUI Framework \n")
-        print("   {99}-Back To The Main Menu \n\n")
+        print("   {99}-Back To The Main Menu \n")
         choice4 = raw_input("fsociety~# ")
         clearScr()
         if choice4 == "1":
@@ -232,12 +244,10 @@ class wirelessTestingMenu:
             fsociety()
         else:
             self.__init__()
+        self.completed()
 
-    def completed(self, process=None):
-        if process:
-            print("%s is completed, click return to go back")
-        else:
-            print("Completed, click return to go back")
+    def completed(self):
+        print("Completed, click return to go back")
         self.__init__()
 
 
@@ -254,7 +264,7 @@ class exploitationToolsMenu:
         print("   {7}--Blind SQL Automatic Injection And Exploit")
         print("   {8}--Bruteforce the Android Passcode given the hash and salt")
         print("   {9}--Joomla SQL injection Scanner \n ")
-        print("   {99}-Go Back To Main Menu \n\n")
+        print("   {99}-Go Back To Main Menu \n")
         choice5 = raw_input("fsociety~# ")
         clearScr()
         if choice5 == "1":
@@ -279,12 +289,10 @@ class exploitationToolsMenu:
             fsociety()
         else:
             self.__init__()
+        self.completed()
 
-    def completed(self, process=None):
-        if process:
-            print("%s is completed, click return to go back")
-        else:
-            print("Completed, click return to go back")
+    def completed(self):
+        print("Completed, click return to go back")
         self.__init__()
 
 
@@ -296,7 +304,7 @@ class sniffingSpoofingMenu:
         print("   {2}--SSLtrip")
         print("   {3}--pyPISHER")
         print("   {4}--SMTP Mailer \n ")
-        print("   {99}-Back To Main Menu \n\n")
+        print("   {99}-Back To Main Menu \n")
         choice6 = raw_input("fsociety~# ")
         clearScr()
         if choice6 == "1":
@@ -311,12 +319,10 @@ class sniffingSpoofingMenu:
             fsociety()
         else:
             self.__init__()
+        self.completed()
 
-    def completed(self, process=None):
-        if process:
-            print("%s is completed, click return to go back")
-        else:
-            print("Completed, click return to go back")
+    def completed(self):
+        print("Completed, click return to go back")
         self.__init__()
 
 
@@ -368,51 +374,144 @@ class webHackingMenu:
             fsociety()
         else:
             self.__init__()
+        self.completed()
 
-    def completed(self, process=None):
-        if process:
-            print("%s is completed, click return to go back")
-        else:
-            print("Completed, click return to go back")
+    def completed(self):
+        print("Completed, click return to go back")
         self.__init__()
 
 
 class privateWebHacking:
     def __init__(self):
         clearScr()
-        aaa = raw_input("Target IP : ")
+        aaa = raw_input("Enter Target IP: ")
         Fscan(aaa)
+        self.completed()
 
-    def completed(self, process=None):
-        if process:
-            print("%s is completed, click return to go back")
-        else:
-            print("Completed, click return to go back")
-        fsociety()
+    def completed(self):
+        print("Completed, click return to go back")
+        self.__init__()
 
 
 class postExploitationMenu:
     def __init__(self):
         clearScr()
-
-    def completed(self, process=None):
-        if process:
-            print("%s is completed, click return to go back")
+        print(fsocietylogo)
+        print("   {1}--Shell Checker")
+        print("   {2}--POET")
+        print("   {3}--Phishing Framework \n")
+        print("   {99}-Return to main menu \n ")
+        choice11 = raw_input("fsociety~# ")
+        clearScr()
+        if choice11 == "1":
+            sitechecker()
+        elif choice11 == "2":
+            poet()
+        elif choice11 == "3":
+            weeman()
+        elif choice11 == "99":
+            fsociety()
         else:
-            print("Completed, click return to go back")
+            self.__init__()
+        self.completed()
+
+    def completed(self):
+        print("Completed, click return to go back")
         self.__init__()
 
 
-def completed(process=None, lastMenu=fsociety):
-    if process:
-        print("%s is completed, click return to go back")
-    else:
-        print("Completed, click return to go back")
-    lastMenu()
+'''
+Information Gathering Tools Classes
+'''
 
 
-def yesOrNo():
-    return (raw_input("Continue Y / N: ") in yes)
+class nmap:
+    nmapLogo = '''
+    88b 88 8b    d8    db    88""Yb
+    88Yb88 88b  d88   dPYb   88__dP
+    88 Y88 88YbdP88  dP__Yb  88"""
+    88  Y8 88 YY 88 dP""""Yb 88
+    '''
+
+    def __init__(self):
+        self.installDir = "nmap"
+        self.gitRepo = "https://github.com/nmap/nmap.git"
+
+        self.targetPrompt = "   Enter Target IP/Subnet/Range/Host: "
+
+        if not self.installed():
+            self.install()
+            self.run()
+        else:
+            self.run()
+
+    def installed(self):
+        return (os.path.isfile("/usr/bin/nmap") or os.path.isfile("/usr/local/bin/nmap"))
+
+    def install(self):
+        os.system("git clone %s %s" % (self.gitRepo, self.installDir))
+        os.system("cd %s && ./configure && make && make install" %
+                  self.installDir)
+
+    def run(self):
+        clearScr()
+        print(self.nmapLogo)
+        target = raw_input(self.targetPrompt)
+        self.menu(target)
+
+    def menu(self, target):
+        clearScr()
+        print(self.nmapLogo)
+        print("   Nmap scan for: %s\n" % target)
+        print("   {1}--Simple Scan [-sV]")
+        print("   {2}--Port Scan [-Pn]")
+        print("   {3}--Operating System Detection [-A]\n")
+        print("   {99}-Return to information gathering menu \n")
+        response = raw_input("nmap~# ")
+        clearScr()
+        logPath = "logs/nmap-" + strftime("%Y-%m-%d_%H:%M:%S", gmtime())
+        try:
+            if response == "1":
+                os.system("nmap -sV -oN %s %s" % (logPath, target))
+                response = raw_input(continuePrompt)
+            elif response == "2":
+                os.system("nmap -Pn -oN %s %s" % (logPath, target))
+                response = raw_input(continuePrompt)
+            elif response == "3":
+                os.system("nmap -A -oN %s %s" % (logPath, target))
+                response = raw_input(continuePrompt)
+            elif response == "99":
+                pass
+            else:
+                self.menu(target)
+        except KeyboardInterrupt:
+            self.menu(target)
+
+
+class setoolkit:
+    def __init__(self):
+        self.installDir = "setoolkit"
+        self.gitRepo = "https://github.com/trustedsec/social-engineer-toolkit.git"
+
+        if not self.installed():
+            self.install()
+            self.run()
+        else:
+            print(alreadyInstalled)
+            self.run()
+        response = raw_input(continuePrompt)
+
+    def installed(self):
+        return (os.path.isfile("/usr/bin/setoolkit"))
+
+    def install(self):
+        os.system("apt-get --force-yes -y install git apache2 python-requests libapache2-mod-php \
+            python-pymssql build-essential python-pexpect python-pefile python-crypto python-openssl")
+        os.system("git clone %s %s" % (self.gitRepo, self.installDir))
+        os.system("python %s/setup.py install" % self.installDir)
+
+    def run(self):
+        os.system("setoolkit")
 
 
 def doork():
@@ -423,24 +522,6 @@ def doork():
         clearScr()
         doorkt = raw_input("Target : ")
         os.system("cd doork && python doork.py -t %s -o log.log" % doorkt)
-
-
-def postexp():
-    print(fsocietylogo)
-    print("   {1}--Shell Checker")
-    print("   {2}--POET")
-    print("   {3}--Phishing Framework \n")
-    print("   {99}-Return to main menu \n\n ")
-    choice11 = raw_input("fsociety~# ")
-    clearScr()
-    if choice11 == "1":
-        sitechecker()
-    if choice11 == "2":
-        poet()
-    if choice11 == "3":
-        weeman()
-    elif choice11 == "99":
-        fsociety()
 
 
 def scanusers():
@@ -539,13 +620,6 @@ def h2ip():
     print(ips)
 
 
-def ports():
-    clearScr()
-    target = raw_input('Select a Target IP : ')
-    os.system("nmap -O -Pn %s" % target)
-    sys.exit()
-
-
 def ifinurl():
     print""" This Advanced search in search engines, enables analysis provided to exploit GET / POST capturing emails & urls, with an internal custom validation junction for each target / url found."""
     print('Do You Want To Install InurlBR ? ')
@@ -584,7 +658,7 @@ def commix():
         os.system("python commix.py")
         os.system("")
     else:
-        informationGatheringMenu.completed(process="Commix")
+        informationGatheringMenu.completed("Commix")
 
 
 def pixiewps():
@@ -617,7 +691,7 @@ def inurl():
     output = raw_input("select a file to save :")
     os.system(
         "./inurlbr.php --dork '{0}' -s {1}.txt -q 1,6 -t 1".format(dork, output))
-    webHackingMenu.completed(process="InurlBR")
+    webHackingMenu.completed("InurlBR")
 
 
 def insinurl():
@@ -627,14 +701,6 @@ def insinurl():
     os.system("mv /SCANNER-INURLBR/inurbr.php inurlbr.php")
     clearScr()
     inurl()
-
-
-def nmap():
-    if yesOrNo():
-        os.system("git clone https://github.com/nmap/nmap.git")
-        os.system("cd nmap && ./configure && make && make install")
-    else:
-        fsociety()
 
 
 def jboss():
@@ -693,7 +759,7 @@ def sqlmap():
         os.system(
             "git clone https://github.com/sqlmapproject/sqlmap.git sqlmap-dev & ")
     else:
-        informationGatheringMenu.completed(process="SQLMap")
+        informationGatheringMenu.completed("SQLMap")
 
 
 def grabuploadedlink(url):
@@ -737,21 +803,7 @@ def poet():
         os.system("git clone https://github.com/mossberg/poet.git")
         os.system("python poet/server.py")
     else:
-        postexp()
-
-
-def setoolkit():
-    print ("The Social-Engineer Toolkit is an open-source penetration testing framework")
-    print(") designed for social engineering. SET has a number of custom attack vectors that ")
-    print(" allow you to make a believable attack quickly. SET is a product of TrustedSec, LLC  ")
-    print("an information security consulting firm located in Cleveland, Ohio.\n")
-
-    if yesOrNo():
-        os.system(
-            "git clone https://github.com/trustedsec/social-engineer-toolkit.git")
-        os.system("python social-engineer-toolkit/setup.py")
-    else:
-        informationGatheringMenu.completed(process="SEToolKit")
+        postExploitationMenu.completed("POET")
 
 
 def cupp():
@@ -804,7 +856,7 @@ def ssls():
         os.system("sudo apt-get install python-twisted-web")
         os.system("python sslstrip/setup.py")
     else:
-        sniffingSpoofingMenu.completed(process="SSlStrip")
+        sniffingSpoofingMenu.completed("SSlStrip")
 
 
 def unique(seq):
@@ -1676,4 +1728,8 @@ def wpminiscanner():
 
 
 if __name__ == "__main__":
-    fsociety()
+    try:
+        fsociety()
+    except KeyboardInterrupt:
+        print(" Finishing up...\r"),
+        time.sleep(0.25)

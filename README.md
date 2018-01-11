@@ -24,7 +24,6 @@ A Penetration Testing Framework, you will have every script that a hacker needs
 
 - Nmap
 - Setoolkit
-- Port Scanning
 - Host To IP
 - Wordpress user
 - CMS scanner
