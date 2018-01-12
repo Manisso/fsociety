@@ -161,7 +161,7 @@ class informationGatheringMenu:
         print("  {2}--Setoolkit")
         print("  {3}--Host To IP")
         print("  {4}--WPScan")
-        print("  {5}--CMS scanner")
+        print("  {5}--CMSmap")
         print("  {6}--XSStrike")
         print("  {7}--Doork")
         print("  {8}--Scan for CGI Users  ")
@@ -174,11 +174,11 @@ class informationGatheringMenu:
         elif choice2 == "2":
             setoolkit()
         elif choice2 == "3":
-            h2ip()
+            host2ip()
         elif choice2 == "4":
             wpscan()
         elif choice2 == "5":
-            cmsscan()
+            CMSmap()
         elif choice2 == "6":
             XSStrike()
         elif choice2 == "7":
@@ -514,9 +514,17 @@ class setoolkit:
         os.system("setoolkit")
 
 
-class h2ip:
+class host2ip:
+    host2ipLogo = '''
+    88  88  dP"Yb  .dP"Y8 888888 oP"Yb. 88 88""Yb
+    88  88 dP   Yb `Ybo."   88   "' dP' 88 88__dP
+    888888 Yb   dP o.`Y8b   88     dP'  88 88"""
+    88  88  YbodP  8bodP'   88   .d8888 88 88
+    '''
+
     def __init__(self):
         clearScr()
+        print(self.host2ipLogo)
         host = raw_input("   Enter a Host: ")
         ip = socket.gethostbyname(host)
         print("   %s has the IP of %s" % (host, ip))
@@ -580,6 +588,42 @@ class wpscan:
                 self.menu(target)
         except KeyboardInterrupt:
             self.menu(target)
+
+
+class CMSmap:
+    CMSmapLogo = '''
+     dP""b8 8b    d8 .dP"Y8 8b    d8    db    88""Yb
+    dP   `" 88b  d88 `Ybo." 88b  d88   dPYb   88__dP
+    Yb      88YbdP88 o.`Y8b 88YbdP88  dP__Yb  88"""
+     YboodP 88 YY 88 8bodP' 88 YY 88 dP""""Yb 88
+    '''
+
+    def __init__(self):
+        self.installDir = toolDir + "CMSmap"
+        self.gitRepo = "https://github.com/Dionach/CMSmap.git"
+
+        if not self.installed():
+            self.install()
+        clearScr()
+        print(self.CMSmapLogo)
+        target = raw_input("   Enter a Target: ")
+        self.run(target)
+        response = raw_input(continuePrompt)
+
+    def installed(self):
+        return (os.path.isdir(self.installDir))
+
+    def install(self):
+        os.system("git clone %s %s" % (self.gitRepo, self.installDir))
+
+    def run(self, target):
+        logPath = "logs/cmsmap-" + \
+            strftime("%Y-%m-%d_%H:%M:%S", gmtime()) + ".txt"
+        try:
+            os.system("python %s/cmsmap.py -t %s -o %s" %
+                      (self.installDir, target, logPath))
+        except:
+            pass
 
 
 def doork():
@@ -983,13 +1027,6 @@ def shellnoob():
         os.system("sudo python shellnoob.py --install")
     else:
         exploitationToolsMenu()
-
-
-def cmsscan():
-    os.system("git clone https://github.com/Dionach/CMSmap.git")
-    clearScr()
-    xz = raw_input("select target: ")
-    os.system("cd CMSmap @@ sudo cmsmap.py %s" % xz)
 
 
 def androidhash():
