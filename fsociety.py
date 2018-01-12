@@ -164,8 +164,7 @@ class informationGatheringMenu:
         print("  {5}--CMSmap")
         print("  {6}--XSStrike")
         print("  {7}--Doork")
-        print("  {8}--Scan for CGI Users  ")
-        print("  {9}--Crips\n  ")
+        print("  {8}--Crips\n  ")
         print("  {99}-Back To Main Menu \n")
         choice2 = raw_input("fsociety~# ")
         clearScr()
@@ -184,8 +183,6 @@ class informationGatheringMenu:
         elif choice2 == "7":
             doork()
         elif choice2 == "8":
-            scanusers()
-        elif choice2 == "9":
             crips()
         elif choice2 == "99":
             fsociety()
@@ -626,42 +623,90 @@ class CMSmap:
             pass
 
 
-def doork():
-    print("doork is a open-source passive vulnerability auditor tool that automates the process of searching on Google information about specific website based on dorks. ")
-    if yesOrNo():
-        os.system("pip install beautifulsoup4 && pip install requests")
-        os.system("git clone https://github.com/AeonDave/doork")
+class XSStrike:
+    XSStrikeLogo = '''
+    Yb  dP .dP"Y8 .dP"Y8 888888 88""Yb 88 88  dP 888888
+     YbdP  `Ybo." `Ybo."   88   88__dP 88 88odP  88__
+     dPYb  o.`Y8b o.`Y8b   88   88"Yb  88 88"Yb  88""
+    dP  Yb 8bodP' 8bodP'   88   88  Yb 88 88  Yb 888888
+    '''
+
+    def __init__(self):
+        self.installDir = toolDir + "XSStrike"
+        self.gitRepo = "https://github.com/UltimateHackers/XSStrike.git"
+
+        if not self.installed():
+            self.install()
         clearScr()
-        doorkt = raw_input("Target: ")
-        os.system("cd doork && python doork.py -t %s -o log.log" % doorkt)
+        print(self.XSStrikeLogo)
+        self.run()
+        response = raw_input(continuePrompt)
+
+    def installed(self):
+        return (os.path.isdir(self.installDir))
+
+    def install(self):
+        os.system("git clone %s %s" % (self.gitRepo, self.installDir))
+        os.system("pip install -r %s/requirements.txt" % self.installDir)
+
+    def run(self):
+        os.system("python %s/xsstrike" % self.installDir)
 
 
-def scanusers():
-    site = raw_input('Enter a website: ')
-    try:
-        users = site
-        if 'http://www.' in users:
-            users = users.replace('http://www.', '')
-        if 'http://' in users:
-            users = users.replace('http://', '')
-        if '.' in users:
-            users = users.replace('.', '')
-        if '-' in users:
-            users = users.replace('-', '')
-        if '/' in users:
-            users = users.replace('/', '')
-        while len(users) > 2:
-            print users
-            resp = urllib2.urlopen(
-                site + '/cgi-sys/guestbook.cgi?user=%s' % users).read()
+class doork:
+    doorkLogo = '''
+    8888b.   dP"Yb   dP"Yb  88""Yb 88  dP
+     8I  Yb dP   Yb dP   Yb 88__dP 88odP
+     8I  dY Yb   dP Yb   dP 88"Yb  88"Yb
+    8888Y"   YbodP   YbodP  88  Yb 88  Yb
+    '''
 
-            if 'invalid username' not in resp.lower():
-                print "\tFound -> %s" % users
-                pass
+    def __init__(self):
+        self.installDir = toolDir + "doork"
+        self.gitRepo = "https://github.com/AeonDave/doork.git"
 
-            users = users[:-1]
-    except:
-        pass
+        if not self.installed():
+            self.install()
+        clearScr()
+        print(self.doorkLogo)
+        target = raw_input("   Enter a Target: ")
+        self.run(target)
+        response = raw_input(continuePrompt)
+
+    def installed(self):
+        return (os.path.isdir(self.installDir))
+
+    def install(self):
+        os.system("git clone %s %s" % (self.gitRepo, self.installDir))
+        os.system("pip install beautifulsoup4 requests Django==1.11")
+
+    def run(self, target):
+        if not "http://" in target:
+            target = "http://" + target
+        logPath = "logs/doork-" + \
+            strftime("%Y-%m-%d_%H:%M:%S", gmtime()) + ".txt"
+        try:
+            os.system("python %s/doork.py -t %s -o %s" %
+                      (self.installDir, target, logPath))
+        except KeyboardInterrupt:
+            pass
+
+
+class crips:
+    def __init(self):
+        self.installDir = toolDir + "Crips"
+        self.gitRepo = "https://github.com/Manisso/Crips.git"
+        clearScr()
+
+    def installed(self):
+        return (os.path.isdir(self.installDir))
+
+    def install(self):
+        os.system("git clone %s %s" % (self.gitRepo, self.installDir))
+
+        os.system("bash ./update.sh")
+        os.system("crips")
+        clearScr()
 
 
 def brutex():
@@ -685,21 +730,6 @@ def arachni():
         os.system("archani")
     clearScr()
     os.system("cd arachni/bin && chmod 777 arachni && ./arachni %s" % tara)
-
-
-def XSStrike():
-    clearScr()
-    print("XSStrike is a python script designed to detect and exploit XSS vulnerabilites. Follow The Owner On Github @UltimateHackers")
-    os.system("sudo rm -rf XSStrike")
-    os.system("git clone https://github.com/UltimateHackers/XSStrike.git && cd XSStrike && pip install -r requirements.txt && clear && python xsstrike")
-
-
-def crips():
-    clearScr()
-    os.system("git clone https://github.com/Manisso/Crips.git")
-    os.system("cd Crips && sudo bash ./update.sh")
-    os.system("crips")
-    clearScr()
 
 
 def weeman():
