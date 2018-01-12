@@ -25,8 +25,8 @@ A Penetration Testing Framework, you will have every script that a hacker needs
 - Nmap
 - Setoolkit
 - Host To IP
-- Wordpress user
-- CMS scanner
+- WPScan
+- CMS Scanner
 - XSStrike
 - Dork - Google Dorks Passive Vulnerability Auditor
 - Scan A server's Users
@@ -39,8 +39,8 @@ A Penetration Testing Framework, you will have every script that a hacker needs
 
 ### Wireless Testing:
 
-- reaver
-- pixiewps
+- Reaver
+- Pixiewps
 - Bluetooth Honeypot
 
 ### Exploitation Tools:

