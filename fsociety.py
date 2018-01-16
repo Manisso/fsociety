@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python2
 #    ______              _      _           _______
 #   |  ____|            (_)    | |         |__   __|
 #   | |__ ___  ___   ___ _  ___| |_ _   _     | | ___  __ _ _ __ ___
@@ -149,50 +149,8 @@ class fsociety:
 
     def update(self):
         os.system("git clone https://github.com/Manisso/fsociety.git")
-        os.system("cd fsociety && sudo bash ./update.sh")
+        os.system("cd fsociety && bash ./update.sh")
         os.system("fsociety")
-
-
-class informationGatheringMenu:
-    def __init__(self):
-        clearScr()
-        print(fsocietylogo)
-        print("  {1}--Nmap ")
-        print("  {2}--Setoolkit")
-        print("  {3}--Host To IP")
-        print("  {4}--WPScan")
-        print("  {5}--CMSmap")
-        print("  {6}--XSStrike")
-        print("  {7}--Doork")
-        print("  {8}--Crips\n  ")
-        print("  {99}-Back To Main Menu \n")
-        choice2 = raw_input("fsociety~# ")
-        clearScr()
-        if choice2 == "1":
-            nmap()
-        elif choice2 == "2":
-            setoolkit()
-        elif choice2 == "3":
-            host2ip()
-        elif choice2 == "4":
-            wpscan()
-        elif choice2 == "5":
-            CMSmap()
-        elif choice2 == "6":
-            XSStrike()
-        elif choice2 == "7":
-            doork()
-        elif choice2 == "8":
-            crips()
-        elif choice2 == "99":
-            fsociety()
-        else:
-            self.__init__()
-        self.completed()
-
-    def completed(self):
-        print("Completed, click return to go back")
-        self.__init__()
 
 
 class passwordAttacksMenu:
@@ -420,6 +378,48 @@ class postExploitationMenu:
 '''
 Information Gathering Tools Classes
 '''
+
+
+class informationGatheringMenu:
+    def __init__(self):
+        clearScr()
+        print(fsocietylogo)
+        print("  {1}--Nmap ")
+        print("  {2}--Setoolkit")
+        print("  {3}--Host To IP")
+        print("  {4}--WPScan")
+        print("  {5}--CMSmap")
+        print("  {6}--XSStrike")
+        print("  {7}--Doork")
+        print("  {8}--Crips\n  ")
+        print("  {99}-Back To Main Menu \n")
+        choice2 = raw_input("fsociety~# ")
+        clearScr()
+        if choice2 == "1":
+            nmap()
+        elif choice2 == "2":
+            setoolkit()
+        elif choice2 == "3":
+            host2ip()
+        elif choice2 == "4":
+            wpscan()
+        elif choice2 == "5":
+            CMSmap()
+        elif choice2 == "6":
+            XSStrike()
+        elif choice2 == "7":
+            doork()
+        elif choice2 == "8":
+            crips()
+        elif choice2 == "99":
+            fsociety()
+        else:
+            self.__init__()
+        self.completed()
+
+    def completed(self):
+        print("Completed, click return to go back")
+        self.__init__()
 
 
 class nmap:
@@ -696,17 +696,24 @@ class crips:
     def __init(self):
         self.installDir = toolDir + "Crips"
         self.gitRepo = "https://github.com/Manisso/Crips.git"
+
+        if not self.installed():
+            self.install()
         clearScr()
+        self.run()
 
     def installed(self):
-        return (os.path.isdir(self.installDir))
+        return (os.path.isdir(self.installDir) or os.path.isdir("/usr/share/doc/Crips"))
 
     def install(self):
         os.system("git clone %s %s" % (self.gitRepo, self.installDir))
+        os.system("bash %s/install.sh" % self.installDir)
 
-        os.system("bash ./update.sh")
-        os.system("crips")
-        clearScr()
+    def run(self):
+        try:
+            os.system("crips")
+        except:
+            pass
 
 
 def brutex():
@@ -721,12 +728,12 @@ def brutex():
 def arachni():
     print("Arachni is a feature-full, modular, high-performance Ruby framework aimed towards helping penetration testers and administrators evaluate the security of web applications")
     clearScr()
-    print("Exemple: http://www.target.com/")
+    print("Example: http://www.target.com/")
     tara = raw_input("Select a target to scan: ")
     if yesOrNo():
-        os.system("git clone git://github.com/Arachni/arachni.git")
+        os.system("git clone https://github.com/Arachni/arachni.git")
         os.system(
-            "cd arachni && sudo gem install bundler && bundle install --without prof && rake install")
+            "cd arachni && gem install bundler && bundle install --without prof && rake install")
         os.system("archani")
     clearScr()
     os.system("cd arachni/bin && chmod 777 arachni && ./arachni %s" % tara)
@@ -778,7 +785,7 @@ def bsqlbf():
 def atscan():
     print ("Do You To Install ATSCAN ?")
     if yesOrNo():
-        os.system("sudo rm -rf ATSCAN")
+        os.system("rm -rf ATSCAN")
         os.system(
             "git clone https://github.com/AlisamTechnology/ATSCAN.git && cd ATSCAN && perl atscan.pl")
     else:
@@ -985,7 +992,7 @@ def ssls():
     It requires Python 2.5 or newer, along with the 'twisted' python module."""
     if yesOrNo():
         os.system("git clone https://github.com/moxie0/sslstrip.git")
-        os.system("sudo apt-get install python-twisted-web")
+        os.system("apt-get install python-twisted-web")
         os.system("python sslstrip/setup.py")
     else:
         sniffingSpoofingMenu.completed("SSlStrip")
@@ -1054,7 +1061,7 @@ def shellnoob():
     if yesOrNo():
         os.system("git clone https://github.com/reyammer/shellnoob.git")
         os.system("mv shellnoob/shellnoob.py shellnoob.py")
-        os.system("sudo python shellnoob.py --install")
+        os.system("python shellnoob.py --install")
     else:
         exploitationToolsMenu()
 
