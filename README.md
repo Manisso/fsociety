@@ -101,7 +101,8 @@ A Penetration Testing Framework, you will have every script that a hacker needs
 
 ```bash
 git clone https://github.com/Manisso/fsociety.git
-cd fsociety && python fsociety.py
+cd fsociety
+./install.sh
 ```
 
 Follow This Video [HackerSploit](https://www.youtube.com/watch?v=t3uYpMrK2EU)
@@ -112,7 +113,8 @@ Download [Termux](https://play.google.com/store/apps/details?id=com.termux)
 
 ```bash
 git clone https://github.com/Manisso/fsociety.git
-cd fsociety && python fsociety.py
+cd fsociety
+./install.sh
 ```
 
 Follow This Video [Arif - Tech](https://www.youtube.com/watch?v=JwK5oOBjpgQ&t=160s)

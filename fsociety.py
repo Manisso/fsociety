@@ -153,104 +153,6 @@ class fsociety:
         os.system("fsociety")
 
 
-class passwordAttacksMenu:
-    def __init__(self):
-        clearScr()
-        print(fsocietylogo)
-        print("   {1}--Cupp ")
-        print("   {2}--Ncrack \n ")
-        print("   {99}-Back To Main Menu \n")
-        choice3 = raw_input("fsociety~# ")
-        clearScr()
-        if choice3 == "1":
-            cupp()
-        elif choice3 == "2":
-            ncrack()
-        elif choice3 == "3":
-            fb()
-        elif choice3 == "99":
-            fsociety()
-        else:
-            self.__init__()
-        self.completed()
-
-    def completed(self):
-        print("Completed, click return to go back")
-        self.__init__()
-
-
-class wirelessTestingMenu:
-    def __init__(self):
-        clearScr()
-        print(fsocietylogo)
-        print("   {1}--reaver ")
-        print("   {2}--pixiewps")
-        print("   {3}--Bluetooth Honeypot GUI Framework \n")
-        print("   {99}-Back To The Main Menu \n")
-        choice4 = raw_input("fsociety~# ")
-        clearScr()
-        if choice4 == "1":
-            reaver()
-        elif choice4 == "2":
-            pixiewps()
-        elif choice4 == "3":
-            bluepot()
-        elif choice4 == "99":
-            fsociety()
-        else:
-            self.__init__()
-        self.completed()
-
-    def completed(self):
-        print("Completed, click return to go back")
-        self.__init__()
-
-
-class exploitationToolsMenu:
-    def __init__(self):
-        clearScr()
-        print(fsocietylogo)
-        print("   {1}--ATSCAN")
-        print("   {2}--sqlmap")
-        print("   {3}--Shellnoob")
-        print("   {4}--commix")
-        print("   {5}--FTP Auto Bypass")
-        print("   {6}--JBoss-Autopwn")
-        print("   {7}--Blind SQL Automatic Injection And Exploit")
-        print("   {8}--Bruteforce the Android Passcode given the hash and salt")
-        print("   {9}--Joomla SQL injection Scanner \n ")
-        print("   {99}-Go Back To Main Menu \n")
-        choice5 = raw_input("fsociety~# ")
-        clearScr()
-        if choice5 == "1":
-            atscan()
-        elif choice5 == "2":
-            sqlmap()
-        elif choice5 == "3":
-            shellnoob()
-        elif choice5 == "4":
-            commix()
-        elif choice5 == "5":
-            gabriel()
-        elif choice5 == "6":
-            jboss()
-        elif choice5 == "7":
-            bsqlbf()
-        elif choice5 == "8":
-            androidhash()
-        elif choice5 == "9":
-            cmsfew()
-        elif choice5 == "99":
-            fsociety()
-        else:
-            self.__init__()
-        self.completed()
-
-    def completed(self):
-        print("Completed, click return to go back")
-        self.__init__()
-
-
 class sniffingSpoofingMenu:
     def __init__(self):
         clearScr()
@@ -716,6 +618,164 @@ class crips:
             pass
 
 
+'''
+Password Attack Tools Classes
+'''
+
+
+class passwordAttacksMenu:
+    def __init__(self):
+        clearScr()
+        print(fsocietylogo)
+        print("   {1}--Cupp \n ")
+        print("   {99}-Back To Main Menu \n")
+        choice3 = raw_input("passwd~# ")
+        clearScr()
+        if choice3 == "1":
+            cupp()
+        elif choice3 == "99":
+            fsociety()
+        else:
+            self.__init__()
+        self.completed()
+
+    def completed(self):
+        print("Completed, click return to go back")
+        self.__init__()
+
+
+class cupp:
+    def __init__(self):
+        self.installDir = toolDir + "cupp"
+        self.gitRepo = "https://github.com/Mebus/cupp.git"
+
+        if not self.installed():
+            self.install()
+        clearScr()
+        self.run()
+
+    def installed(self):
+        return (os.path.isdir(self.installDir))
+
+    def install(self):
+        os.system("git clone %s %s" % (self.gitRepo, self.installDir))
+
+    def run(self):
+        os.system("python %s/cupp.py -i" % self.installDir)
+
+
+'''
+Wireless Testing Tools Classes
+'''
+
+
+class wirelessTestingMenu:
+    def __init__(self):
+        clearScr()
+        print(fsocietylogo)
+        print("   {1}--reaver ")
+        print("   {2}--pixiewps")
+        print("   {3}--Bluetooth Honeypot GUI Framework \n")
+        print("   {99}-Back To The Main Menu \n")
+        choice4 = raw_input("fsociety~# ")
+        clearScr()
+        if choice4 == "1":
+            reaver()
+        elif choice4 == "2":
+            pixiewps()
+        elif choice4 == "3":
+            bluepot()
+        elif choice4 == "99":
+            fsociety()
+        else:
+            self.__init__()
+        self.completed()
+
+    def completed(self):
+        print("Completed, click return to go back")
+        self.__init__()
+
+
+def reaver():
+    print """
+      Reaver has been designed to be a robust and practical attack against Wi-Fi Protected Setup
+      WPS registrar PINs in order to recover WPA/WPA2 passphrases. It has been tested against a
+      wide variety of access points and WPS implementations
+      1 to accept / 0 to decline
+        """
+    if yesOrNo():
+        os.system(
+            "apt-get -y install build-essential libpcap-dev sqlite3 libsqlite3-dev aircrack-ng pixiewps")
+        os.system("git clone https://github.com/t6x/reaver-wps-fork-t6x.git")
+        os.system("cd reaver-wps-fork-t6x/src/ & ./configure")
+        os.system("cd reaver-wps-fork-t6x/src/ & make")
+
+
+def pixiewps():
+    print"""Pixiewps is a tool written in C used to bruteforce offline the WPS pin exploiting the low or non-existing entropy of some Access Points, the so-called "pixie dust attack" discovered by Dominique Bongard in summer 2014. It is meant for educational purposes only
+    """
+    if yesOrNo():
+        os.system("git clone https://github.com/wiire/pixiewps.git")
+        os.system("cd pixiewps & make ")
+        os.system("sudo make install")
+
+
+def bluepot():
+    print("you need to have at least 1 bluetooh receiver (if you have many it will work wiht those, too). You must install / libbluetooth-dev on Ubuntu / bluez-libs-devel on Fedora/bluez-devel on openSUSE ")
+    if yesOrNo():
+        os.system("wget https://github.com/andrewmichaelsmith/bluepot/raw/master/bin/bluepot-0.1.tar.gz && tar xfz bluepot-0.1.tar.gz && sudo java -jar bluepot/BluePot-0.1.jar")
+
+
+'''
+Exploitation Tools Classes
+'''
+
+
+class exploitationToolsMenu:
+    def __init__(self):
+        clearScr()
+        print(fsocietylogo)
+        print("   {1}--ATSCAN")
+        print("   {2}--sqlmap")
+        print("   {3}--Shellnoob")
+        print("   {4}--commix")
+        print("   {5}--FTP Auto Bypass")
+        print("   {6}--JBoss-Autopwn")
+        print("   {7}--Blind SQL Automatic Injection And Exploit")
+        print("   {8}--Bruteforce the Android Passcode given the hash and salt")
+        print("   {9}--Joomla SQL injection Scanner \n ")
+        print("   {99}-Go Back To Main Menu \n")
+        choice5 = raw_input("fsociety~# ")
+        clearScr()
+        if choice5 == "1":
+            atscan()
+        elif choice5 == "2":
+            sqlmap()
+        elif choice5 == "3":
+            shellnoob()
+        elif choice5 == "4":
+            commix()
+        elif choice5 == "5":
+            gabriel()
+        elif choice5 == "6":
+            jboss()
+        elif choice5 == "7":
+            bsqlbf()
+        elif choice5 == "8":
+            androidhash()
+        elif choice5 == "9":
+            cmsfew()
+        elif choice5 == "99":
+            fsociety()
+        else:
+            self.__init__()
+        self.completed()
+
+    def completed(self):
+        print("Completed, click return to go back")
+        self.__init__()
+
+
 def brutex():
     clearScr()
     print("Automatically brute force all services running on a target: Open ports / DNS domains / Usernames / Passwords ")
@@ -802,17 +862,6 @@ def commix():
         os.system("")
     else:
         informationGatheringMenu.completed("Commix")
-
-
-def pixiewps():
-    print"""Pixiewps is a tool written in C used to bruteforce offline the WPS pin exploiting the low or non-existing entropy of some Access Points, the so-called "pixie dust attack" discovered by Dominique Bongard in summer 2014. It is meant for educational purposes only
-    """
-    if yesOrNo():
-        os.system("git clone https://github.com/wiire/pixiewps.git")
-        os.system("cd pixiewps & make ")
-        os.system("sudo make install")
-    else:
-        fsociety()
 
 
 def vbulletinrce():
@@ -947,45 +996,6 @@ def poet():
         postExploitationMenu.completed("POET")
 
 
-def cupp():
-    print("cupp is a password list generator ")
-    print("Usage: python cupp.py -h")
-    if yesOrNo():
-        os.system("git clone https://github.com/Mebus/cupp.git")
-        print("file downloaded successfully")
-    else:
-        passwordAttacksMenu()
-
-
-def ncrack():
-    print("A Ruby interface to Ncrack, Network authentication cracking tool.")
-    print("requires: nmap >= 0.3ALPHA / rprogram ~> 0.3")
-    print("Continue: y/n")
-    if yesOrNo():
-        os.system("git clone https://github.com/sophsec/ruby-ncrack.git")
-        os.system("cd ruby-ncrack")
-        os.system("install ruby-ncrack")
-    else:
-        passwordAttacksMenu()
-
-
-def reaver():
-    print """
-      Reaver has been designed to be a robust and practical attack against Wi-Fi Protected Setup
-      WPS registrar PINs in order to recover WPA/WPA2 passphrases. It has been tested against a
-      wide variety of access points and WPS implementations
-      1 to accept / 0 to decline
-        """
-    if yesOrNo():
-        os.system(
-            "apt-get -y install build-essential libpcap-dev sqlite3 libsqlite3-dev aircrack-ng pixiewps")
-        os.system("git clone https://github.com/t6x/reaver-wps-fork-t6x.git")
-        os.system("cd reaver-wps-fork-t6x/src/ & ./configure")
-        os.system("cd reaver-wps-fork-t6x/src/ & make")
-    else:
-        wirelessTestingMenu()
-
-
 def ssls():
     print"""sslstrip is a MITM tool that implements Moxie Marlinspike's SSL stripping
     attacks.
@@ -1072,14 +1082,6 @@ def androidhash():
     os.system("git clone https://github.com/PentesterES/AndroidPINCrack.git")
     os.system(
         "cd AndroidPINCrack && python AndroidPINCrack.py -H %s -s %s" % (key, salt))
-
-
-def bluepot():
-    print("you need to have at least 1 bluetooh receiver (if you have many it will work wiht those, too). You must install / libbluetooth-dev on Ubuntu / bluez-libs-devel on Fedora/bluez-devel on openSUSE ")
-    if yesOrNo():
-        os.system("wget https://github.com/andrewmichaelsmith/bluepot/raw/master/bin/bluepot-0.1.tar.gz && tar xfz bluepot-0.1.tar.gz && sudo java -jar bluepot/BluePot-0.1.jar")
-    else:
-        wirelessTestingMenu()
 
 
 def cmsfew():

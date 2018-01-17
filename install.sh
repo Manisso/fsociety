@@ -37,7 +37,7 @@ if [ -d "$INSTALL_DIR" ]; then
             sudo rm -rf "$INSTALL_DIR"
         fi
     else
-        echo "[✘] If you want to install you must remove previous installations[✘] ";
+        echo "[✘] If you want to install you must remove previous installations [✘] ";
         echo "[✘] Installation failed! [✘] ";
         exit
     fi
