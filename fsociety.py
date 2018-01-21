@@ -148,7 +148,7 @@ class fsociety:
         self.__init__()
 
     def update(self):
-        os.system("git clone https://github.com/Manisso/fsociety.git")
+        os.system("git clone --depth=1 https://github.com/Manisso/fsociety.git")
         os.system("cd fsociety && bash ./update.sh")
         os.system("fsociety")
 
@@ -348,7 +348,7 @@ class nmap:
         return (os.path.isfile("/usr/bin/nmap") or os.path.isfile("/usr/local/bin/nmap"))
 
     def install(self):
-        os.system("git clone %s %s" % (self.gitRepo, self.installDir))
+        os.system("git clone --depth=1 %s %s" % (self.gitRepo, self.installDir))
         os.system("cd %s && ./configure && make && make install" %
                   self.installDir)
 
@@ -406,7 +406,7 @@ class setoolkit:
     def install(self):
         os.system("apt-get --force-yes -y install git apache2 python-requests libapache2-mod-php \
             python-pymssql build-essential python-pexpect python-pefile python-crypto python-openssl")
-        os.system("git clone %s %s" % (self.gitRepo, self.installDir))
+        os.system("git clone --depth=1 %s %s" % (self.gitRepo, self.installDir))
         os.system("python %s/setup.py install" % self.installDir)
 
     def run(self):
@@ -453,7 +453,7 @@ class wpscan:
         return (os.path.isdir(self.installDir))
 
     def install(self):
-        os.system("git clone %s %s" % (self.gitRepo, self.installDir))
+        os.system("git clone --depth=1 %s %s" % (self.gitRepo, self.installDir))
 
     def menu(self, target):
         clearScr()
@@ -513,7 +513,7 @@ class CMSmap:
         return (os.path.isdir(self.installDir))
 
     def install(self):
-        os.system("git clone %s %s" % (self.gitRepo, self.installDir))
+        os.system("git clone --depth=1 %s %s" % (self.gitRepo, self.installDir))
 
     def run(self, target):
         logPath = "logs/cmsmap-" + \
@@ -548,7 +548,7 @@ class XSStrike:
         return (os.path.isdir(self.installDir))
 
     def install(self):
-        os.system("git clone %s %s" % (self.gitRepo, self.installDir))
+        os.system("git clone --depth=1 %s %s" % (self.gitRepo, self.installDir))
         os.system("pip install -r %s/requirements.txt" % self.installDir)
 
     def run(self):
@@ -579,7 +579,7 @@ class doork:
         return (os.path.isdir(self.installDir))
 
     def install(self):
-        os.system("git clone %s %s" % (self.gitRepo, self.installDir))
+        os.system("git clone --depth=1 %s %s" % (self.gitRepo, self.installDir))
         os.system("pip install beautifulsoup4 requests Django==1.11")
 
     def run(self, target):
@@ -608,7 +608,7 @@ class crips:
         return (os.path.isdir(self.installDir) or os.path.isdir("/usr/share/doc/Crips"))
 
     def install(self):
-        os.system("git clone %s %s" % (self.gitRepo, self.installDir))
+        os.system("git clone --depth=1 %s %s" % (self.gitRepo, self.installDir))
         os.system("bash %s/install.sh" % self.installDir)
 
     def run(self):
@@ -658,7 +658,7 @@ class cupp:
         return (os.path.isdir(self.installDir))
 
     def install(self):
-        os.system("git clone %s %s" % (self.gitRepo, self.installDir))
+        os.system("git clone --depth=1 %s %s" % (self.gitRepo, self.installDir))
 
     def run(self):
         os.system("python %s/cupp.py -i" % self.installDir)
@@ -706,7 +706,7 @@ def reaver():
     if yesOrNo():
         os.system(
             "apt-get -y install build-essential libpcap-dev sqlite3 libsqlite3-dev aircrack-ng pixiewps")
-        os.system("git clone https://github.com/t6x/reaver-wps-fork-t6x.git")
+        os.system("git clone --depth=1 https://github.com/t6x/reaver-wps-fork-t6x.git")
         os.system("cd reaver-wps-fork-t6x/src/ & ./configure")
         os.system("cd reaver-wps-fork-t6x/src/ & make")
 
@@ -715,7 +715,7 @@ def pixiewps():
     print"""Pixiewps is a tool written in C used to bruteforce offline the WPS pin exploiting the low or non-existing entropy of some Access Points, the so-called "pixie dust attack" discovered by Dominique Bongard in summer 2014. It is meant for educational purposes only
     """
     if yesOrNo():
-        os.system("git clone https://github.com/wiire/pixiewps.git")
+        os.system("git clone --depth=1 https://github.com/wiire/pixiewps.git")
         os.system("cd pixiewps & make ")
         os.system("sudo make install")
 
@@ -779,7 +779,7 @@ class exploitationToolsMenu:
 def brutex():
     clearScr()
     print("Automatically brute force all services running on a target: Open ports / DNS domains / Usernames / Passwords ")
-    os.system("git clone https://github.com/1N3/BruteX.git")
+    os.system("git clone --depth=1 https://github.com/1N3/BruteX.git")
     clearScr()
     brutexchoice = raw_input("Select a Target: ")
     os.system("cd BruteX && chmod 777 brutex && ./brutex %s" % brutexchoice)
@@ -791,7 +791,7 @@ def arachni():
     print("Example: http://www.target.com/")
     tara = raw_input("Select a target to scan: ")
     if yesOrNo():
-        os.system("git clone https://github.com/Arachni/arachni.git")
+        os.system("git clone --depth=1 https://github.com/Arachni/arachni.git")
         os.system(
             "cd arachni && gem install bundler && bundle install --without prof && rake install")
         os.system("archani")
@@ -803,7 +803,7 @@ def weeman():
     print("HTTP server for phishing in python. (and framework) Usually you will want to run Weeman with DNS spoof attack. (see dsniff, ettercap).")
     if yesOrNo():
         os.system(
-            "git clone https://github.com/samyoyo/weeman.git && cd weeman && python weeman.py")
+            "git clone --depth=1 https://github.com/samyoyo/weeman.git && cd weeman && python weeman.py")
     else:
         fsociety()
 
@@ -847,7 +847,7 @@ def atscan():
     if yesOrNo():
         os.system("rm -rf ATSCAN")
         os.system(
-            "git clone https://github.com/AlisamTechnology/ATSCAN.git && cd ATSCAN && perl atscan.pl")
+            "git clone --depth=1 https://github.com/AlisamTechnology/ATSCAN.git && cd ATSCAN && perl atscan.pl")
     else:
         fsociety()
 
@@ -856,7 +856,7 @@ def commix():
     print ("Automated All-in-One OS Command Injection and Exploitation Tool.")
     print ("usage: python commix.py --help")
     if yesOrNo():
-        os.system("git clone https://github.com/stasinopoulos/commix.git commix")
+        os.system("git clone --depth=1 https://github.com/stasinopoulos/commix.git commix")
         os.system("cd commix")
         os.system("python commix.py")
         os.system("")
@@ -886,7 +886,7 @@ def inurl():
 
 
 def insinurl():
-    os.system("git clone https://github.com/googleinurl/SCANNER-INURLBR.git")
+    os.system("git clone --depth=1 https://github.com/googleinurl/SCANNER-INURLBR.git")
     os.system("chmod +x SCANNER-INURLBR/inurlbr.php")
     os.system("apt-get install curl libcurl3 libcurl3-dev php5 php5-cli php5-curl")
     os.system("mv /SCANNER-INURLBR/inurbr.php inurlbr.php")
@@ -904,7 +904,7 @@ def jboss():
     print("Continue: y/n")
     if yesOrNo():
         os.system(
-            "git clone https://github.com/SpiderLabs/jboss-autopwn.git"), sys.exit()
+            "git clone --depth=1 https://github.com/SpiderLabs/jboss-autopwn.git"), sys.exit()
     else:
         fsociety()
 
@@ -947,7 +947,7 @@ def sqlmap():
     print ("usage: python sqlmap.py -h")
     if yesOrNo():
         os.system(
-            "git clone https://github.com/sqlmapproject/sqlmap.git sqlmap-dev & ")
+            "git clone --depth=1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev & ")
     else:
         informationGatheringMenu.completed("SQLMap")
 
@@ -990,7 +990,7 @@ def poet():
     print("POET is a simple POst-Exploitation Tool.\n")
     choicepoet = yesOrNo()
     if choicepoet in yes:
-        os.system("git clone https://github.com/mossberg/poet.git")
+        os.system("git clone --depth=1 https://github.com/mossberg/poet.git")
         os.system("python poet/server.py")
     else:
         postExploitationMenu.completed("POET")
@@ -1001,7 +1001,7 @@ def ssls():
     attacks.
     It requires Python 2.5 or newer, along with the 'twisted' python module."""
     if yesOrNo():
-        os.system("git clone https://github.com/moxie0/sslstrip.git")
+        os.system("git clone --depth=1 https://github.com/moxie0/sslstrip.git")
         os.system("apt-get install python-twisted-web")
         os.system("python sslstrip/setup.py")
     else:
@@ -1069,7 +1069,7 @@ def gravity():
 def shellnoob():
     print """Writing shellcodes has always been super fun, but some parts are extremely boring and error prone. Focus only on the fun part, and use ShellNoob!"""
     if yesOrNo():
-        os.system("git clone https://github.com/reyammer/shellnoob.git")
+        os.system("git clone --depth=1 https://github.com/reyammer/shellnoob.git")
         os.system("mv shellnoob/shellnoob.py shellnoob.py")
         os.system("python shellnoob.py --install")
     else:
@@ -1079,7 +1079,7 @@ def shellnoob():
 def androidhash():
     key = raw_input("Enter the android hash: ")
     salt = raw_input("Enter the android salt: ")
-    os.system("git clone https://github.com/PentesterES/AndroidPINCrack.git")
+    os.system("git clone --depth=1 https://github.com/PentesterES/AndroidPINCrack.git")
     os.system(
         "cd AndroidPINCrack && python AndroidPINCrack.py -H %s -s %s" % (key, salt))
 
