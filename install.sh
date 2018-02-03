@@ -12,8 +12,6 @@ echo "
 
 ";
 
-unamestr=`uname`
-
 if [ "$PREFIX" = "/data/data/com.termux/files/usr" ]; then
     INSTALL_DIR="$PREFIX/usr/share/doc/fsociety"
     BIN_DIR="$PREFIX/bin/"
@@ -21,11 +19,12 @@ if [ "$PREFIX" = "/data/data/com.termux/files/usr" ]; then
     TERMUX=true
     pkg install -y git python2
 else
-    if [[ "$unamestr" == 'Darwin' ]]; then
+    if [[ "$(uname)" == 'Darwin' ]]; then
        INSTALL_DIR="/usr/local/fsociety"
        BIN_DIR="/usr/local/bin/"
        BASH_PATH="/bin/bash"
        TERMUX=false
+       /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
        brew install python
     else
        INSTALL_DIR="/usr/share/doc/fsociety"
