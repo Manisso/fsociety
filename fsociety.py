@@ -81,14 +81,14 @@ shells = ['wso.php', 'shell.php', 'an.php', 'hacker.php', 'lol.php', 'up.php', '
 upload = []
 yes = ['yes', 'y', 'ye', 'Y']
 
-fsocietylogo = color.END + """
-d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db
-88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8'
-88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'
-88        `Y8b. 88    88 8b         88    88         88       88
-88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88
-YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP
-"""
+fsocietylogo = color.END + '''
+        d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db
+        88'     88'  YP .8P  Y8. d8P  Y8   `88'   88         88    `8b  d8'
+        88ooo   `8bo.   88    88 8P         88    88ooooo    88     `8bd8'
+        88        `Y8b. 88    88 8b         88    88         88       88
+        88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88
+        YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP
+        '''
 alreadyInstalled = "Already Installed"
 continuePrompt = "\nClick [Return] to continue"
 
@@ -101,11 +101,11 @@ Starts Menu Classes
 class fsociety:
     def __init__(self):
         clearScr()
-        print (fsocietylogo + color.RED + """
-                }-----{+} Coded By Manisso {+}-----{
+        print (fsocietylogo + color.RED + '''
+       }-----{+} Coded By Manisso and thehappydinoa {+}-----{
              }--------{+}  fb.me/dzmanisso {+}--------{
                 }-----{+} Greetz To IcoDz  {+}-----{
-    """ + color.END + """
+    ''' + color.END + '''
        {1}--Information Gathering
        {2}--Password Attacks
        {3}--Wireless Testing
@@ -115,8 +115,9 @@ class fsociety:
        {7}--Private Web Hacking
        {8}--Post Exploitation
        {0}--INSTALL & UPDATE
-       {99}-Exit\n
-     """)
+       {11}-CONTRIBUTORS
+       {99}-EXIT\n
+     ''')
         choice = raw_input("fsociety~# ")
         clearScr()
         if choice == "1":
@@ -137,14 +138,31 @@ class fsociety:
             postExploitationMenu()
         elif choice == "0":
             self.update()
+        elif choice == "11":
+            self.githubContributors()
         elif choice == "99":
             sys.exit()
         else:
             self.__init__()
         self.completed()
 
+    def githubContributors(self):
+        clearScr()
+        print('''
+     dP""b8  dP"Yb  88b 88 888888 88""Yb 88 88""Yb .dP"Y8
+    dP   `" dP   Yb 88Yb88   88   88__dP 88 88__dP `Ybo."
+    Yb      Yb   dP 88 Y88   88   88"Yb  88 88""Yb o.`Y8b
+     YboodP  YbodP  88  Y8   88   88  Yb 88 88oodP 8bodP'
+     ''')
+        contributorsURL = 'https://api.github.com/repos/manisso/fsociety/contributors'
+        jsonResponseList = json.loads(urllib2.urlopen(contributorsURL).read())
+        for dictionary in jsonResponseList:
+            print("   * %s" % dictionary['login'])
+        print('\n')
+
+
     def completed(self):
-        print("Completed, click return to go back")
+        raw_input("Completed, click return to go back")
         self.__init__()
 
     def update(self):
@@ -154,9 +172,16 @@ class fsociety:
 
 
 class sniffingSpoofingMenu:
+    menuLogo = '''
+    .dP"Y8 88b 88 88 888888 888888 88 88b 88  dP""b8
+    `Ybo." 88Yb88 88 88__   88__   88 88Yb88 dP   `"
+    o.`Y8b 88 Y88 88 88""   88""   88 88 Y88 Yb  "88
+    8bodP' 88  Y8 88 88     88     88 88  Y8  YboodP
+    '''
+
     def __init__(self):
         clearScr()
-        print(fsocietylogo)
+        print(self.menuLogo)
         print("   {1}--Setoolkit ")
         print("   {2}--SSLtrip")
         print("   {3}--pyPISHER")
@@ -179,14 +204,20 @@ class sniffingSpoofingMenu:
         self.completed()
 
     def completed(self):
-        print("Completed, click return to go back")
+        raw_input("Completed, click return to go back")
         self.__init__()
 
 
 class webHackingMenu:
+    menuLogo = '''
+    Yb        dP 888888 88""Yb
+     Yb  db  dP  88__   88__dP
+      YbdPYbdP   88""   88""Yb
+       YP  YP    888888 88oodP
+    '''
     def __init__(self):
         clearScr()
-        print(fsocietylogo)
+        print(self.menuLogo)
         print("   {1}--Drupal Hacking ")
         print("   {2}--Inurlbr")
         print("   {3}--Wordpress & Joomla Scanner")
@@ -234,26 +265,41 @@ class webHackingMenu:
         self.completed()
 
     def completed(self):
-        print("Completed, click return to go back")
+        raw_input("Completed, click return to go back")
         self.__init__()
 
 
 class privateWebHacking:
+    menuLogo = '''
+    88""Yb 88""Yb 88 Yb    dP    db    888888 888888
+    88__dP 88__dP 88  Yb  dP    dPYb     88   88__
+    88"""  88"Yb  88   YbdP    dP__Yb    88   88""
+    88     88  Yb 88    YP    dP""""Yb   88   888888
+    '''
+
     def __init__(self):
         clearScr()
+        print(self.menuLogo)
         aaa = raw_input("Enter Target IP: ")
         Fscan(aaa)
         self.completed()
 
     def completed(self):
-        print("Completed, click return to go back")
+        raw_input("Completed, click return to go back")
         self.__init__()
 
 
 class postExploitationMenu:
+    menuLogo = '''
+    88""Yb  dP"Yb  .dP"Y8 888888
+    88__dP dP   Yb `Ybo."   88
+    88"""  Yb   dP o.`Y8b   88
+    88      YbodP  8bodP'   88
+    '''
+
     def __init__(self):
         clearScr()
-        print(fsocietylogo)
+        print(self.menuLogo)
         print("   {1}--Shell Checker")
         print("   {2}--POET")
         print("   {3}--Phishing Framework \n")
@@ -273,7 +319,7 @@ class postExploitationMenu:
         self.completed()
 
     def completed(self):
-        print("Completed, click return to go back")
+        raw_input("Completed, click return to go back")
         self.__init__()
 
 
@@ -283,9 +329,17 @@ Information Gathering Tools Classes
 
 
 class informationGatheringMenu:
+    menuLogo = '''
+    88 88b 88 888888  dP"Yb
+    88 88Yb88 88__   dP   Yb
+    88 88 Y88 88""   Yb   dP
+    88 88  Y8 88      YbodP
+    '''
+
     def __init__(self):
         clearScr()
-        print(fsocietylogo)
+        print(self.menuLogo)
+
         print("  {1}--Nmap ")
         print("  {2}--Setoolkit")
         print("  {3}--Host To IP")
@@ -320,7 +374,7 @@ class informationGatheringMenu:
         self.completed()
 
     def completed(self):
-        print("Completed, click return to go back")
+        raw_input("Completed, click return to go back")
         self.__init__()
 
 
@@ -348,7 +402,8 @@ class nmap:
         return (os.path.isfile("/usr/bin/nmap") or os.path.isfile("/usr/local/bin/nmap"))
 
     def install(self):
-        os.system("git clone --depth=1 %s %s" % (self.gitRepo, self.installDir))
+        os.system("git clone --depth=1 %s %s" %
+                  (self.gitRepo, self.installDir))
         os.system("cd %s && ./configure && make && make install" %
                   self.installDir)
 
@@ -406,7 +461,8 @@ class setoolkit:
     def install(self):
         os.system("apt-get --force-yes -y install git apache2 python-requests libapache2-mod-php \
             python-pymssql build-essential python-pexpect python-pefile python-crypto python-openssl")
-        os.system("git clone --depth=1 %s %s" % (self.gitRepo, self.installDir))
+        os.system("git clone --depth=1 %s %s" %
+                  (self.gitRepo, self.installDir))
         os.system("python %s/setup.py install" % self.installDir)
 
     def run(self):
@@ -453,7 +509,8 @@ class wpscan:
         return (os.path.isdir(self.installDir))
 
     def install(self):
-        os.system("git clone --depth=1 %s %s" % (self.gitRepo, self.installDir))
+        os.system("git clone --depth=1 %s %s" %
+                  (self.gitRepo, self.installDir))
 
     def menu(self, target):
         clearScr()
@@ -513,7 +570,8 @@ class CMSmap:
         return (os.path.isdir(self.installDir))
 
     def install(self):
-        os.system("git clone --depth=1 %s %s" % (self.gitRepo, self.installDir))
+        os.system("git clone --depth=1 %s %s" %
+                  (self.gitRepo, self.installDir))
 
     def run(self, target):
         logPath = "logs/cmsmap-" + \
@@ -548,7 +606,8 @@ class XSStrike:
         return (os.path.isdir(self.installDir))
 
     def install(self):
-        os.system("git clone --depth=1 %s %s" % (self.gitRepo, self.installDir))
+        os.system("git clone --depth=1 %s %s" %
+                  (self.gitRepo, self.installDir))
         os.system("pip install -r %s/requirements.txt" % self.installDir)
 
     def run(self):
@@ -579,7 +638,8 @@ class doork:
         return (os.path.isdir(self.installDir))
 
     def install(self):
-        os.system("git clone --depth=1 %s %s" % (self.gitRepo, self.installDir))
+        os.system("git clone --depth=1 %s %s" %
+                  (self.gitRepo, self.installDir))
         os.system("pip install beautifulsoup4 requests Django==1.11")
 
     def run(self, target):
@@ -595,6 +655,13 @@ class doork:
 
 
 class crips:
+    cripsLogo = '''
+     dP""b8 88""Yb 88 88""Yb .dP"Y8
+    dP   `" 88__dP 88 88__dP `Ybo."
+    Yb      88"Yb  88 88"""  o.`Y8b
+     YboodP 88  Yb 88 88     8bodP'
+    '''
+
     def __init(self):
         self.installDir = toolDir + "Crips"
         self.gitRepo = "https://github.com/Manisso/Crips.git"
@@ -602,13 +669,15 @@ class crips:
         if not self.installed():
             self.install()
         clearScr()
+        print(self.cripsLogo)
         self.run()
 
     def installed(self):
         return (os.path.isdir(self.installDir) or os.path.isdir("/usr/share/doc/Crips"))
 
     def install(self):
-        os.system("git clone --depth=1 %s %s" % (self.gitRepo, self.installDir))
+        os.system("git clone --depth=1 %s %s" %
+                  (self.gitRepo, self.installDir))
         os.system("bash %s/install.sh" % self.installDir)
 
     def run(self):
@@ -624,9 +693,16 @@ Password Attack Tools Classes
 
 
 class passwordAttacksMenu:
+    menuLogo = '''
+    88""Yb    db    .dP"Y8 .dP"Y8 Yb        dP 8888b.
+    88__dP   dPYb   `Ybo." `Ybo."  Yb  db  dP   8I  Yb
+    88"""   dP__Yb  o.`Y8b o.`Y8b   YbdPYbdP    8I  dY
+    88     dP""""Yb 8bodP' 8bodP'    YP  YP    8888Y"
+    '''
+
     def __init__(self):
         clearScr()
-        print(fsocietylogo)
+        print(self.menuLogo)
         print("   {1}--Cupp \n ")
         print("   {99}-Back To Main Menu \n")
         choice3 = raw_input("passwd~# ")
@@ -640,11 +716,17 @@ class passwordAttacksMenu:
         self.completed()
 
     def completed(self):
-        print("Completed, click return to go back")
+        raw_input("Completed, click return to go back")
         self.__init__()
 
 
 class cupp:
+    cuppLogo = '''
+     dP""b8 88   88 88""Yb 88""Yb
+    dP   `" 88   88 88__dP 88__dP
+    Yb      Y8   8P 88"""  88"""
+     YboodP `YbodP' 88     88
+     '''
     def __init__(self):
         self.installDir = toolDir + "cupp"
         self.gitRepo = "https://github.com/Mebus/cupp.git"
@@ -652,13 +734,15 @@ class cupp:
         if not self.installed():
             self.install()
         clearScr()
+        print(self.cuppLogo)
         self.run()
 
     def installed(self):
         return (os.path.isdir(self.installDir))
 
     def install(self):
-        os.system("git clone --depth=1 %s %s" % (self.gitRepo, self.installDir))
+        os.system("git clone --depth=1 %s %s" %
+                  (self.gitRepo, self.installDir))
 
     def run(self):
         os.system("python %s/cupp.py -i" % self.installDir)
@@ -670,9 +754,16 @@ Wireless Testing Tools Classes
 
 
 class wirelessTestingMenu:
+    menuLogo = '''
+    Yb        dP 88 88""Yb 888888 88     888888 .dP"Y8 .dP"Y8
+     Yb  db  dP  88 88__dP 88__   88     88__   `Ybo." `Ybo."
+      YbdPYbdP   88 88"Yb  88""   88  .o 88""   o.`Y8b o.`Y8b
+       YP  YP    88 88  Yb 888888 88ood8 888888 8bodP' 8bodP'
+    '''
+
     def __init__(self):
         clearScr()
-        print(fsocietylogo)
+        print(self.menuLogo)
         print("   {1}--reaver ")
         print("   {2}--pixiewps")
         print("   {3}--Bluetooth Honeypot GUI Framework \n")
@@ -692,28 +783,40 @@ class wirelessTestingMenu:
         self.completed()
 
     def completed(self):
-        print("Completed, click return to go back")
+        raw_input("Completed, click return to go back")
         self.__init__()
 
 
-def reaver():
-    print """
-      Reaver has been designed to be a robust and practical attack against Wi-Fi Protected Setup
-      WPS registrar PINs in order to recover WPA/WPA2 passphrases. It has been tested against a
-      wide variety of access points and WPS implementations
-      1 to accept / 0 to decline
-        """
-    if yesOrNo():
-        os.system(
-            "apt-get -y install build-essential libpcap-dev sqlite3 libsqlite3-dev aircrack-ng pixiewps")
-        os.system("git clone --depth=1 https://github.com/t6x/reaver-wps-fork-t6x.git")
-        os.system("cd reaver-wps-fork-t6x/src/ & ./configure")
-        os.system("cd reaver-wps-fork-t6x/src/ & make")
+class reaver:
+    def __init__(self):
+        self.installDir = toolDir + "reaver"
+        self.gitRepo = "https://github.com/t6x/reaver-wps-fork-t6x.git"
 
+        if not self.installed():
+            self.install()
+        clearScr()
+        self.run()
+
+    def installed(self):
+        return (os.path.isdir(self.installDir))
+
+    def install(self):
+        os.system("git clone --depth=1 %s %s" %
+                  (self.gitRepo, self.installDir))
+        os.system("apt-get -y install build-essential libpcap-dev sqlite3 libsqlite3-dev aircrack-ng pixiewps")
+        os.system("cd %s/" % self.installDir)
+        os.system("./configure")
+        os.system("make")
+        os.system("sudo make install")
+
+    def run(self):
+        os.system("reaver --help")
+
+# Updated to Here
 
 def pixiewps():
-    print"""Pixiewps is a tool written in C used to bruteforce offline the WPS pin exploiting the low or non-existing entropy of some Access Points, the so-called "pixie dust attack" discovered by Dominique Bongard in summer 2014. It is meant for educational purposes only
-    """
+    print('''Pixiewps is a tool written in C used to bruteforce offline the WPS pin exploiting the low or non-existing entropy of some Access Points, the so-called "pixie dust attack" discovered by Dominique Bongard in summer 2014. It is meant for educational purposes only
+    ''')
     if yesOrNo():
         os.system("git clone --depth=1 https://github.com/wiire/pixiewps.git")
         os.system("cd pixiewps & make ")
@@ -732,9 +835,16 @@ Exploitation Tools Classes
 
 
 class exploitationToolsMenu:
+    menuLogo = '''
+    888888 Yb  dP 88""Yb 88
+    88__    YbdP  88__dP 88
+    88""    dPYb  88"""  88  .o
+    888888 dP  Yb 88     88ood8
+    '''
+
     def __init__(self):
         clearScr()
-        print(fsocietylogo)
+        print(menuLogo)
         print("   {1}--ATSCAN")
         print("   {2}--sqlmap")
         print("   {3}--Shellnoob")
@@ -772,7 +882,7 @@ class exploitationToolsMenu:
         self.completed()
 
     def completed(self):
-        print("Completed, click return to go back")
+        raw_input("Completed, click return to go back")
         self.__init__()
 
 
@@ -824,7 +934,7 @@ def sitechecker():
 
 
 def ifinurl():
-    print""" This Advanced search in search engines, enables analysis provided to exploit GET / POST capturing emails & urls, with an internal custom validation junction for each target / url found."""
+    print(''' This Advanced search in search engines, enables analysis provided to exploit GET / POST capturing emails & urls, with an internal custom validation junction for each target / url found.''')
     print('Do You Want To Install InurlBR ? ')
     cinurl = raw_input("Y/N: ")
     if cinurl in yes:
@@ -856,7 +966,8 @@ def commix():
     print ("Automated All-in-One OS Command Injection and Exploitation Tool.")
     print ("usage: python commix.py --help")
     if yesOrNo():
-        os.system("git clone --depth=1 https://github.com/stasinopoulos/commix.git commix")
+        os.system(
+            "git clone --depth=1 https://github.com/stasinopoulos/commix.git commix")
         os.system("cd commix")
         os.system("python commix.py")
         os.system("")
@@ -886,7 +997,8 @@ def inurl():
 
 
 def insinurl():
-    os.system("git clone --depth=1 https://github.com/googleinurl/SCANNER-INURLBR.git")
+    os.system(
+        "git clone --depth=1 https://github.com/googleinurl/SCANNER-INURLBR.git")
     os.system("chmod +x SCANNER-INURLBR/inurlbr.php")
     os.system("apt-get install curl libcurl3 libcurl3-dev php5 php5-cli php5-curl")
     os.system("mv /SCANNER-INURLBR/inurbr.php inurlbr.php")
@@ -972,7 +1084,8 @@ def grabshell(url):
                 currentcode = urllib.urlopen(upl + shell).getcode()
                 if currentcode == 200:
                     print "-------------------------"
-                    print "  [ ! ] Found Shell:  " + str(upl + shell) + " [ ! ]"
+                    print "  [ ! ] Found Shell:  " + \
+                        str(upl + shell) + " [ ! ]"
                     print "-------------------------"
     except:
         pass
@@ -997,9 +1110,9 @@ def poet():
 
 
 def ssls():
-    print"""sslstrip is a MITM tool that implements Moxie Marlinspike's SSL stripping
+    print('''sslstrip is a MITM tool that implements Moxie Marlinspike's SSL stripping
     attacks.
-    It requires Python 2.5 or newer, along with the 'twisted' python module."""
+    It requires Python 2.5 or newer, along with the 'twisted' python module.''')
     if yesOrNo():
         os.system("git clone --depth=1 https://github.com/moxie0/sslstrip.git")
         os.system("apt-get install python-twisted-web")
@@ -1062,12 +1175,12 @@ def gravity():
     for ss in gravityforms:
         print ss
 
-    print '\n'
-    print '[*] Found, ', len(gravityforms), ' gravityforms.'
+    print('\n')
+    print('[*] Found, ', len(gravityforms), ' gravityforms.')
 
 
 def shellnoob():
-    print """Writing shellcodes has always been super fun, but some parts are extremely boring and error prone. Focus only on the fun part, and use ShellNoob!"""
+    print('''Writing shellcodes has always been super fun, but some parts are extremely boring and error prone. Focus only on the fun part, and use ShellNoob!''')
     if yesOrNo():
         os.system("git clone --depth=1 https://github.com/reyammer/shellnoob.git")
         os.system("mv shellnoob/shellnoob.py shellnoob.py")
@@ -1079,7 +1192,8 @@ def shellnoob():
 def androidhash():
     key = raw_input("Enter the android hash: ")
     salt = raw_input("Enter the android salt: ")
-    os.system("git clone --depth=1 https://github.com/PentesterES/AndroidPINCrack.git")
+    os.system(
+        "git clone --depth=1 https://github.com/PentesterES/AndroidPINCrack.git")
     os.system(
         "cd AndroidPINCrack && python AndroidPINCrack.py -H %s -s %s" % (key, salt))
 
@@ -1104,7 +1218,7 @@ def pisher():
     os.system("python pisher.py")
 
 
-menuu = fsocietylogo + """
+menuu = fsocietylogo + '''
 
    {1}--Get all websites
    {2}--Get joomla websites
@@ -1120,13 +1234,13 @@ menuu = fsocietylogo + """
    {12}-Bypass Cloudflare
 
    {99}-Back To Main Menu
-"""
+'''
 
 
 def unique(seq):
-    """
+    '''
     get unique from list found it on stackoverflow
-    """
+    '''
     seen = set()
     return [seen.add(x) or x for x in seq if x not in seen]
 
@@ -1173,10 +1287,10 @@ class Fscan:
                 print menuu
 
     def getSites(self, a):
-        """
+        '''
         get all websites on same server
         from bing search
-        """
+        '''
         lista = []
         page = 1
         while page <= 101:
@@ -1202,17 +1316,17 @@ class Fscan:
         self.sites = unique(lista)
         if a:
             clearScr()
-            print '[*] Found ', len(lista), ' Website\n'
+            print('[*] Found ', len(lista), ' Website\n')
             for site in self.sites:
                 print site
 
     def getWordpress(self):
-        """
+        '''
         get wordpress site using a dork the attacker
         may do a password list attack (i did a tool for that purpose check my pastebin)
         or scan for common vulnerabilities using wpscan for example (i did a simple tool
         for multi scanning using wpscan)
-        """
+        '''
         lista = []
         page = 1
         while page <= 101:
@@ -1231,16 +1345,16 @@ class Fscan:
                 pass
         lista = unique(lista)
         clearScr()
-        print '[*] Found ', len(lista), ' Wordpress Website\n'
+        print('[*] Found ', len(lista), ' Wordpress Website\n')
         for site in lista:
             print site
 
     def getJoomla(self):
-        """
+        '''
         get all joomla websites using
         bing search the attacker may bruteforce
         or scan them
-        """
+        '''
         lista = []
         page = 1
         while page <= 101:
@@ -1256,18 +1370,18 @@ class Fscan:
             page += 50
         lista = unique(lista)
         clearScr()
-        print '[*] Found ', len(lista), ' Joomla Website\n'
+        print('[*] Found ' + len(lista) + ' Joomla Website\n')
         for site in lista:
             print site
 ############################
 # find admin panels
 
     def findPanels(self):
-        """
+        '''
         find panels from grabbed websites
         the attacker may do a lot of vulnerabilty
         tests on the admin area
-        """
+        '''
         print "[~] Finding admin panels"
         adminList = ['admin/', 'site/admin', 'admin.php/', 'up/admin/', 'central/admin/', 'whm/admin/', 'whmcs/admin/', 'support/admin/', 'upload/admin/', 'video/admin/', 'shop/admin/', 'shoping/admin/', 'wp-admin/', 'wp/wp-admin/', 'blog/wp-admin/', 'admincp/', 'admincp.php/', 'vb/admincp/', 'forum/admincp/', 'up/admincp/', 'administrator/',
                      'administrator.php/', 'joomla/administrator/', 'jm/administrator/', 'site/administrator/', 'install/', 'vb/install/', 'dimcp/', 'clientes/', 'admin_cp/', 'login/', 'login.php', 'site/login', 'site/login.php', 'up/login/', 'up/login.php', 'cp.php', 'up/cp', 'cp', 'master', 'adm', 'member', 'control', 'webmaster', 'myadmin', 'admin_cp', 'admin_site']
@@ -1283,10 +1397,10 @@ class Fscan:
  # find ZIP files
 
     def findZip(self):
-        """
+        '''
         find zip files from grabbed websites
         it may contain useful informations
-        """
+        '''
         zipList = ['backup.tar.gz', 'backup/backup.tar.gz', 'backup/backup.zip', 'vb/backup.zip', 'site/backup.zip', 'backup.zip', 'backup.rar', 'backup.sql', 'vb/vb.zip', 'vb.zip', 'vb.sql', 'vb.rar',
                    'vb1.zip', 'vb2.zip', 'vbb.zip', 'vb3.zip', 'upload.zip', 'up/upload.zip', 'joomla.zip', 'joomla.rar', 'joomla.sql', 'wordpress.zip', 'wp/wordpress.zip', 'blog/wordpress.zip', 'wordpress.rar']
         clearScr()
@@ -1300,11 +1414,11 @@ class Fscan:
                     pass
 
     def findUp(self):
-        """
+        '''
         find upload forms from grabbed
         websites the attacker may succeed to
         upload malicious files like webshells
-        """
+        '''
         upList = ['up.php', 'up1.php', 'up/up.php', 'site/up.php', 'vb/up.php', 'forum/up.php', 'blog/up.php', 'upload.php',
                   'upload1.php', 'upload2.php', 'vb/upload.php', 'forum/upload.php', 'blog/upload.php', 'site/upload.php', 'download.php']
         clearScr()
@@ -1321,13 +1435,13 @@ class Fscan:
                     pass
 
     def getUsers(self):
-        """
+        '''
         get server users using a method found by
         iranian hackers , the attacker may
         do a bruteforce attack on CPanel, ssh, ftp or
         even mysql if it supports remote login
         (you can use medusa or hydra)
-        """
+        '''
         clearScr()
         print "[~] Grabbing Users"
         userslist = []
@@ -1359,11 +1473,11 @@ class Fscan:
             print user
 
     def cloudflareBypasser(self):
-        """
+        '''
         trys to bypass cloudflare i already wrote
         in my blog how it works, i learned this
         method from a guy in madleets
-        """
+        '''
         clearScr()
         print "[~] Bypassing cloudflare"
         subdoms = ['mail', 'webmail', 'ftp', 'direct', 'cpanel']
@@ -1386,24 +1500,25 @@ class Fscan:
                     pass
 
     def getServerBanner(self):
-        """
+        '''
         simply gets the server banner
         the attacker may benefit from it
         like getting the server side software
-        """
+        '''
         clearScr()
         try:
             s = 'http://' + self.serverip
             httpresponse = urllib.urlopen(s)
-            print ' [*] Server header -> ', httpresponse.headers.getheader('server')
+            print ' [*] Server header -> ', httpresponse.headers.getheader(
+                'server')
         except:
-            pass
+            print('[*] Server header ->  Not Found')
 
     def grabSqli(self):
-        """
+        '''
         just grabs all websites in server with php?id= dork
         for scanning for error based sql injection
-        """
+        '''
         page = 1
         lista = []
         while page <= 101:
@@ -1423,13 +1538,13 @@ class Fscan:
         self.checkSqli(lista)
 
     def checkSqli(self, s):
-        """
+        '''
         checks for error based sql injection,
         most of the codes here are from webpwn3r
         project the one who has found an lfi in
         yahoo as i remember, you can find a separate
         tool in my blog
-        """
+        '''
         clearScr()
         print "[~] Checking SQL injection"
         payloads = ["3'", "3%5c", "3%27%22%28%29", "3'><",
@@ -1452,10 +1567,10 @@ class Fscan:
 
 
 def portScanner(self, mode, ran):
-    """
+    '''
     simple port scanner works with range of ports
     or with common ports (al-swisre idea)
-    """
+    '''
     clearScr()
     print "[~] Scanning Ports"
 
@@ -1831,7 +1946,8 @@ def wpminiscanner():
     print '-' * 30 + '\n'
     for ss in wpstorethemeremotefileupload:
         print ss
-    print '[*] Found, ', len(wpstorethemeremotefileupload), ' wp_storethemeremotefileupload exploit.'
+    print '[*] Found, ', len(
+        wpstorethemeremotefileupload), ' wp_storethemeremotefileupload exploit.'
     print '-' * 30 + '\n'
     for ss in wpcontactcreativeform:
         print ss
