@@ -189,10 +189,10 @@ class sniffingSpoofingMenu:
     def __init__(self):
         clearScr()
         print(self.menuLogo)
-        print("   {1}--Setoolkit ")
-        print("   {2}--SSLtrip")
-        print("   {3}--pyPISHER")
-        print("   {4}--SMTP Mailer \n ")
+        print("   {1}--SEToolkit - Tool aimed at penetration testing around Social-Engineering")
+        print("   {2}--SSLtrip - MITM tool that implements SSL stripping  attacks")
+        print("   {3}--pyPISHER - Tool to create a mallicious website for password pishing")
+        print("   {4}--SMTP Mailer - Tool to send SMTP mail\n ")
         print("   {99}-Back To Main Menu \n")
         choice6 = raw_input("fsociety~# ")
         clearScr()
@@ -222,6 +222,7 @@ class webHackingMenu:
       YbdPYbdP   88""   88""Yb
        YP  YP    888888 88oodP
     '''
+
     def __init__(self):
         clearScr()
         print(self.menuLogo)
@@ -287,8 +288,8 @@ class privateWebHacking:
     def __init__(self):
         clearScr()
         print(self.menuLogo)
-        aaa = raw_input("Enter Target IP: ")
-        Fscan(aaa)
+        target = raw_input("Enter Target IP: ")
+        Fscan(target)
         self.completed()
 
     def completed(self):
@@ -347,7 +348,7 @@ class informationGatheringMenu:
         clearScr()
         print(self.menuLogo)
 
-        print("  {1}--Nmap ")
+        print("  {1}--Nmap - Network Mapper")
         print("  {2}--Setoolkit")
         print("  {3}--Host To IP")
         print("  {4}--WPScan")
@@ -710,12 +711,15 @@ class passwordAttacksMenu:
     def __init__(self):
         clearScr()
         print(self.menuLogo)
-        print("   {1}--Cupp \n ")
+        print("   {1}--Cupp - Common User Passwords Profiler")
+        print("   {2}--BruteX - Automatically bruteforces all services running on a target\n")
         print("   {99}-Back To Main Menu \n")
         choice3 = raw_input("passwd~# ")
         clearScr()
         if choice3 == "1":
             cupp()
+        elif choice3 == "2":
+            brutex()
         elif choice3 == "99":
             fsociety()
         else:
@@ -734,6 +738,7 @@ class cupp:
     Yb      Y8   8P 88"""  88"""
      YboodP `YbodP' 88     88
      '''
+
     def __init__(self):
         self.installDir = toolDir + "cupp"
         self.gitRepo = "https://github.com/Mebus/cupp.git"
@@ -810,7 +815,8 @@ class reaver:
     def install(self):
         os.system("git clone --depth=1 %s %s" %
                   (self.gitRepo, self.installDir))
-        os.system("apt-get -y install build-essential libpcap-dev sqlite3 libsqlite3-dev aircrack-ng pixiewps")
+        os.system(
+            "apt-get -y install build-essential libpcap-dev sqlite3 libsqlite3-dev aircrack-ng pixiewps")
         os.system("cd %s/" % self.installDir)
         os.system("./configure")
         os.system("make")
@@ -818,6 +824,7 @@ class reaver:
 
     def run(self):
         os.system("reaver --help")
+
 
 class pixiewps:
     def __init__(self):
@@ -842,6 +849,7 @@ class pixiewps:
     def run(self):
         os.system("pixiewps --help")
 
+
 class bluepot:
     def __init__(self):
         self.installDir = toolDir + "bluepot"
@@ -856,11 +864,13 @@ class bluepot:
 
     def install(self):
         os.system("apt-get install libbluetooth-dev")
-        os.system("wget -O - https://github.com/andrewmichaelsmith/bluepot/raw/master/bin/bluepot-0.1.tar.gz | tar xfz -")
+        os.system(
+            "wget -O - https://github.com/andrewmichaelsmith/bluepot/raw/master/bin/bluepot-0.1.tar.gz | tar xfz -")
         os.system("mv bluepot/ %s/" % self.installDir)
 
     def run(self):
         os.system("sudo java -jar %s/BluePot-0.1.jar" % self.installDir)
+
 
 '''
 Exploitation Tools Classes
@@ -918,29 +928,55 @@ class exploitationToolsMenu:
         raw_input("Completed, click return to go back")
         self.__init__()
 
-# Updated to Here
 
-def brutex():
-    clearScr()
-    print("Automatically brute force all services running on a target: Open ports / DNS domains / Usernames / Passwords ")
-    os.system("git clone --depth=1 https://github.com/1N3/BruteX.git")
-    clearScr()
-    brutexchoice = raw_input("Select a Target: ")
-    os.system("cd BruteX && chmod 777 brutex && ./brutex %s" % brutexchoice)
+class brutex:
+    def __init__(self):
+        self.installDir = toolDir + "brutex"
+        self.gitRepo = "https://github.com/1N3/BruteX.git"
+
+        if not self.installed():
+            self.install()
+        clearScr()
+        self.run()
+
+    def installed(self):
+        return (os.path.isdir(self.installDir))
+
+    def install(self):
+        os.system("git clone --depth=1 %s %s" %
+                  (self.gitRepo, self.installDir))
+        os.system("./%s/install" % self.installDir)
+
+    def run(self):
+        target = raw_input("Enter Target IP: ")
+        os.system("brutex %s" % target)
 
 
-def arachni():
-    print("Arachni is a feature-full, modular, high-performance Ruby framework aimed towards helping penetration testers and administrators evaluate the security of web applications")
-    clearScr()
-    print("Example: http://www.target.com/")
-    tara = raw_input("Select a target to scan: ")
-    if yesOrNo():
-        os.system("git clone --depth=1 https://github.com/Arachni/arachni.git")
+class arachni:
+    def __init__(self):
+        self.installDir = toolDir + "arachni"
+        self.gitRepo = "https://github.com/Arachni/arachni.git"
+
+        if not self.installed():
+            self.install()
+        clearScr()
+        self.run()
+
+    def installed(self):
+        return (os.path.isdir(self.installDir))
+
+    def install(self):
+        os.system("git clone --depth=1 %s %s" %
+                  (self.gitRepo, self.installDir))
+        os.system("cd %s/" % self.installDir)
         os.system(
-            "cd arachni && gem install bundler && bundle install --without prof && rake install")
-        os.system("archani")
-    clearScr()
-    os.system("cd arachni/bin && chmod 777 arachni && ./arachni %s" % tara)
+            "gem install bundler && bundle install --without prof && rake install")
+
+    def run(self):
+        target = raw_input("Enter Target Hostname: ")
+        os.system("arachni %s --output-debug 2> %sarachni/%s.log" % (target, logDir, strftime("%Y-%m-%d_%H:%M:%S", gmtime())))
+
+# Updated to Here
 
 
 def weeman():
