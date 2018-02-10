@@ -25,7 +25,7 @@ elif [ "$(uname)" = "Darwin" ]; then
     BASH_PATH="/bin/bash"
     TERMUX=false
 else
-    INSTALL_DIR="/usr/local/fsociety"
+    INSTALL_DIR="$HOME/.fsociety"
     BIN_DIR="/usr/local/bin/"
     BASH_PATH="/bin/bash"
     TERMUX=false
@@ -61,7 +61,6 @@ fi
 
 echo "[✔] Installing ...";
 echo "";
-mkdir "$INSTALL_DIR";
 git clone https://github.com/Manisso/fsociety "$INSTALL_DIR";
 echo "#!$BASH_PATH
 python $INSTALL_DIR/fsociety.py" '${1+"$@"}' > fsociety;
