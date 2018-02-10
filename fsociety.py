@@ -189,9 +189,11 @@ class sniffingSpoofingMenu:
     def __init__(self):
         clearScr()
         print(self.menuLogo)
-        print("   {1}--SEToolkit - Tool aimed at penetration testing around Social-Engineering")
+        print(
+            "   {1}--SEToolkit - Tool aimed at penetration testing around Social-Engineering")
         print("   {2}--SSLtrip - MITM tool that implements SSL stripping  attacks")
-        print("   {3}--pyPISHER - Tool to create a mallicious website for password pishing")
+        print(
+            "   {3}--pyPISHER - Tool to create a mallicious website for password pishing")
         print("   {4}--SMTP Mailer - Tool to send SMTP mail\n ")
         print("   {99}-Back To Main Menu \n")
         choice6 = raw_input("fsociety~# ")
@@ -712,7 +714,8 @@ class passwordAttacksMenu:
         clearScr()
         print(self.menuLogo)
         print("   {1}--Cupp - Common User Passwords Profiler")
-        print("   {2}--BruteX - Automatically bruteforces all services running on a target\n")
+        print(
+            "   {2}--BruteX - Automatically bruteforces all services running on a target\n")
         print("   {99}-Back To Main Menu \n")
         choice3 = raw_input("passwd~# ")
         clearScr()
@@ -974,7 +977,8 @@ class arachni:
 
     def run(self):
         target = raw_input("Enter Target Hostname: ")
-        os.system("arachni %s --output-debug 2> %sarachni/%s.log" % (target, logDir, strftime("%Y-%m-%d_%H:%M:%S", gmtime())))
+        os.system("arachni %s --output-debug 2> %sarachni/%s.log" %
+                  (target, logDir, strftime("%Y-%m-%d_%H:%M:%S", gmtime())))
 
 # Updated to Here
 

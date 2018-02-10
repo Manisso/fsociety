@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "MR ROBOT";
+    src: url("../fonts/MR ROBOT.ttf");
+}
+
+.robot-text {
+    font-family: 'MR ROBOT', 'Lucida Console';
+    color: red;
+}
+
+.robot-logo {
+    font-size: 25px;
+}
