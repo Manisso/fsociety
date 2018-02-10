@@ -74,6 +74,7 @@ Variables
 '''
 
 toolDir = "tools/"
+logDir = "logs/"
 directories = ['/uploads/', '/upload/', '/files/', '/resume/', '/resumes/', '/documents/', '/docs/', '/pictures/', '/file/', '/Upload/', '/Uploads/', '/Resume/', '/Resume/', '/UsersFiles/', '/Usersiles/', '/usersFiles/', '/Users_Files/', '/UploadedFiles/',
                '/Uploaded_Files/', '/uploadedfiles/', '/uploadedFiles/', '/hpage/', '/admin/upload/', '/admin/uploads/', '/admin/resume/', '/admin/resumes/', '/admin/pictures/', '/pics/', '/photos/', '/Alumni_Photos/', '/alumni_photos/', '/AlumniPhotos/', '/users/']
 shells = ['wso.php', 'shell.php', 'an.php', 'hacker.php', 'lol.php', 'up.php', 'cp.php', 'upload.php',
@@ -101,6 +102,7 @@ Starts Menu Classes
 class fsociety:
     def __init__(self):
         clearScr()
+        self.createFolders()
         print (fsocietylogo + color.RED + '''
        }-----{+} Coded By Manisso and thehappydinoa {+}-----{
              }--------{+}  fb.me/dzmanisso {+}--------{
@@ -160,6 +162,11 @@ class fsociety:
             print("   * %s" % dictionary['login'])
         print('\n')
 
+    def createFolders(self):
+        if not os.path.isdir(toolDir):
+            os.makedirs(toolDir)
+        if not os.path.isdir(logDir):
+            os.makedirs(logDir)
 
     def completed(self):
         raw_input("Completed, click return to go back")
@@ -812,22 +819,48 @@ class reaver:
     def run(self):
         os.system("reaver --help")
 
-# Updated to Here
+class pixiewps:
+    def __init__(self):
+        self.installDir = toolDir + "pixiewps"
+        self.gitRepo = "https://github.com/wiire/pixiewps.git"
 
-def pixiewps():
-    print('''Pixiewps is a tool written in C used to bruteforce offline the WPS pin exploiting the low or non-existing entropy of some Access Points, the so-called "pixie dust attack" discovered by Dominique Bongard in summer 2014. It is meant for educational purposes only
-    ''')
-    if yesOrNo():
-        os.system("git clone --depth=1 https://github.com/wiire/pixiewps.git")
-        os.system("cd pixiewps & make ")
+        if not self.installed():
+            self.install()
+        clearScr()
+        self.run()
+
+    def installed(self):
+        return (os.path.isdir(self.installDir))
+
+    def install(self):
+        os.system("git clone --depth=1 %s %s" %
+                  (self.gitRepo, self.installDir))
+        os.system("apt-get -y install build-essential")
+        os.system("make")
         os.system("sudo make install")
 
+    def run(self):
+        os.system("pixiewps --help")
 
-def bluepot():
-    print("you need to have at least 1 bluetooh receiver (if you have many it will work wiht those, too). You must install / libbluetooth-dev on Ubuntu / bluez-libs-devel on Fedora/bluez-devel on openSUSE ")
-    if yesOrNo():
-        os.system("wget https://github.com/andrewmichaelsmith/bluepot/raw/master/bin/bluepot-0.1.tar.gz && tar xfz bluepot-0.1.tar.gz && sudo java -jar bluepot/BluePot-0.1.jar")
+class bluepot:
+    def __init__(self):
+        self.installDir = toolDir + "bluepot"
 
+        if not self.installed():
+            self.install()
+        clearScr()
+        self.run()
+
+    def installed(self):
+        return (os.path.isdir(self.installDir))
+
+    def install(self):
+        os.system("apt-get install libbluetooth-dev")
+        os.system("wget -O - https://github.com/andrewmichaelsmith/bluepot/raw/master/bin/bluepot-0.1.tar.gz | tar xfz -")
+        os.system("mv bluepot/ %s/" % self.installDir)
+
+    def run(self):
+        os.system("sudo java -jar %s/BluePot-0.1.jar" % self.installDir)
 
 '''
 Exploitation Tools Classes
@@ -885,6 +918,7 @@ class exploitationToolsMenu:
         raw_input("Completed, click return to go back")
         self.__init__()
 
+# Updated to Here
 
 def brutex():
     clearScr()
