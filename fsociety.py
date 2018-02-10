@@ -105,8 +105,7 @@ class fsociety:
         self.createFolders()
         print (fsocietylogo + color.RED + '''
        }-----{+} Coded By Manisso and thehappydinoa {+}-----{
-             }--------{+}  fb.me/dzmanisso {+}--------{
-                }-----{+} Greetz To IcoDz  {+}-----{
+       }--------{+}  GitHub.com/Manisso/fsociety {+}--------{
     ''' + color.END + '''
        {1}--Information Gathering
        {2}--Password Attacks
@@ -948,7 +947,9 @@ class brutex:
     def install(self):
         os.system("git clone --depth=1 %s %s" %
                   (self.gitRepo, self.installDir))
-        os.system("./%s/install" % self.installDir)
+        if not os.path.isdir("/usr/share/brutex"):
+            os.makedirs("/usr/share/brutex")
+        os.system("cd %s && chmod +x install.sh && ./install.sh" % self.installDir)
 
     def run(self):
         target = raw_input("Enter Target IP: ")
