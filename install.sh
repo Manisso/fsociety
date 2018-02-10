@@ -25,12 +25,12 @@ elif [ "$(uname)" = "Darwin" ]; then
     BASH_PATH="/bin/bash"
     TERMUX=false
 else
-    INSTALL_DIR="/usr/share/doc/fsociety"
-    BIN_DIR="/usr/bin/"
+    INSTALL_DIR="/usr/local/fsociety"
+    BIN_DIR="/usr/local/bin/"
     BASH_PATH="/bin/bash"
     TERMUX=false
 
-    apt-get install -y git python2.7
+    sudo apt-get install -y git python2.7
 fi
 
 echo "[✔] Checking directories...";

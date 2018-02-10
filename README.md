@@ -1,6 +1,6 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/Manisso/fsociety/blob/master/LICENSE) ![OS](https://img.shields.io/badge/Tested%20On-Linux%20|%20OSX%20|%20Windows%20|%20Android-yellowgreen.svg?style=flat-square) [![Python2.7](https://img.shields.io/badge/Python-2.7-green.svg?style=flat-square)](https://www.python.org/downloads/release/python-2714/) [![Python3](https://img.shields.io/badge/Python-3-green.svg?style=flat-square)](https://github.com/Manisso/fsociety/tree/python3) ![Docker](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg?style=flat-square)
 
-# Fsociety Hacking Tools Pack
+# [Fsociety Hacking Tools Pack](http://fsociety.thehappydinoa.me)
 
 A Penetration Testing Framework, you will have every script that a hacker needs
 
@@ -18,7 +18,8 @@ A Penetration Testing Framework, you will have every script that a hacker needs
 - Web Hacking
 - Private Web Hacking
 - Post Exploitation
-- INSTALL & UPDATE
+- Contributors
+- Install & Update
 
 ### Information Gathering:
 
