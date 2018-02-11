@@ -43,10 +43,10 @@ if [ -d "$INSTALL_DIR" ]; then
     if [ "$mama" = "y" ]; then
         if [ "$TERMUX" = true ]; then
             rm -rf "$INSTALL_DIR"
-            rm "$BIN_DIR/fsociety"
+            rm "$BIN_DIR/fsociety*"
         else
             sudo rm -rf "$INSTALL_DIR"
-            sudo rm "$BIN_DIR/fsociety"
+            sudo rm "$BIN_DIR/fsociety*"
         fi
     else
         echo "[✘] If you want to install you must remove previous installations [✘] ";

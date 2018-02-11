@@ -73,13 +73,13 @@ def yesOrNo():
 '''
 Config
 '''
-configFile = 'fsociety.cfg'
-
+configFile = os.path.dirname(os.path.abspath(__file__)) + "/fsociety.cfg"
+print(os.path.dirname(os.path.abspath(__file__)))
 config = ConfigParser.RawConfigParser()
 config.read(configFile)
 
-toolDir = config.get('fsociety', 'toolDir')
-logDir = config.get('fsociety', 'logDir')
+toolDir = os.path.dirname(os.path.abspath(__file__)) + '/' + config.get('fsociety', 'toolDir')
+logDir = os.path.dirname(os.path.abspath(__file__)) + '/' + config.get('fsociety', 'logDir')
 yes = config.get('fsociety', 'yes').split()
 
 fsocietylogo = color.END + '''
