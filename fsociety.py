@@ -73,13 +73,14 @@ def yesOrNo():
 '''
 Config
 '''
-configFile = os.path.dirname(os.path.abspath(__file__)) + "/fsociety.cfg"
-print(os.path.dirname(os.path.abspath(__file__)))
+installDir = os.path.dirname(os.path.abspath(__file__)) + '/'
+configFile = installDir + "/fsociety.cfg"
+print(installDir)
 config = ConfigParser.RawConfigParser()
 config.read(configFile)
 
-toolDir = os.path.dirname(os.path.abspath(__file__)) + '/' + config.get('fsociety', 'toolDir')
-logDir = os.path.dirname(os.path.abspath(__file__)) + '/' + config.get('fsociety', 'logDir')
+toolDir = installDir + config.get('fsociety', 'toolDir')
+logDir = installDir + config.get('fsociety', 'logDir')
 yes = config.get('fsociety', 'yes').split()
 
 fsocietylogo = color.END + '''
