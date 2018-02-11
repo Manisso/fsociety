@@ -5,44 +5,41 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>fsociety</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>fsociety - Penetration Testing Framework</title>
     <meta name="description" content="A Penetration Testing Framework with every script that a hacker needs">
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
     <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand robot-text" href="#">
-            <img src="/favicon/favicon-96x96.png" width="30" height="30" class="d-inline-block align-top" alt="fsociety">
-            fsociety
+            <img src="./favicon/favicon-96x96.png" width="30" height="30" class="d-inline-block align-top" alt="fsociety">
+            <span>fsociety</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
+        </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
@@ -58,15 +55,23 @@
         </div>
     </nav>
     <main class="container">
-        <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center" id="features">
-            <a href="https://github.com/Manisso/fsociety"><h1 class="display-4 robot-text">fsociety</h1></a>
+        <div class="px-3 pt-3 pb-2 pt-md-5 mx-auto text-center">
+            <h1 class="display-4 robot-text">fsociety</h1>
+            <p class="py-2">
+                <button onclick="watch()" type="button" class="btn btn-sm robot-btn">Watch</button>
+                <button onclick="star()" type="button" class="btn btn-sm robot-btn">Star</button>
+                <button onclick="fork()" type="button" class="btn btn-sm robot-btn">Fork</button>
+            </p>
             <p class="lead">A Penetration Testing Framework with every script that a hacker needs.</p>
             <p class="lead">Contains all tools used in the Mr. Robot TV series</p>
-            <p class="robot-text robot-logo">Features</p>
         </div>
-        <div class="row">
+        <hr class="robot-hr pb-md-4">
+        <div class="row" id="features">
+            <div class="col-md-12">
+                <p class="robot-text robot-logo text-center">Features</p>
+            </div>
             <div class="col-md-6 col-lg-4 mb-3">
-                <div class="card">
+                <div class="robot-card card">
                     <div class="card-body">
                         <h5 class="card-title">Information Gathering</h5>
                         <p class="card-text">Collect host metadata about services and users.</p>
@@ -74,7 +79,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-4 mb-3">
-                <div class="card">
+                <div class="robot-card card">
                     <div class="card-body">
                         <h5 class="card-title">Password Attacks</h5>
                         <p class="card-text">Crack passwords and create wordlists.</p>
@@ -82,7 +87,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-4 mb-3">
-                <div class="card">
+                <div class="robot-card card">
                     <div class="card-body">
                         <h5 class="card-title">Wireless Testing</h5>
                         <p class="card-text">Used for intrusion detection and wifi attacks.</p>
@@ -90,7 +95,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-4 mb-3">
-                <div class="card">
+                <div class="robot-card card">
                     <div class="card-body">
                         <h5 class="card-title">Exploitation Tools</h5>
                         <p class="card-text">Acesss systems and data with service-oriented exploits.</p>
@@ -98,7 +103,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-4 mb-3">
-                <div class="card">
+                <div class="robot-card card">
                     <div class="card-body">
                         <h5 class="card-title">Sniffing &amp; Spoofing</h5>
                         <p class="card-text">Listen to network traffic or fake a network entity.</p>
@@ -106,7 +111,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-4 mb-3">
-                <div class="card">
+                <div class="robot-card card">
                     <div class="card-body">
                         <h5 class="card-title">Web Hacking</h5>
                         <p class="card-text">Exploit popular CMSs that are hosted online.</p>
@@ -114,7 +119,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-4 mb-3">
-                <div class="card">
+                <div class="robot-card card">
                     <div class="card-body">
                         <h5 class="card-title">Private Web Hacking</h5>
                         <p class="card-text">Access files and databases.</p>
@@ -122,7 +127,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-lg-4 mb-3">
-                <div class="card">
+                <div class="robot-card card">
                     <div class="card-body">
                         <h5 class="card-title">Post Exploitation</h5>
                         <p class="card-text">Exploits for after you have already gained access.</p>
@@ -130,10 +135,12 @@
                 </div>
             </div>
         </div>
+        <hr class="robot-hr mt-md-5">
         <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center" id="install">
             <p class="robot-text robot-logo">Install</p>
             <kbd>bash <(wget -qO- https://git.io/vAtmB)</kbd>
         </div>
+        <hr class="robot-hr mt-md-5">
         <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center" id="contributors">
             <p class="robot-text robot-logo">Contributors</p>
             <a href="https://github.com/Manisso"><img src="https://avatars0.githubusercontent.com/u/16539311?s=200" class="rounded" alt="Manisso" style="padding: 1rem;"></a>
@@ -171,7 +178,20 @@
             </div>
         </div>
     </footer>
-    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        function watch() {
+            document.location.href = 'https://github.com/Manisso/fsociety/subscription'
+        }
+        function star() {
+            document.location.href = 'https://github.com/Manisso/fsociety'
+        }
+        function fork() {
+            document.location.href = 'https://github.com/Manisso/fsociety/fork'
+        }
+    </script>
 </body>
 
 </html>
