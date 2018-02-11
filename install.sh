@@ -66,16 +66,16 @@ fi
 
 echo "[✔] Installing ...";
 echo "";
-git clone https://github.com/Manisso/fsociety "$INSTALL_DIR";
+git clone --depth=1 https://github.com/Manisso/fsociety "$INSTALL_DIR";
 echo "#!$BASH_PATH
 python $INSTALL_DIR/fsociety.py" '${1+"$@"}' > "$INSTALL_DIR/fsociety";
 chmod +x fsociety;
 if [ "$TERMUX" = true ]; then
-    cp fsociety "$BIN_DIR"
+    cp "$INSTALL_DIR/fsociety" "$BIN_DIR"
 else
-    sudo cp fsociety "$BIN_DIR"
+    sudo cp "$INSTALL_DIR/fsociety" "$BIN_DIR"
 fi
-rm fsociety;
+rm "$INSTALL_DIR/fsociety";
 
 
 if [ -d "$INSTALL_DIR" ] ;

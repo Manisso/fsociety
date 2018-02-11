@@ -35,6 +35,7 @@ import Queue
 import threading
 import base64
 import time
+import ConfigParser
 from sys import argv
 from commands import *
 from getpass import getpass
@@ -70,17 +71,16 @@ def yesOrNo():
 
 
 '''
-Variables
+Config
 '''
+configFile = 'fsociety.cfg'
 
-toolDir = "tools/"
-logDir = "logs/"
-directories = ['/uploads/', '/upload/', '/files/', '/resume/', '/resumes/', '/documents/', '/docs/', '/pictures/', '/file/', '/Upload/', '/Uploads/', '/Resume/', '/Resume/', '/UsersFiles/', '/Usersiles/', '/usersFiles/', '/Users_Files/', '/UploadedFiles/',
-               '/Uploaded_Files/', '/uploadedfiles/', '/uploadedFiles/', '/hpage/', '/admin/upload/', '/admin/uploads/', '/admin/resume/', '/admin/resumes/', '/admin/pictures/', '/pics/', '/photos/', '/Alumni_Photos/', '/alumni_photos/', '/AlumniPhotos/', '/users/']
-shells = ['wso.php', 'shell.php', 'an.php', 'hacker.php', 'lol.php', 'up.php', 'cp.php', 'upload.php',
-          'sh.php', 'pk.php', 'mad.php', 'x00x.php', 'worm.php', '1337worm.php', 'config.php', 'x.php', 'haha.php']
-upload = []
-yes = ['yes', 'y', 'ye', 'Y']
+config = ConfigParser.RawConfigParser()
+config.read(configFile)
+
+toolDir = config.get('fsociety', 'toolDir')
+logDir = config.get('fsociety', 'logDir')
+yes = config.get('fsociety', 'yes').split()
 
 fsocietylogo = color.END + '''
         d88888b .d8888.  .d88b.   .o88b. d888888b d88888b d888888b db    db
@@ -90,14 +90,32 @@ fsocietylogo = color.END + '''
         88      db   8D `8b  d8' Y8b  d8   .88.   88.        88       88
         YP      `8888Y'  `Y88P'   `Y88P' Y888888P Y88888P    YP       YP
         '''
+fsocietyPrompt = "fsociety ~# "
 alreadyInstalled = "Already Installed"
 continuePrompt = "\nClick [Return] to continue"
+
+termsAndConditions = '''
+I shall not use fsociety to:
+(i) upload or otherwise transmit, display or distribute any
+content that infringes any trademark, trade secret, copyright
+or other proprietary or intellectual property rights of any
+person; (ii) upload or otherwise transmit any material that contains
+software viruses or any other computer code, files or programs
+designed to interrupt, destroy or limit the functionality of any
+computer software or hardware or telecommunications equipment;
+'''
 
 
 '''
 Starts Menu Classes
 '''
-
+def agreement():
+    while not config.getboolean("fsociety", "agreement"):
+        clearScr()
+        print(termsAndConditions)
+        agree = raw_input("You must agree to our terms and conditions first (Y/n) ").lower()
+        if agree in yes:
+            config.set('fsociety', 'agreement', 'true')
 
 class fsociety:
     def __init__(self):
@@ -119,7 +137,7 @@ class fsociety:
        {11}-CONTRIBUTORS
        {99}-EXIT\n
      ''')
-        choice = raw_input("fsociety~# ")
+        choice = raw_input(fsocietyPrompt)
         clearScr()
         if choice == "1":
             informationGatheringMenu()
@@ -142,12 +160,16 @@ class fsociety:
         elif choice == "11":
             self.githubContributors()
         elif choice == "99":
+            #with open(configFile, 'wb') as configfile:
+                #config.write(configfile)
             sys.exit()
+        elif choice == "\r" or choice == "\n" or choice == "" or choice == " ":
+            self.__init__()
         else:
             try:
                 print(os.system(choice))
             except:
-                self.__init__()
+                pass
         self.completed()
 
     def githubContributors(self):
@@ -198,7 +220,7 @@ class sniffingSpoofingMenu:
             "   {3}--pyPISHER - Tool to create a mallicious website for password pishing")
         print("   {4}--SMTP Mailer - Tool to send SMTP mail\n ")
         print("   {99}-Back To Main Menu \n")
-        choice6 = raw_input("fsociety~# ")
+        choice6 = raw_input(fsocietyPrompt)
         clearScr()
         if choice6 == "1":
             setoolkit()
@@ -244,7 +266,7 @@ class webHackingMenu:
             "   {11}-BruteX - Automatically brute force all services running on a target")
         print("   {12}-Arachni - Web Application Security Scanner Framework \n ")
         print("   {99}-Back To Main Menu \n")
-        choiceweb = raw_input("fsociety~# ")
+        choiceweb = raw_input(fsocietyPrompt)
         clearScr()
         if choiceweb == "1":
             maine()
@@ -316,7 +338,7 @@ class postExploitationMenu:
         print("   {2}--POET")
         print("   {3}--Phishing Framework \n")
         print("   {99}-Return to main menu \n ")
-        choice11 = raw_input("fsociety~# ")
+        choice11 = raw_input(fsocietyPrompt)
         clearScr()
         if choice11 == "1":
             sitechecker()
@@ -361,7 +383,7 @@ class informationGatheringMenu:
         print("  {7}--Doork")
         print("  {8}--Crips\n  ")
         print("  {99}-Back To Main Menu \n")
-        choice2 = raw_input("fsociety~# ")
+        choice2 = raw_input(fsocietyPrompt)
         clearScr()
         if choice2 == "1":
             nmap()
@@ -433,7 +455,7 @@ class nmap:
         print("   {2}--Port Scan [-Pn]")
         print("   {3}--Operating System Detection [-A]\n")
         print("   {99}-Return to information gathering menu \n")
-        response = raw_input("nmap~# ")
+        response = raw_input("nmap ~# ")
         clearScr()
         logPath = "logs/nmap-" + strftime("%Y-%m-%d_%H:%M:%S", gmtime())
         try:
@@ -532,7 +554,7 @@ class wpscan:
         print("   {2}--Plugin Enumeration [--enumerate p]")
         print("   {3}--All Enumeration Tools [--enumerate]\n")
         print("   {99}-Return to information gathering menu \n")
-        response = raw_input("wpscan~# ")
+        response = raw_input("wpscan ~# ")
         clearScr()
         logPath = "../../logs/wpscan-" + \
             strftime("%Y-%m-%d_%H:%M:%S", gmtime()) + ".txt"
@@ -719,7 +741,7 @@ class passwordAttacksMenu:
         print(
             "   {2}--BruteX - Automatically bruteforces all services running on a target\n")
         print("   {99}-Back To Main Menu \n")
-        choice3 = raw_input("passwd~# ")
+        choice3 = raw_input("passwd ~# ")
         clearScr()
         if choice3 == "1":
             cupp()
@@ -785,7 +807,7 @@ class wirelessTestingMenu:
         print("   {2}--pixiewps")
         print("   {3}--Bluetooth Honeypot GUI Framework \n")
         print("   {99}-Back To The Main Menu \n")
-        choice4 = raw_input("fsociety~# ")
+        choice4 = raw_input(fsocietyPrompt)
         clearScr()
         if choice4 == "1":
             reaver()
@@ -903,7 +925,7 @@ class exploitationToolsMenu:
         print("   {8}--Bruteforce the Android Passcode given the hash and salt")
         print("   {9}--Joomla SQL injection Scanner \n ")
         print("   {99}-Go Back To Main Menu \n")
-        choice5 = raw_input("fsociety~# ")
+        choice5 = raw_input(fsocietyPrompt)
         clearScr()
         if choice5 == "1":
             atscan()
@@ -1329,7 +1351,7 @@ class Fscan:
         self.getSites(False)
         print menuu
         while True:
-            choice = raw_input('fsociety~# ')
+            choice = raw_input(fsocietyPrompt)
             if choice == '1':
                 self.getSites(True)
             elif choice == '2':
@@ -1747,7 +1769,7 @@ def getdrupal():
 
 
 def drupallist():
-    listop = raw_input("Enter The list Txt ~# ")
+    listop = raw_input("Enter The list Txt: ")
     fileopen = open(listop, 'r')
     content = fileopen.readlines()
     for i in content:
@@ -2050,6 +2072,7 @@ def wpminiscanner():
 
 if __name__ == "__main__":
     try:
+        agreement()
         fsociety()
     except KeyboardInterrupt:
         print(" Finishing up...\r"),
