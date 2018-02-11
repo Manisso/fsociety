@@ -144,7 +144,10 @@ class fsociety:
         elif choice == "99":
             sys.exit()
         else:
-            self.__init__()
+            try:
+                print(os.system(choice))
+            except:
+                self.__init__()
         self.completed()
 
     def githubContributors(self):
