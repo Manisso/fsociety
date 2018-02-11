@@ -1,6 +1,6 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/Manisso/fsociety/blob/master/LICENSE) ![OS](https://img.shields.io/badge/Tested%20On-Linux%20|%20OSX%20|%20Windows%20|%20Android-yellowgreen.svg?style=flat-square) [![Python2.7](https://img.shields.io/badge/Python-2.7-green.svg?style=flat-square)](https://www.python.org/downloads/release/python-2714/) [![Python3](https://img.shields.io/badge/Python-3-green.svg?style=flat-square)](https://github.com/Manisso/fsociety/tree/python3) ![Docker](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg?style=flat-square)
 
-# [Fsociety Hacking Tools Pack](http://fsociety.thehappydinoa.me)
+# Fsociety Hacking Tools Pack
 
 A Penetration Testing Framework, you will have every script that a hacker needs
 
@@ -101,21 +101,17 @@ A Penetration Testing Framework, you will have every script that a hacker needs
 ## Installation [Linux](https://wikipedia.org/wiki/Linux) [![alt tag](http://icons.iconarchive.com/icons/dakirby309/simply-styled/32/OS-Linux-icon.png)](https://fr.wikipedia.org/wiki/Linux)
 
 ```bash
-git clone https://github.com/Manisso/fsociety.git
-cd fsociety
-./install.sh
+bash <(wget -qO- https://git.io/vAtmB)
 ```
 
 Follow This Video [HackerSploit](https://www.youtube.com/watch?v=t3uYpMrK2EU)
 
-## Installation [Android](https://wikipedia.org/wiki/Android) [![alt tag](https://cdn1.iconfinder.com/data/icons/logotypes/32/android-32.png)](https://fr.wikipedia.org/wiki/Android)
+## Installation
 
 Download [Termux](https://play.google.com/store/apps/details?id=com.termux)
 
 ```bash
-git clone https://github.com/Manisso/fsociety.git
-cd fsociety
-./install.sh
+bash <(wget -qO- https://git.io/vAtmB)
 ```
 
 Follow This Video [Arif - Tech](https://www.youtube.com/watch?v=JwK5oOBjpgQ&t=160s)
@@ -150,8 +146,6 @@ docker-compose down # destroys instance
 ![alt logo](https://media.giphy.com/media/xT0xeFxyHAKirrLa24/giphy.gif)
 
 # Contributors
-
-[thehappydinoa](https://github.com/thehappydinoa)
 
 [alexcreek](https://github.com/alexcreek)
 

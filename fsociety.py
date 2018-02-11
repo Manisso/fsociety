@@ -12,7 +12,7 @@
 #                                Greet's To
 #                              IcoDz - Canejo
 #                             Tool For Hacking
-#                     Authors : Manisso/thehappydinoa
+#                             Author : Manisso
 
 '''
 Imports
@@ -123,7 +123,7 @@ class fsociety:
         clearScr()
         self.createFolders()
         print (fsocietylogo + color.RED + '''
-       }-----{+} Coded By Manisso and thehappydinoa {+}-----{
+       }--------------{+} Coded By Manisso {+}--------------{
        }--------{+}  GitHub.com/Manisso/fsociety {+}--------{
     ''' + color.END + '''
        {1}--Information Gathering
