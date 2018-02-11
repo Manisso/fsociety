@@ -69,7 +69,7 @@ echo "";
 git clone --depth=1 https://github.com/Manisso/fsociety "$INSTALL_DIR";
 echo "#!$BASH_PATH
 python $INSTALL_DIR/fsociety.py" '${1+"$@"}' > "$INSTALL_DIR/fsociety";
-chmod +x fsociety;
+chmod +x "$INSTALL_DIR/fsociety";
 if [ "$TERMUX" = true ]; then
     cp "$INSTALL_DIR/fsociety" "$BIN_DIR"
 else

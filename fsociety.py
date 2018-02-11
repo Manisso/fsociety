@@ -94,7 +94,7 @@ fsocietyPrompt = "fsociety ~# "
 alreadyInstalled = "Already Installed"
 continuePrompt = "\nClick [Return] to continue"
 
-termsAndConditions = '''
+termsAndConditions = color.NOTICE + '''
 I shall not use fsociety to:
 (i) upload or otherwise transmit, display or distribute any
 content that infringes any trademark, trade secret, copyright
@@ -103,7 +103,7 @@ person; (ii) upload or otherwise transmit any material that contains
 software viruses or any other computer code, files or programs
 designed to interrupt, destroy or limit the functionality of any
 computer software or hardware or telecommunications equipment;
-'''
+''' + color.END
 
 
 '''
@@ -160,8 +160,8 @@ class fsociety:
         elif choice == "11":
             self.githubContributors()
         elif choice == "99":
-            #with open(configFile, 'wb') as configfile:
-                #config.write(configfile)
+            with open(configFile, 'wb') as configfile:
+                config.write(configfile)
             sys.exit()
         elif choice == "\r" or choice == "\n" or choice == "" or choice == " ":
             self.__init__()
@@ -2075,5 +2075,5 @@ if __name__ == "__main__":
         agreement()
         fsociety()
     except KeyboardInterrupt:
-        print(" Finishing up...\r"),
+        print(" Finishing up...\n")
         time.sleep(0.25)
