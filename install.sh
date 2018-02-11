@@ -72,8 +72,10 @@ python $INSTALL_DIR/fsociety.py" '${1+"$@"}' > "$INSTALL_DIR/fsociety";
 chmod +x "$INSTALL_DIR/fsociety";
 if [ "$TERMUX" = true ]; then
     cp "$INSTALL_DIR/fsociety" "$BIN_DIR"
+    cp "$INSTALL_DIR/fsociety.cfg" "$BIN_DIR"
 else
     sudo cp "$INSTALL_DIR/fsociety" "$BIN_DIR"
+    sudo cp "$INSTALL_DIR/fsociety.cfg" "$BIN_DIR"
 fi
 rm "$INSTALL_DIR/fsociety";
 
