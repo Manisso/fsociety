@@ -915,7 +915,7 @@ class exploitationToolsMenu:
 
     def __init__(self):
         clearScr()
-        print(menuLogo)
+        print(self.menuLogo)
         print("   {1}--ATSCAN")
         print("   {2}--sqlmap")
         print("   {3}--Shellnoob")
