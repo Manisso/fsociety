@@ -498,7 +498,7 @@ class setoolkit:
             python-pymssql build-essential python-pexpect python-pefile python-crypto python-openssl")
         os.system("git clone --depth=1 %s %s" %
                   (self.gitRepo, self.installDir))
-        os.system("python %s/setup.py install" % self.installDir)
+        os.system("cd %s && python setup.py install" % self.installDir)
 
     def run(self):
         os.system("setoolkit")
