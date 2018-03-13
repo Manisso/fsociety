@@ -1202,8 +1202,7 @@ def shelltarget():
 
 def poet():
     print("POET is a simple POst-Exploitation Tool.\n")
-    choicepoet = yesOrNo()
-    if choicepoet in yes:
+    if yesOrNo():
         os.system("git clone --depth=1 https://github.com/mossberg/poet.git")
         os.system("python poet/server.py")
     else:
