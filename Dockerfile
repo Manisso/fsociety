@@ -15,5 +15,8 @@ RUN git clone https://github.com/Manisso/fsociety.git \
   && chmod +x install.sh \
   && ./install.sh
 
+# Change workdir
+WORKDIR /root/.fsociety/
+
 # Hack to keep the container running
 CMD python -c "import signal; signal.pause()"
