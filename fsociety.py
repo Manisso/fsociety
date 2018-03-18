@@ -1202,8 +1202,7 @@ def shelltarget():
 
 def poet():
     print("POET is a simple POst-Exploitation Tool.\n")
-    choicepoet = yesOrNo()
-    if choicepoet in yes:
+    if yesOrNo():
         os.system("git clone --depth=1 https://github.com/mossberg/poet.git")
         os.system("python poet/server.py")
     else:
@@ -1667,31 +1666,31 @@ class Fscan:
                 pass
 
 
-def portScanner(self, mode, ran):
-    '''
-    simple port scanner works with range of ports
-    or with common ports (al-swisre idea)
-    '''
-    clearScr()
-    print "[~] Scanning Ports"
+    def portScanner(self, mode, ran):
+        '''
+        simple port scanner works with range of ports
+        or with common ports (al-swisre idea)
+        '''
+        clearScr()
+        print "[~] Scanning Ports"
 
-    def do_it(ip, port):
-        sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        if mode == 1:
+            a = ran.split('-')
+            start = int(a[0])
+            end = int(a[1])
+            for i in range(start, end):
+                do_it(self.serverip, i)
+        elif mode == 2:
+            for port in [80, 21, 22, 2082, 25, 53, 110, 443, 143]:
+                do_it(self.serverip, port)
 
-        sock = sock.connect_ex((ip, port))
-        if sock == 0:
-            print " [*] Port %i is open" % port
 
-    if mode == 1:
-        a = ran.split('-')
-        start = int(a[0])
-        end = int(a[1])
-        for i in range(start, end):
-            do_it(self.serverip, i)
-    elif mode == 2:
-        for port in [80, 21, 22, 2082, 25, 53, 110, 443, 143]:
+def do_it(ip, port):
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-            do_it(self.serverip, port)
+    sock = sock.connect_ex((ip, port))
+    if sock == 0:
+        print " [*] Port %i is open" % port
 
 
 ############################
