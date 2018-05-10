@@ -138,7 +138,7 @@ docker-compose up -d
 docker-compose exec fsociety fsociety
 docker-compose down # destroys instance
 ```
-# Visit Our Social Network :) 
+# Visit Our Social Network :kissing_heart:
 
 [Fsociety.host](https://fsociety.host/)
 
