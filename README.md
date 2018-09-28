@@ -167,3 +167,7 @@ docker-compose down # destroys instance
 # License
 
 [MIT Licence](https://github.com/Manisso/fsociety/blob/master/LICENSE)
+
+# Join the team 
+ Do you want to collaborate? Join the project at https://crowdforge.io/projects/409
+
