@@ -1134,8 +1134,8 @@ def wppluginscan():
             conn = httplib.HTTPConnection(site)
             conn.request('HEAD', "/wp-content/plugins/" + dir)
             resp = conn.getresponse().status
-        except(), message:
-            print "Cant Connect:", message
+        except Exception as message:
+            print "Cant Connect:" + message
             pass
 
     def timer():
