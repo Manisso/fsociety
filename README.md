@@ -49,7 +49,7 @@ A Penetration Testing Framework, you will have every script that a hacker needs
 - ATSCAN
 - sqlmap
 - Shellnoob
-- commix
+- Commix
 - FTP Auto Bypass
 - JBoss Autopwn
 
@@ -86,7 +86,7 @@ A Penetration Testing Framework, you will have every script that a hacker needs
 - Get server users
 - SQli Scanner
 - Ports Scan (range of ports)
-- ports Scan (common ports)
+- Ports Scan (common ports)
 - Get server Info
 - Bypass Cloudflare
 
