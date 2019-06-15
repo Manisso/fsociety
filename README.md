@@ -166,6 +166,8 @@ docker-compose down # destroys instance
 
 [jdrago999](https://github.com/jdrago999)
 
+[CRO-TheHacker](https://github.com/CRO-THEHACKER)
+
 # License
 
 [MIT Licence](https://github.com/Manisso/fsociety/blob/master/LICENSE)
