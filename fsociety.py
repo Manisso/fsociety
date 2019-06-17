@@ -70,8 +70,8 @@ print(installDir)
 config = configparser.RawConfigParser()
 config.read(configFile)
 
-toolDir = installDir + config.get('fsociety', 'toolDir')
-logDir = installDir + config.get('fsociety', 'logDir')
+toolDir = installDir + config.get('fsociety', 'tool_dir')
+logDir = installDir + config.get('fsociety', 'log_dir')
 yes = config.get('fsociety', 'yes').split()
 color_random = [color.HEADER, color.IMPORTANT, color.NOTICE, color.OKBLUE, color.OKGREEN, color.WARNING, color.RED,
                 color.END, color.UNDERLINE, color.LOGGING]
@@ -156,7 +156,7 @@ class fsociety:
         elif choice == "11":
             self.githubContributors()
         elif choice == "99":
-            with open(configFile, 'wb') as configfile:
+            with open(configFile, 'w') as configfile:
                 config.write(configfile)
             sys.exit()
         elif choice == "\r" or choice == "\n" or choice == "" or choice == " ":
