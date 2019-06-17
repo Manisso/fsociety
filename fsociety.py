@@ -58,7 +58,7 @@ def clearScr():
 
 
 def yesOrNo():
-    return (input("Continue Y / N: ") in yes)
+    return input("Continue Y / N: ") in yes
 
 
 '''
@@ -247,7 +247,7 @@ class webHackingMenu:
 
     def __init__(self):
         clearScr()
-        print((self.menuLogo))
+        print(self.menuLogo)
         print("   {1}--Drupal Hacking ")
         print("   {2}--Inurlbr")
         print("   {3}--Wordpress & Joomla Scanner")
@@ -309,7 +309,7 @@ class privateWebHacking:
 
     def __init__(self):
         clearScr()
-        print((self.menuLogo))
+        print(self.menuLogo)
         target = input("Enter Target IP: ")
         Fscan(target)
         self.completed()
@@ -368,7 +368,7 @@ class informationGatheringMenu:
 
     def __init__(self):
         clearScr()
-        print((self.menuLogo))
+        print(self.menuLogo)
 
         print("  {1}--Nmap - Network Mapper")
         print("  {2}--Setoolkit")
@@ -1168,11 +1168,11 @@ def grabuploadedlink(url):
     try:
         for dir in directories:
             currentcode = urllib.request.urlopen(url + dir).getcode()
-            if currentcode == 200 or currentcode == 403:
+            if currentcode in (200, 403):
                 print("-------------------------")
-                print("  [ + ] Found Directory:  " + str(url + dir) + " [ + ]")
-                print("-------------------------")
-                upload.append(url + dir)
+            print("  [ + ] Found Directory:  " + str(url + dir) + " [ + ]")
+            print("-------------------------")
+            upload.append(url + dir)
     except:
         pass
 
@@ -1469,7 +1469,7 @@ class Fscan:
             page += 50
         lista = unique(lista)
         clearScr()
-        print(f'[*] Found {len(lista)} Joomla Website\n'))
+        print(f'[*] Found {len(lista)} Joomla Website\n')
         for site in lista:
             print(site)
 
@@ -1782,7 +1782,7 @@ def getdrupal():
 
 def drupallist():
     listop = input("Enter The list Txt: ")
-    fileopen = open(listop, 'r')
+    fileopen = open(listop)
     content = fileopen.readlines()
     for i in content:
         url = i.strip()
@@ -2038,7 +2038,7 @@ def check_wpsymposium(sites):
     for site in sites:
         try:
             if urllib.request.urlopen(site + 'wp-symposium/server/file_upload_form.php').getcode() == 200:
-                wpsycmium.append(site)
+                wpsymposium.append(site)
         except:
             pass
 
