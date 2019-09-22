@@ -107,6 +107,25 @@ designed to interrupt, destroy or limit the functionality of any
 computer software or hardware or telecommunications equipment;
 ''' + color.END
 
+mrrobot4 = color.NOTICE + '''
+Hello,
+
+As we all know, Mr. Robot 4.0 is comming out - the end of Mr. Robot.
+
+We will update to python3.7 & add all of the new hacking tool of 4.0 later this year
+There will be no more updates after the show is done.
+This is to keep cannon to the show.))
+
+Thank you for all the sourport over the years, the fsociety team thanks you!
+Feel free to join the NEW DISCORD!!!
+Anything Mr. Robot will be on the server!
+
+[ https://discord.gg/HgsuR4a ]
+
+
+
+Thanks for reading,
+Zachary, CRO-THEHACKER - Dev'''
 
 '''
 Starts Menu Classes
@@ -115,6 +134,7 @@ def agreement():
     while not config.getboolean("fsociety", "agreement"):
         clearScr()
         print(termsAndConditions)
+        print(mrrobot4)
         agree = raw_input("You must agree to our terms and conditions first (Y/n) ").lower()
         if agree in yes:
             config.set('fsociety', 'agreement', 'true')
