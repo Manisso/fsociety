@@ -120,7 +120,7 @@ Thank you for all the sourport over the years, the fsociety team thanks you!
 Feel free to join the NEW DISCORD!!!
 Anything Mr. Robot will be on the server!
 
-[ https://discord.gg/HgsuR4a ]
+[ https://discord.gg/xB87X9z ]
 
 
 
