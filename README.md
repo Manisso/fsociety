@@ -143,6 +143,7 @@ docker-compose down # destroys instance
 # Visit Our Social Network :kissing_heart:
 
 [Fsociety.host](https://fsociety.host/)
+[Discord](https://discord.gg/mvTTTy)
 
 # Screenshots
 
