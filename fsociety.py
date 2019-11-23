@@ -1171,10 +1171,10 @@ def wppluginscan():
             plugin = plugin.rstrip()
             scan(site, plugin)
             if resp not in Notfound:
-                print "+----------------------------------------+"
-                print "| current site:" + site
-                print "| Found Plugin: " + plugin
-                print "| Result:", resp
+                print("+----------------------------------------+")
+                print("| current site:" + site)
+                print("| Found Plugin: " + plugin)
+                print("| Result:", resp)
 
 
 def sqlmap():
