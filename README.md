@@ -143,7 +143,7 @@ docker-compose down # destroys instance
 # Visit Our Network :kissing_heart:
 
 
-[Discord](https://discord.gg/mvTTTy)
+[Discord](https://discord.gg/BaBpuPn)
 
 # Screenshots
 
