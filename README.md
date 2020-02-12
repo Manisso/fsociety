@@ -1,13 +1,17 @@
-[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/Manisso/fsociety/blob/master/LICENSE) ![OS](https://img.shields.io/badge/Tested%20On-Linux%20|%20OSX%20|%20Windows%20|%20Android-yellowgreen.svg?style=flat-square) [![Python2.7](https://img.shields.io/badge/Python-2.7-green.svg?style=flat-square)](https://www.python.org/downloads/release/python-2714/) [![Python3](https://img.shields.io/badge/Python-3-green.svg?style=flat-square)](https://github.com/Manisso/fsociety/tree/python3) ![Docker](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg?style=flat-square)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/Manisso/fsociety/blob/master/LICENSE) ![OS](https://img.shields.io/badge/Tested%20On-Linux%20|%20OSX%20|%20Windows%20|%20Android-yellowgreen.svg?style=flat-square) [![Python2.7](https://img.shields.io/badge/Python-2.7-green.svg?style=flat-square)](https://www.python.org/downloads/release/python-2714/) [![Python3](https://img.shields.io/badge/Python-3-green.svg?style=flat-square)](https://github.com/CRO-THEHACKER/fsociety3) ![Docker](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg?style=flat-square)
 
 # Fsociety Hacking Tools Pack
 
 A Penetration Testing Framework, you will have every script that a hacker needs
 
-## Fsociety Contains All Tools Used In Mr Robot Series
+## Fsociety Contains All Tools Used in Mr. Robot Series
 
 [![alt tag](http://nikolaskama.me/content/images/2016/07/mr-robot-1.gif)](https://wikipedia.org/wiki/Mr._Robot)
 
+# FSociety3 - py3 update
+
+Please feel free to start using the FSociety3 update, the EOL for fsociety will be 2021.
+- [the project](https://github.com/CRO-THEHACKER/fsociety3)
 ## Menu
 
 - Information Gathering
@@ -18,7 +22,8 @@ A Penetration Testing Framework, you will have every script that a hacker needs
 - Web Hacking
 - Private Web Hacking
 - Post Exploitation
-- INSTALL & UPDATE
+- Contributors
+- Install & Update
 
 ### Information Gathering:
 
@@ -48,7 +53,7 @@ A Penetration Testing Framework, you will have every script that a hacker needs
 - ATSCAN
 - sqlmap
 - Shellnoob
-- commix
+- Commix
 - FTP Auto Bypass
 - JBoss Autopwn
 
@@ -85,7 +90,7 @@ A Penetration Testing Framework, you will have every script that a hacker needs
 - Get server users
 - SQli Scanner
 - Ports Scan (range of ports)
-- ports Scan (common ports)
+- Ports Scan (common ports)
 - Get server Info
 - Bypass Cloudflare
 
@@ -100,21 +105,17 @@ A Penetration Testing Framework, you will have every script that a hacker needs
 ## Installation [Linux](https://wikipedia.org/wiki/Linux) [![alt tag](http://icons.iconarchive.com/icons/dakirby309/simply-styled/32/OS-Linux-icon.png)](https://fr.wikipedia.org/wiki/Linux)
 
 ```bash
-git clone https://github.com/Manisso/fsociety.git
-cd fsociety
-./install.sh
+bash <(wget -qO- https://git.io/vAtmB)
 ```
 
 Follow This Video [HackerSploit](https://www.youtube.com/watch?v=t3uYpMrK2EU)
 
-## Installation [Android](https://wikipedia.org/wiki/Android) [![alt tag](https://cdn1.iconfinder.com/data/icons/logotypes/32/android-32.png)](https://fr.wikipedia.org/wiki/Android)
+## Installation
 
 Download [Termux](https://play.google.com/store/apps/details?id=com.termux)
 
 ```bash
-git clone https://github.com/Manisso/fsociety.git
-cd fsociety
-./install.sh
+bash <(wget -qO- https://git.io/vAtmB)
 ```
 
 Follow This Video [Arif - Tech](https://www.youtube.com/watch?v=JwK5oOBjpgQ&t=160s)
@@ -125,7 +126,9 @@ Download Linux Bash Like [Cygwin](https://www.cygwin.com/)
 
 Download [Python](https://www.python.org/downloads/release/python-2714/)
 
-Or Use Google Cloud Console [Cloud Shell](https://console.cloud.google.com/cloudshell/editor?project=&pli=1&shellonly=true)
+Use Google Cloud Console [Cloud Shell](https://console.cloud.google.com/cloudshell/editor?project=&pli=1&shellonly=true)
+
+Or Use Free Ubuntu VPS [c9.io](https://c9.io/)
 
 ## [Docker](https://en.wikipedia.org/wiki/Docker_(software)) Usage ![docker logo](https://png.icons8.com/color/50/000000/docker.png)
 
@@ -141,6 +144,10 @@ docker-compose up -d
 docker-compose exec fsociety fsociety
 docker-compose down # destroys instance
 ```
+# Visit Our Network :kissing_heart:
+
+
+[Discord](https://discord.gg/BaBpuPn)
 
 # Screenshots
 
@@ -149,8 +156,6 @@ docker-compose down # destroys instance
 ![alt logo](https://media.giphy.com/media/xT0xeFxyHAKirrLa24/giphy.gif)
 
 # Contributors
-
-[thehappydinoa](https://github.com/thehappydinoa)
 
 [alexcreek](https://github.com/alexcreek)
 
@@ -166,6 +171,16 @@ docker-compose down # destroys instance
 
 [jdrago999](https://github.com/jdrago999)
 
+[CRO-TheHacker](https://github.com/CRO-THEHACKER)
+
 # License
 
 [MIT Licence](https://github.com/Manisso/fsociety/blob/master/LICENSE)
+
+# Join the team 
+ Do you want to collaborate? Join the project at https://crowdforge.io/projects/409
+ 
+ # Donate
+- Bitcoin  = 3N8i3Xpi15E11M2zPUm5kPhGjnPSLXcWFt
+- Ethereum = 0xa891e54169182a93cacba41288d16aaffa537503
+

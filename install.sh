@@ -1,29 +1,41 @@
 clear
 echo "
-███╗   ███╗ █████╗ ███╗   ██╗██╗███████╗███████╗ ██████╗
-████╗ ████║██╔══██╗████╗  ██║██║██╔════╝██╔════╝██╔═══██╗
-██╔████╔██║███████║██╔██╗ ██║██║███████╗███████╗██║   ██║
-██║╚██╔╝██║██╔══██║██║╚██╗██║██║╚════██║╚════██║██║   ██║
-██║ ╚═╝ ██║██║  ██║██║ ╚████║██║███████║███████║╚██████╔╝
-╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝╚══════╝╚══════╝ ╚═════╝
-▀▀█▀▀ █▀▀█ █▀▀█ █   █▀▀ ~ Tools Instaler By Ⓜ Ⓐ Ⓝ Ⓘ Ⓢ Ⓢ Ⓞ  ☪ ~
-  █   █  █ █  █ █   ▀▀█
-  ▀   ▀▀▀▀ ▀▀▀▀ ▀▀▀ ▀▀▀
+███████╗███████╗ ██████╗  ██████╗██╗███████╗████████╗██╗   ██╗
+██╔════╝██╔════╝██╔═══██╗██╔════╝██║██╔════╝╚══██╔══╝╚██╗ ██╔╝
+█████╗  ███████╗██║   ██║██║     ██║█████╗     ██║    ╚████╔╝
+██╔══╝  ╚════██║██║   ██║██║     ██║██╔══╝     ██║     ╚██╔╝
+██║     ███████║╚██████╔╝╚██████╗██║███████╗   ██║      ██║
+╚═╝     ╚══════╝ ╚═════╝  ╚═════╝╚═╝╚══════╝   ╚═╝      ╚═╝
 
+██╗███╗   ██╗███████╗████████╗ █████╗ ██╗     ██╗     ███████╗██████╗
+██║████╗  ██║██╔════╝╚══██╔══╝██╔══██╗██║     ██║     ██╔════╝██╔══██╗
+██║██╔██╗ ██║███████╗   ██║   ███████║██║     ██║     █████╗  ██████╔╝
+██║██║╚██╗██║╚════██║   ██║   ██╔══██║██║     ██║     ██╔══╝  ██╔══██╗
+██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗███████╗██║  ██║
+╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝
 ";
+
+sudo chmod +x uninstall
 
 if [ "$PREFIX" = "/data/data/com.termux/files/usr" ]; then
     INSTALL_DIR="$PREFIX/usr/share/doc/fsociety"
     BIN_DIR="$PREFIX/bin/"
     BASH_PATH="$PREFIX/bin/bash"
     TERMUX=true
+
     pkg install -y git python2
-else
-    INSTALL_DIR="/usr/share/doc/fsociety"
-    BIN_DIR="/usr/bin/"
+elif [ "$(uname)" = "Darwin" ]; then
+    INSTALL_DIR="/usr/local/fsociety"
+    BIN_DIR="/usr/local/bin/"
     BASH_PATH="/bin/bash"
     TERMUX=false
-    apt-get install -y git python
+else
+    INSTALL_DIR="$HOME/.fsociety"
+    BIN_DIR="/usr/local/bin/"
+    BASH_PATH="/bin/bash"
+    TERMUX=false
+
+    sudo apt-get install -y git python2.7
 fi
 
 echo "[✔] Checking directories...";
@@ -33,8 +45,10 @@ if [ -d "$INSTALL_DIR" ]; then
     if [ "$mama" = "y" ]; then
         if [ "$TERMUX" = true ]; then
             rm -rf "$INSTALL_DIR"
+            rm "$BIN_DIR/fsociety*"
         else
             sudo rm -rf "$INSTALL_DIR"
+            sudo rm "$BIN_DIR/fsociety*"
         fi
     else
         echo "[✘] If you want to install you must remove previous installations [✘] ";
@@ -54,16 +68,18 @@ fi
 
 echo "[✔] Installing ...";
 echo "";
-git clone https://github.com/Manisso/fsociety "$INSTALL_DIR";
+git clone --depth=1 https://github.com/Manisso/fsociety "$INSTALL_DIR";
 echo "#!$BASH_PATH
-python $INSTALL_DIR/fsociety.py" '${1+"$@"}' > fsociety;
-chmod +x fsociety;
+python $INSTALL_DIR/fsociety.py" '${1+"$@"}' > "$INSTALL_DIR/fsociety";
+chmod +x "$INSTALL_DIR/fsociety";
 if [ "$TERMUX" = true ]; then
-    cp fsociety "$BIN_DIR"
+    cp "$INSTALL_DIR/fsociety" "$BIN_DIR"
+    cp "$INSTALL_DIR/fsociety.cfg" "$BIN_DIR"
 else
-    sudo cp fsociety "$BIN_DIR"
+    sudo cp "$INSTALL_DIR/fsociety" "$BIN_DIR"
+    sudo cp "$INSTALL_DIR/fsociety.cfg" "$BIN_DIR"
 fi
-rm fsociety;
+rm "$INSTALL_DIR/fsociety";
 
 
 if [ -d "$INSTALL_DIR" ] ;
