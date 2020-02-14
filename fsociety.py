@@ -63,7 +63,7 @@ class color:
 
 
 def clearScr():
-    os.system('clear')
+    os.system('clear')# no windows ,is Linux
 
 
 def yesOrNo():
