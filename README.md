@@ -2,8 +2,8 @@
 
 # Fsociety Hacking Tools Pack
 
-A Penetration Testing Framework, you will have every script that a hacker needs
-
+A Penetration Testing Framework, you will have every script that a hacker needs  
+It is not recommended to run directly on windows. Please see the following
 ## Fsociety Contains All Tools Used in Mr. Robot Series
 
 [![alt tag](http://nikolaskama.me/content/images/2016/07/mr-robot-1.gif)](https://wikipedia.org/wiki/Mr._Robot)
