@@ -1,4 +1,5 @@
-!/bin/bash
+#!/bin/bash
+# Script for uninstall Fsociety tools
 
 # ----- FSociety Team -----
 
