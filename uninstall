@@ -9,16 +9,9 @@
 
 #  * https://github.com/CRO-THEHACKER/
 
-#  * http://thedarkarmy.ml/
-
-#
-
 # Feel free to share any ideas with the
-
 # project!
-
 #
-
 # -------------------------
 
 clear
@@ -36,8 +29,6 @@ if [ "$PREFIX" = "/data/data/com.termux/files/usr" ]; then
     BASH_PATH="$PREFIX/bin/bash"
 
     TERMUX=true
-
-    pkg uninstall -y git python2
 
 elif [ "$(uname)" = "Darwin" ]; then
 
@@ -58,8 +49,6 @@ else
     BASH_PATH="/bin/bash"
 
     TERMUX=false
-
-    sudo apt-get remove -y git python2.7
 
 fi
 
