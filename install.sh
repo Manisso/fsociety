@@ -1,5 +1,6 @@
 #!/bin/bash
 # Bash Script for install Fsociety tools
+# Must run to install tool
 
 clear
 echo "
