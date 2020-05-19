@@ -8,10 +8,6 @@ A Penetration Testing Framework, you will have every script that a hacker needs
 
 [![alt tag](http://nikolaskama.me/content/images/2016/07/mr-robot-1.gif)](https://wikipedia.org/wiki/Mr._Robot)
 
-# FSociety3 - py3 update
-
-Please feel free to start using the FSociety3 update, the EOL for fsociety will be 2021.
-- [the project](https://github.com/CRO-THEHACKER/fsociety3)
 ## Menu
 
 - Information Gathering
@@ -144,10 +140,6 @@ docker-compose up -d
 docker-compose exec fsociety fsociety
 docker-compose down # destroys instance
 ```
-# Visit Our Network :kissing_heart:
-
-
-[Discord](https://discord.gg/BaBpuPn)
 
 # Screenshots
 
