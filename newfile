@@ -1,7 +1,0 @@
-# Nmap 7.80 scan initiated Fri Jul 24 19:32:15 2020 as: nmap -sV -oN newfile 127.0.0.1
-Nmap scan report for localhost (127.0.0.1)
-Host is up (0.000066s latency).
-All 1000 scanned ports on localhost (127.0.0.1) are closed
-
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-# Nmap done at Fri Jul 24 19:32:15 2020 -- 1 IP address (1 host up) scanned in 0.32 seconds
