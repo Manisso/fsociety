@@ -466,7 +466,7 @@ class nmap:
     def run(self):
         clearScr()
         print(self.nmapLogo)
-        target = raw_input(self.targetPrompt)
+        target = raw_input(self.targetPrompt).split(' ')[0]
         self.menu(target)
 
     def menu(self, target):
@@ -558,7 +558,7 @@ class wpscan:
             self.install()
         clearScr()
         print(self.wpscanLogo)
-        target = raw_input("   Enter a Target: ")
+        target = raw_input("   Enter a Target: ").split(' ')[0]
         self.menu(target)
 
     def installed(self):
@@ -618,7 +618,7 @@ class CMSmap:
             self.install()
         clearScr()
         print(self.CMSmapLogo)
-        target = raw_input("   Enter a Target: ")
+        target = raw_input("   Enter a Target: ").split(' ')[0]
         self.run(target)
         response = raw_input(continuePrompt)
 
