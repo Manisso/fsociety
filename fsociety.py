@@ -569,14 +569,13 @@ class wpscan:
         clearScr()
         print(self.wpscanLogo)
         target = raw_input("   Enter a Target: ").split(' ')[0]
-        test_target = target.split('/')
+        test_target = ''
+        if target[0:4] == 'http':
+            test_target = target
+        else:
+            test_target = 'http://'+target
         try:
-            socket.gethostbyname(test_target[0])
-            if len(test_target) > 1:
-                try:
-                    int(test_target[1])
-                except KeyboardInterrupt:
-                    informationGatheringMenu()
+            urllib2.urlopen(test_target)
             self.menu(target)
         except KeyboardInterrupt:
             informationGatheringMenu()
@@ -639,14 +638,13 @@ class CMSmap:
         clearScr()
         print(self.CMSmapLogo)
         target = raw_input("   Enter a Target: ").split(' ')[0]
-        test_target = target.split('/')
+        test_target = ''
+        if target[0:4] == 'http':
+            test_target = target
+        else:
+            test_target = 'http://'+target
         try:
-            socket.gethostbyname(test_target[0])
-            if len(test_target) > 1:
-                try:
-                    int(test_target[1])
-                except KeyboardInterrupt:
-                    informationGatheringMenu()
+            urllib2.urlopen(test_target)
             self.run(target)
             response = raw_input(continuePrompt)
         except KeyboardInterrupt:
@@ -716,9 +714,18 @@ class doork:
             self.install()
         clearScr()
         print(self.doorkLogo)
-        target = raw_input("   Enter a Target: ")
-        self.run(target)
-        response = raw_input(continuePrompt)
+        target = raw_input("   Enter a Target: ").split(' ')[0]
+        test_target = ''
+        if target[0:4] == 'http':
+            test_target = target
+        else:
+            test_target = 'http://'+target
+        try:
+            urllib2.urlopen(test_target)
+            self.run(target)
+            response = raw_input(continuePrompt)
+        except KeyboardInterrupt:
+            informationGatheringMenu()
 
     def installed(self):
         return (os.path.isdir(self.installDir))
@@ -1102,7 +1109,6 @@ def bsqlbf():
     os.system("wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/bsqlbf-v2/bsqlbf-v2-7.pl -o bsqlbf.pl")
     os.system("perl bsqlbf.pl -url %s" % cbsq)
     os.system("rm bsqlbf.pl")
-
 
 def atscan():
     print ("Do You To Install ATSCAN ?")
