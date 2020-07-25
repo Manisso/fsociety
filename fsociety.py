@@ -467,9 +467,14 @@ class nmap:
         clearScr()
         print(self.nmapLogo)
         target = raw_input(self.targetPrompt).split(' ')[0]
-        test_target = target.split('/')[0]
+        test_target = target.split('/')
         try:
-            socket.gethostbyname(test_target)
+            socket.gethostbyname(test_target[0])
+            if len(test_target) > 1:
+                try:
+                    int(test_target[1])
+                except KeyboardInterrupt:
+                    informationGatheringMenu()
             self.menu(target)
         except KeyboardInterrupt:
             informationGatheringMenu()
@@ -564,9 +569,14 @@ class wpscan:
         clearScr()
         print(self.wpscanLogo)
         target = raw_input("   Enter a Target: ").split(' ')[0]
-        test_target = target.split('/')[0]
+        test_target = target.split('/')
         try:
-            socket.gethostbyname(test_target)
+            socket.gethostbyname(test_target[0])
+            if len(test_target) > 1:
+                try:
+                    int(test_target[1])
+                except KeyboardInterrupt:
+                    informationGatheringMenu()
             self.menu(target)
         except KeyboardInterrupt:
             informationGatheringMenu()
@@ -629,9 +639,14 @@ class CMSmap:
         clearScr()
         print(self.CMSmapLogo)
         target = raw_input("   Enter a Target: ").split(' ')[0]
-        test_target = target.split('/')[0]
+        test_target = target.split('/')
         try:
-            socket.gethostbyname(test_target)
+            socket.gethostbyname(test_target[0])
+            if len(test_target) > 1:
+                try:
+                    int(test_target[1])
+                except KeyboardInterrupt:
+                    informationGatheringMenu()
             self.run(target)
             response = raw_input(continuePrompt)
         except KeyboardInterrupt:
