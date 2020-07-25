@@ -467,7 +467,11 @@ class nmap:
         clearScr()
         print(self.nmapLogo)
         target = raw_input(self.targetPrompt).split(' ')[0]
-        self.menu(target)
+        try:
+            socket.gethostbyname(target)
+            self.menu(target)
+        except KeyboardInterrupt:
+            informationGatheringMenu()
 
     def menu(self, target):
         clearScr()
@@ -559,7 +563,11 @@ class wpscan:
         clearScr()
         print(self.wpscanLogo)
         target = raw_input("   Enter a Target: ").split(' ')[0]
-        self.menu(target)
+        try:
+            socket.gethostbyname(target)
+            self.menu(target)
+        except KeyboardInterrupt:
+            informationGatheringMenu()
 
     def installed(self):
         return (os.path.isdir(self.installDir))
@@ -619,9 +627,13 @@ class CMSmap:
         clearScr()
         print(self.CMSmapLogo)
         target = raw_input("   Enter a Target: ").split(' ')[0]
-        self.run(target)
-        response = raw_input(continuePrompt)
-
+        try:
+            socket.gethostbyname(target)
+            self.run(target)
+            response = raw_input(continuePrompt)
+        except KeyboardInterrupt:
+            informationGatheringMenu()
+        
     def installed(self):
         return (os.path.isdir(self.installDir))
 
