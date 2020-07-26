@@ -1174,8 +1174,8 @@ def joomlarce():
     print("if the response is 200 , you will find your shell in Joomla_3.5_Shell.txt")
     jmtarget = raw_input("Select a targets list:").split(' ')[0]
     try:
-        os.path.exists(jmtarget)
-        os.system("python temp.py %s" % jmtarget)
+        if os.path.exists(jmtarget):
+            os.system("python temp.py %s" % jmtarget)
     except KeyboardInterrupt:
         fsociety()
 
