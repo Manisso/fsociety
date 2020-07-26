@@ -1187,7 +1187,7 @@ def joomlarce():
         fsociety()
 
 def inurl():
-    dork = raw_input("select a Dork:")
+    dork = raw_input("select a Dork:").split(' ')[0]
     output = raw_input("select a file to save:").split(' ')[0]
     all_dorks = ['dork:', 'dork-file:', 'exploit-cad:', 'range:', 'range-rand:', 'irc:', 'exploit-all-id:', 'exploit-vul-id:', 'exploit-get:', 'exploit-post:', 'regexp-filter:', 'exploit-command:', 'command-all:', 'command-vul:', 'replace:', 'remove:', 'regexp:', 'sall:', 'sub-file:', 'sub-get::', 'sub-concat:', 'user-agent:', 'url-reference:', 'delay:', 'sendmail:', 'time-out:', 'http-header:', 'ifcode:', 'ifurl:', 'ifemail:', 'mp:', 'target:', 'no-banner::', 'gc::', 'proxy:', 'proxy-file:', 'time-proxy:', 'pr::', 'proxy-http-file:', 'update::', 'info::', 'help::', 'unique::', 'popup::', 'ajuda::', 'install-dependence::', 'cms-check::', 'sub-post::', 'robots::', 'alexa-rank::', 'beep::', 'exploit-list::', 'tor-random::', 'shellshock::', 'dork-rand:', 'sub-cmd-all:', 'sub-cmd-vul:', 'port-cmd:', 'port-scan:', 'port-write:', 'ifredirect:', 'persist:', 'file-cookie:', 'save-as:']
     if dork in all_dorks:
