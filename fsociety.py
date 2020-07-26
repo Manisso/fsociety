@@ -1070,8 +1070,15 @@ class arachni:
 
     def run(self):
         target = raw_input("Enter Target Hostname: ").split(' ')[0]
+        test_target = ''
+        if target[0:4] == 'http':
+            test_target = target
+        else:
+            test_target = 'http://'+target
         try:
-            socket.gethostbyname(target)
+            url = urlparse(test_target)
+            socket.gethostbyname(url.netloc)
+            target = url.scheme + '://' + url.netloc + url.path
             os.system("arachni %s --output-debug 2> %sarachni/%s.log" %
                 (target, logDir, strftime("%Y-%m-%d_%H:%M:%S", gmtime())))
         except KeyboardInterrupt:
@@ -1181,10 +1188,12 @@ def joomlarce():
 
 def inurl():
     dork = raw_input("select a Dork:")
-    output = raw_input("select a file to save:")
-    os.system(
-        "./inurlbr.php --dork '{0}' -s {1}.txt -q 1,6 -t 1".format(dork, output))
-    webHackingMenu.completed("InurlBR")
+    output = raw_input("select a file to save:").split(' ')[0]
+    all_dorks = ['dork:', 'dork-file:', 'exploit-cad:', 'range:', 'range-rand:', 'irc:', 'exploit-all-id:', 'exploit-vul-id:', 'exploit-get:', 'exploit-post:', 'regexp-filter:', 'exploit-command:', 'command-all:', 'command-vul:', 'replace:', 'remove:', 'regexp:', 'sall:', 'sub-file:', 'sub-get::', 'sub-concat:', 'user-agent:', 'url-reference:', 'delay:', 'sendmail:', 'time-out:', 'http-header:', 'ifcode:', 'ifurl:', 'ifemail:', 'mp:', 'target:', 'no-banner::', 'gc::', 'proxy:', 'proxy-file:', 'time-proxy:', 'pr::', 'proxy-http-file:', 'update::', 'info::', 'help::', 'unique::', 'popup::', 'ajuda::', 'install-dependence::', 'cms-check::', 'sub-post::', 'robots::', 'alexa-rank::', 'beep::', 'exploit-list::', 'tor-random::', 'shellshock::', 'dork-rand:', 'sub-cmd-all:', 'sub-cmd-vul:', 'port-cmd:', 'port-scan:', 'port-write:', 'ifredirect:', 'persist:', 'file-cookie:', 'save-as:']
+    if dork in all_dorks:
+        os.system(
+            "./inurlbr.php --dork '{0}' -s {1}.txt -q 1,6 -t 1".format(dork, output))
+        webHackingMenu.completed("InurlBR")
 
 
 def insinurl():
@@ -1382,8 +1391,8 @@ def shellnoob():
 def androidhash():
     key = raw_input("Enter the android hash: ").split(' ')[0]
     salt = raw_input("Enter the android salt: ").split(' ')[0]
-    symbols = ['!','@','#','$','%','^','&','*','(',')','-','=','+','|','||','&&','/','//','+']
-    if symbols not in key and symbols not in salt:
+    symbols = ['!','@','#','$','%','^','&','*','(',')','-','=','+','|','||','&&','/','//','+', ' ']
+    if [symbol for symbol in symbols if symbol not in key and symbol not in salt] == symbols:
         os.system(
             "git clone --depth=1 https://github.com/PentesterES/AndroidPINCrack.git")
         os.system(
