@@ -1,12 +1,15 @@
-[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/Manisso/fsociety/blob/master/LICENSE) ![OS](https://img.shields.io/badge/Tested%20On-Linux%20|%20OSX%20|%20Windows%20|%20Android-yellowgreen.svg?style=flat-square) [![Python2.7](https://img.shields.io/badge/Python-2.7-green.svg?style=flat-square)](https://www.python.org/downloads/release/python-2714/) [![Python3](https://img.shields.io/badge/Python-3-green.svg?style=flat-square)](https://github.com/CRO-THEHACKER/fsociety3) ![Docker](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg?style=flat-square)
-
 # Fsociety Hacking Tools Pack
 
-A Penetration Testing Framework, you will have every script that a hacker needs
+[![Python2.7](https://img.shields.io/badge/Python-2.7-green.svg?style=flat-square)](https://www.python.org/downloads/release/python-2714/) 
+![OS](https://img.shields.io/badge/Tested%20On-Linux%20|%20OSX%20|%20Windows%20|%20Android-yellowgreen.svg?style=flat-square) 
+![Docker](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg?style=flat-square) 
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/Manisso/fsociety/blob/master/LICENSE)
+
+A Penetration Testing Framework, you will have every script that a hacker needs. Works with Python 2. For a Python 3 version see our updated version at [`fsociety-team/fsociety`](https://github.com/fsociety-team/fsociety).
 
 ## Fsociety Contains All Tools Used in Mr. Robot Series
 
-[![alt tag](http://nikolaskama.me/content/images/2016/07/mr-robot-1.gif)](https://wikipedia.org/wiki/Mr._Robot)
+[![Mr. Robot](http://nikolaskama.me/content/images/2016/07/mr-robot-1.gif)](https://wikipedia.org/wiki/Mr._Robot)
 
 ## Menu
 
@@ -170,9 +173,6 @@ docker-compose down # destroys instance
 [MIT Licence](https://github.com/Manisso/fsociety/blob/master/LICENSE)
 
 # Join the team 
+
  Do you want to collaborate? Join the project at https://crowdforge.io/projects/409
- 
- # Donate
-- Bitcoin  = 3N8i3Xpi15E11M2zPUm5kPhGjnPSLXcWFt
-- Ethereum = 0xa891e54169182a93cacba41288d16aaffa537503
 
