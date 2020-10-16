@@ -1500,7 +1500,7 @@ class Fscan:
     def findPanels(self):
         '''
         find panels from grabbed websites
-        the attacker may do a lot of vulnerabilty
+        the attacker may do a lot of vulnerability
         tests on the admin area
         '''
         print "[~] Finding admin panels"
