@@ -107,8 +107,6 @@ A Penetration Testing Framework, you will have every script that a hacker needs.
 bash <(wget -qO- https://git.io/vAtmB)
 ```
 
-Follow This Video [HackerSploit](https://www.youtube.com/watch?v=t3uYpMrK2EU)
-
 ## Installation
 
 Download [Termux](https://play.google.com/store/apps/details?id=com.termux)
@@ -117,7 +115,7 @@ Download [Termux](https://play.google.com/store/apps/details?id=com.termux)
 bash <(wget -qO- https://git.io/vAtmB)
 ```
 
-Follow This Video [Arif - Tech](https://www.youtube.com/watch?v=JwK5oOBjpgQ&t=160s)
+Follow this video [Arif - Tech](https://www.youtube.com/watch?v=JwK5oOBjpgQ)
 
 ## Installation [Windows](https://wikipedia.org/wiki/Microsoft_Windows)[![alt tag](http://icons.iconarchive.com/icons/yootheme/social-bookmark/32/social-windows-button-icon.png)](https://fr.wikipedia.org/wiki/Microsoft_Windows)
 
@@ -127,7 +125,7 @@ Download [Python](https://www.python.org/downloads/release/python-2714/)
 
 Use Google Cloud Console [Cloud Shell](https://console.cloud.google.com/cloudshell/editor?project=&pli=1&shellonly=true)
 
-Or Use Free Ubuntu VPS [c9.io](https://c9.io/)
+Or use free Ubuntu VPS [c9.io](https://c9.io/)
 
 ## [Docker](https://en.wikipedia.org/wiki/Docker_(software)) Usage ![docker logo](https://png.icons8.com/color/50/000000/docker.png)
 
@@ -171,8 +169,3 @@ docker-compose down # destroys instance
 # License
 
 [MIT Licence](https://github.com/Manisso/fsociety/blob/master/LICENSE)
-
-# Join the team 
-
- Do you want to collaborate? Join the project at https://crowdforge.io/projects/409
-
