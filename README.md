@@ -21,6 +21,7 @@ A Penetration Testing Framework, you will have every script that a hacker needs.
 - Web Hacking
 - Private Web Hacking
 - Post Exploitation
+- Phishing Attack
 - Contributors
 - Install & Update
 
@@ -161,6 +162,8 @@ docker-compose down # destroys instance
 [mswell](https://github.com/mswell)
 
 [Ev3](https://github.com/Ev3)
+
+[Ms.programmer2938](https://github.com/msprogrammer2938)
 
 [huangsam](https://github.com/huangsam)
 
