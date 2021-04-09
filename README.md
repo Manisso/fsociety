@@ -152,7 +152,7 @@ docker-compose down # destroys instance
 # Screenshots
 
 [![asciicast](https://asciinema.org/a/URj2nvpbYpeJyJe43KlASZ7fz.png)](https://asciinema.org/a/URj2nvpbYpeJyJe43KlASZ7fz)
-
+![WhatsApp Image 2021-04-09 at 9 46 42 AM](https://user-images.githubusercontent.com/78996423/114132160-12963c80-9919-11eb-9ca3-92225ad2bea5.jpeg)
 ![alt logo](https://media.giphy.com/media/xT0xeFxyHAKirrLa24/giphy.gif)
 
 # Contributors
