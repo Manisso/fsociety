@@ -1595,7 +1595,7 @@ class Fscan:
 
     def cloudflareBypasser(self):
         '''
-        trys to bypass cloudflare i already wrote
+        tries to bypass cloudflare i already wrote
         in my blog how it works, i learned this
         method from a guy in madleets
         '''
