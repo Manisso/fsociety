@@ -22,4 +22,10 @@ Throws this error in console :
 ```bash
 TypeError: a bytes-like object is required, not 'str'
 ```
+Quick fix : 
 
+```bash
+
+        elif choice == "99":
+            sys.exit()
+```
