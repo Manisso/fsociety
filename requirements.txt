@@ -1,0 +1,5 @@
+argparse
+httplib2
+urllib3
+configparser
+urlparse2
