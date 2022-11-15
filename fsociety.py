@@ -26,7 +26,6 @@ import re
 import urllib2
 import socket
 import urllib
-import sys
 import json
 import telnetlib
 import glob
