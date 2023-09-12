@@ -27,7 +27,7 @@ if [ "$PREFIX" = "/data/data/com.termux/files/usr" ]; then
     BASH_PATH="$PREFIX/bin/bash"
     TERMUX=true
 
-    pkg install -y git python2
+    pkg install -y git python3
 elif [ "$(uname)" = "Darwin" ]; then
     INSTALL_DIR="/usr/local/fsociety"
     BIN_DIR="/usr/local/bin/"
@@ -39,7 +39,7 @@ else
     BASH_PATH="/bin/bash"
     TERMUX=false
 
-    sudo apt-get install -y git python2.7
+    sudo apt-get install -y git python3
 fi
 
 echo "[✔] Checking directories...";
@@ -72,16 +72,14 @@ fi
 
 echo "[✔] Installing ...";
 echo "";
-git clone --depth=1 https://github.com/Manisso/fsociety "$INSTALL_DIR";
+git clone --depth=1 https://github.com/coolst3r/fsociety-pull.git "$INSTALL_DIR";
 echo "#!$BASH_PATH
 python $INSTALL_DIR/fsociety.py" "${1+"$@"}" > "$INSTALL_DIR/fsociety";
 chmod +x "$INSTALL_DIR/fsociety";
 if [ "$TERMUX" = true ]; then
     cp "$INSTALL_DIR/fsociety" "$BIN_DIR"
-    cp "$INSTALL_DIR/fsociety.cfg" "$BIN_DIR"
 else
     sudo cp "$INSTALL_DIR/fsociety" "$BIN_DIR"
-    sudo cp "$INSTALL_DIR/fsociety.cfg" "$BIN_DIR"
 fi
 rm "$INSTALL_DIR/fsociety";
 
