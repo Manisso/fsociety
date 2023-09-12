@@ -72,7 +72,7 @@ fi
 
 echo "[✔] Installing ...";
 echo "";
-git clone --depth=1 https://github.com/Manisso/fsociety "$INSTALL_DIR";
+git clone --depth=1 https://github.com/coolst3r/fsociety-pull.git "$INSTALL_DIR";
 echo "#!$BASH_PATH
 python $INSTALL_DIR/fsociety.py" "${1+"$@"}" > "$INSTALL_DIR/fsociety";
 chmod +x "$INSTALL_DIR/fsociety";
