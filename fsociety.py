@@ -190,7 +190,7 @@ class fsociety:
         else:
             try:
                 print(os.system(choice))
-            except:
+            except Exception:
                 pass
         self.completed()
 
@@ -635,7 +635,7 @@ class CMSmap:
         try:
             os.system("python %s/cmsmap.py -t %s -o %s" %
                       (self.installDir, target, logPath))
-        except:
+        except Exception:
             pass
 
 
@@ -739,7 +739,7 @@ class crips:
     def run(self):
         try:
             os.system("crips")
-        except:
+        except Exception:
             pass
 
 
@@ -1195,7 +1195,7 @@ def grabuploadedlink(url):
                 print "  [ + ] Found Directory:  " + str(url + dir) + " [ + ]"
                 print "-------------------------"
                 upload.append(url + dir)
-    except:
+    except Exception:
         pass
 
 
@@ -1209,7 +1209,7 @@ def grabshell(url):
                     print "  [ ! ] Found Shell:  " + \
                         str(upl + shell) + " [ ! ]"
                     print "-------------------------"
-    except:
+    except Exception:
         pass
 
 
@@ -1283,7 +1283,7 @@ def check_gravityforms(sites):
         try:
             if urllib.urlopen(site + 'wp-content/plugins/gravityforms/gravityforms.php').getcode() == 403:
                 gravityforms.append(site)
-        except:
+        except Exception:
             pass
 
     return gravityforms
@@ -1462,7 +1462,7 @@ class Fscan:
                     findwp = re.findall('(.*?)\?page_id=', wpnoclean)
                     lista.extend(findwp)
                 page += 50
-            except:
+            except Exception:
                 pass
         lista = unique(lista)
         clearScr()
@@ -1586,7 +1586,7 @@ class Fscan:
                         print site
 
                     site = site[:-1]
-            except:
+            except Exception:
                 pass
 
         clearScr()
@@ -1632,7 +1632,7 @@ class Fscan:
             httpresponse = urllib.urlopen(s)
             print ' [*] Server header -> ', httpresponse.headers.getheader(
                 'server')
-        except:
+        except Exception:
             print('[*] Server header ->  Not Found')
 
     def grabSqli(self):
@@ -1652,7 +1652,7 @@ class Fscan:
                 for i in range(len(findwebs)):
                     x = findwebs[i]
                     lista.append(x)
-            except:
+            except Exception:
                 pass
             page += 50
         lista = unique(lista)
@@ -1683,7 +1683,7 @@ class Fscan:
                             checker = re.findall(check, line)
                             if len(checker) != 0:
                                 print ' [*] SQLi found -> ', power
-            except:
+            except Exception:
                 pass
 
 
@@ -1871,7 +1871,7 @@ def check_wordpress(sites):
         try:
             if urllib2.urlopen(site + 'wp-login.php').getcode() == 200:
                 wp.append(site)
-        except:
+        except Exception:
             pass
 
     return wp
@@ -1883,7 +1883,7 @@ def check_joomla(sites):
         try:
             if urllib2.urlopen(site + 'administrator').getcode() == 200:
                 joomla.append(site)
-        except:
+        except Exception:
             pass
 
     return joomla
@@ -1931,7 +1931,7 @@ def grabsqli(ip):
                     str(sites).strip(i)
 
             page = page + 10
-    except:
+    except Exception:
         pass
 
 
@@ -1986,7 +1986,7 @@ def check_wordpress(sites):
         try:
             if urllib2.urlopen(site + 'wp-login.php').getcode() == 200:
                 wp.append(site)
-        except:
+        except Exception:
             pass
 
     return wp
@@ -1998,7 +1998,7 @@ def check_wpstorethemeremotefileupload(sites):
         try:
             if urllib2.urlopen(site + 'wp-content/themes/WPStore/upload/index.php').getcode() == 200:
                 wpstorethemeremotefileupload.append(site)
-        except:
+        except Exception:
             pass
 
     return wpstorethemeremotefileupload
@@ -2010,7 +2010,7 @@ def check_wpcontactcreativeform(sites):
         try:
             if urllib2.urlopen(site + 'wp-content/plugins/sexy-contact-form/includes/fileupload/index.php').getcode() == 200:
                 wpcontactcreativeform.append(site)
-        except:
+        except Exception:
             pass
 
     return wpcontactcreativeform
@@ -2022,7 +2022,7 @@ def check_wplazyseoplugin(sites):
         try:
             if urllib2.urlopen(site + 'wp-content/plugins/lazy-seo/lazyseo.php').getcode() == 200:
                 wplazyseoplugin.append(site)
-        except:
+        except Exception:
             pass
 
     return wplazyseoplugin
@@ -2034,7 +2034,7 @@ def check_wpeasyupload(sites):
         try:
             if urllib2.urlopen(site + 'wp-content/plugins/easy-comment-uploads/upload-form.php').getcode() == 200:
                 wpeasyupload.append(site)
-        except:
+        except Exception:
             pass
 
     return wpeasyupload
@@ -2046,7 +2046,7 @@ def check_wpsymposium(sites):
         try:
             if urllib2.urlopen(site + 'wp-symposium/server/file_upload_form.php').getcode() == 200:
                 wpsycmium.append(site)
-        except:
+        except Exception:
             pass
 
     return wpsymposium
