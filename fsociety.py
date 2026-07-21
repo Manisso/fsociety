@@ -65,6 +65,10 @@ class color:
 def clearScr():
     os.system('clear')
 
+def title():
+    os.system("printf '\033]2;Fsociety\a'")
+
+
 
 def yesOrNo():
     return (raw_input("Continue Y / N: ") in yes)
@@ -141,6 +145,7 @@ def agreement():
 
 class fsociety:
     def __init__(self):
+        title()
         clearScr()
         self.createFolders()
         print (fsocietylogo + color.RED + '''
@@ -155,6 +160,7 @@ class fsociety:
        {6}--Web Hacking
        {7}--Private Web Hacking
        {8}--Post Exploitation
+       {9}--Pishing
        {0}--INSTALL & UPDATE
        {11}-CONTRIBUTORS
        {99}-EXIT\n
@@ -177,6 +183,8 @@ class fsociety:
             privateWebHacking()
         elif choice == "8":
             postExploitationMenu()
+        elif choice == "9":
+            Phishing()
         elif choice == "0":
             self.update()
         elif choice == "11":
@@ -432,8 +440,69 @@ class informationGatheringMenu:
     def completed(self):
         raw_input("Completed, click return to go back")
         self.__init__()
-
-
+Phishing_banner = """
+ ____  _     _     _     _
+|  _ \| |__ (_)___| |__ (_)_ __   __ _
+| |_) | '_ \| / __| '_ \| | '_ \ / _` |
+|  __/| | | | \__ \ | | | | | | | (_| |
+|_|   |_| |_|_|___/_| |_|_|_| |_|\__, |
+                                 |___/
+                                         """
+def Phishing():
+    clearScr()
+    print(Phishing_banner)
+    print("{1}.Soial-Enginner")
+    print("{2}.zphisher")
+    print("{3}.GoPhish")
+    print("{4].AdvPhishing")
+    print("{5}.Soial-Phish")
+    print("{6}.Black-Phish")
+    print("{7}.Dark Phish")
+    print("{8}.Hidden Eye")
+    print("{99}.Main Menu\n")
+    choose = raw_input(fsocietyPrompt)
+    if choose == '1':
+        clearScr()
+        os.system("git clone https://github.com/xHak9x/SocialPhish")
+        completed_()
+    elif choose == '2':
+       clearScr()
+       os.system("git clone https://github.com/htr-tech/zphisher")
+       completed_()
+    elif choose == '3':
+        clearScr()
+        os.system("git clone https://github.com/gophish/gophish")
+        completed_()
+    elif choose == '4':
+        clearScr()
+        os.system("git clone https://github.com/Ignitetch/AdvPhishing")
+        completed_()
+    elif choose == '5':
+        clearScr()
+        os.system("git clone https://github.com/xHak9x/SocialPhish")
+        completed_()
+    elif choose == '6':
+        clearScr()
+        os.system("git clone https://github.com/iinc0gnit0/BlackPhish")
+        completed_()
+    elif choose == '7':
+        clearScr()
+        os.system("git clone https://github.com/Cyber-Anonymous/Dark-Phish")
+        completed_()
+    elif choose == '8':
+        clearScr()
+        os.system("git clone https://github.com/DarkSecDevelopers/HiddenEye-Legacy")
+        completed_()
+    elif choose == '99':
+        fsociety()
+    else:
+        Phishing()
+def completed_():
+    try1 = input("\nCompleted, click return to go back")
+    if try1 == '1':
+        self.__init__()
+    else:
+        self.__init__()
 class nmap:
     nmapLogo = '''
     88b 88 8b    d8    db    88""Yb
